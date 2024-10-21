@@ -4,6 +4,24 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+const MIN_OCTAVE = 2; // from double bass, see: https://en.wikipedia.org/wiki/Double_bass#Pitch
+const MAX_OCTAVE = 8; // from double bass, see: https://en.wikipedia.org/wiki/Piccolo
+const NOTES = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
+const NOTE_VALUES = []; 
+
+
+
+for (let i = MIN_OCTAVE; i <= MAX_OCTAVE; i++) {
+  for (let j = 0; j < NOTES.length; j++) {
+    NOTE_VALUES.push(NOTES[j] + i);
+  }
+}
+
+console.log('NOTES', NOTES);
+console.log('NOTE_VALUES', NOTE_VALUES);
+
+const PLAY_SOUND_OPTIONS = NOTE_VALUES.map((note) => [note, 'sounds/' + note + '.m4a']);
+
 Blockly.defineBlocksWithJsonArray([
   // Block for colour picker.
   {
@@ -13,13 +31,7 @@ Blockly.defineBlocksWithJsonArray([
       {
         type: 'field_dropdown',
         name: 'VALUE',
-        options: [
-          ['C4', 'sounds/c4.m4a'],
-          ['D4', 'sounds/d4.m4a'],
-          ['E4', 'sounds/e4.m4a'],
-          ['F4', 'sounds/f4.m4a'],
-          ['G4', 'sounds/g4.m4a'],
-        ],
+        options: PLAY_SOUND_OPTIONS,
       },
     ],
     previousStatement: null,
