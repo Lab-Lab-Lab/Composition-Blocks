@@ -3454,12 +3454,16 @@
     });
   }
 
-  function newBlocklyBlockForNote(currWork, noteString) { // e.g. "C4"
-    if (noteString === REST_STR) {
-      return undefined;
-    }
+  function newBlocklyBlockForNote(currWork, noteObj) { // e.g. "C4"
+    const duration = noteObj.type;
+    const noteString = blocklyNoteFromMusicXMLNote(noteObj);
     const newB = currWork.newBlock('play_sound', null); // FIXME? why is this null?
-    newB.setFieldValue(`sounds/${noteString}.m4a`, 'VALUE');
+    if (noteString === REST_STR) {
+      newB.setFieldValue('null', 'VALUE');  
+    } else {
+      newB.setFieldValue(`sounds/${noteString}.m4a`, 'VALUE');
+    }
+    newB.setFieldValue(duration, 'DURATION');
     newB.initSvg();
     return newB;
   }
@@ -3471,9 +3475,10 @@
     if (currentButton.innerText === '1') {
       console.log('loading workspace 1');
       const xmlNotes = notesFromJSON(exampleMusicXMLJSON);
-      const blocklyNotes = xmlNotes.map(blocklyNoteFromMusicXMLNote);
-      console.log('blocklyNotes', blocklyNotes);
-      const allNotesFromScore = blocklyNotes.map(note => newBlocklyBlockForNote(currWork, note)).filter(n=> n !== undefined);
+      // debugger
+      // const blocklyNotes = xmlNotes.map(blocklyNoteFromMusicXMLNote);
+      // console.log('blocklyNotes', blocklyNotes);
+      const allNotesFromScore = xmlNotes.map(note => newBlocklyBlockForNote(currWork, note)).filter(n=> n !== undefined);
       allNotesFromScore.forEach((note, i) => {
         if (i > 0) {
           const prevNote = allNotesFromScore[i - 1];
