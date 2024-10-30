@@ -21,17 +21,24 @@ console.log('NOTES', NOTES);
 console.log('NOTE_VALUES', NOTE_VALUES);
 
 const PLAY_SOUND_OPTIONS = NOTE_VALUES.map((note) => [note, 'sounds/' + note + '.m4a']);
+PLAY_SOUND_OPTIONS.push(['rest', 'null']);
+const PLAY_DURATION_OPTIONS = ['whole', 'half', 'quarter', 'eighth'].map((duration) => [duration, duration]);
 
 Blockly.defineBlocksWithJsonArray([
   // Block for colour picker.
   {
     type: 'play_sound',
-    message0: 'Play %1',
+    message0: 'Play %1 for %2',
     args0: [
       {
         type: 'field_dropdown',
         name: 'VALUE',
         options: PLAY_SOUND_OPTIONS,
+      },
+      {
+        type: 'field_dropdown',
+        name: 'DURATION',
+        options: PLAY_DURATION_OPTIONS,
       },
     ],
     previousStatement: null,
