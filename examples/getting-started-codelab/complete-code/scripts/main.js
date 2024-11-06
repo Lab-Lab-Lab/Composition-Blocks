@@ -1769,16 +1769,47 @@
     });
   }
 
+//   {
+//     "rest": {},
+//     "voice": "1",
+//     "staff": "1",
+//     "duration": "2",
+//     "$adagio-location": {
+//         "timePos": 6
+//     },
+//     "type": "quarter",
+//     "$color": "#E75B5C"
+// }
+
+// {
+//   "staff": "1",
+//   "voice": "1",
+//   "duration": "2",
+//   "pitch": {
+//       "octave": "4",
+//       "step": "B",
+//       "alter": "-1"
+//   },
+//   "$adagio-location": {
+//       "timePos": 4
+//   },
+//   "type": "quarter",
+//   "$color": "#E75B5C"
+// }
   function newBlocklyBlockForNote(currWork, noteObj) { // e.g. "C4"
     const duration = noteObj.type;
     const noteString = blocklyNoteFromMusicXMLNote(noteObj);
     const newB = currWork.newBlock('play_sound', null); // FIXME? why is this null?
     if (noteString === REST_STR) {
-      newB.setFieldValue('null', 'VALUE'); 
+      newB.setFieldValue('rest', 'STEP');
+      newB.setFieldValue('rest', 'OCTAVE');
     } else {
-      newB.setFieldValue(`sounds/${noteString}.m4a`, 'VALUE');
+      newB.setFieldValue(noteObj.pitch.octave, 'OCTAVE');
+      newB.setFieldValue(noteObj.pitch.step, 'STEP');
     }
     newB.setFieldValue(duration, 'DURATION');
+
+    
     newB.initSvg();
     return newB;
   }
