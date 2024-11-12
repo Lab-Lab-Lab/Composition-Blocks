@@ -1,0 +1,16 @@
+.split-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.fill-height {
+  height: 100vh;
+  width: 50vw;
+}
+
+pre {
+  white-space: normal;
+  word-wrap: break-word;
+  max-width: 50vw;
+}
