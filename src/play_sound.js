@@ -7,6 +7,19 @@ const NOTES = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
 
 const NOTE_VALUES = [];
 
+// Notes 11/13
+// npm install 
+// package.json
+// Script section will make you aware of commands
+// npm run dev
+// o -> enter to open
+
+// Either parse xml
+// or when block created: log something and create from that log
+
+// measure problem
+// flatIO needs measures, create measure block?
+
 
 
 for (let i = MIN_OCTAVE; i <= MAX_OCTAVE; i++) {
