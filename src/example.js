@@ -1,4 +1,4 @@
- const exampleMusicXMLJSON = {
+const exampleMusicXMLJSON = {
   "score-partwise": {
     "$version": "3.1",
     "identification": {
