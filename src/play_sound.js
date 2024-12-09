@@ -68,7 +68,9 @@ const MCPR_TOOLBOX = [
         name: 'NOTES',
       },
     ],
-    colour: 355,
+    previousStatement: null,  // Allow the measure block to connect to previous blocks
+    nextStatement: null,      // Allow the measure block to connect to next blocks
+    colour: 270,
     tooltip: 'A measure that groups a set of notes',
     helpUrl: '',
   },
