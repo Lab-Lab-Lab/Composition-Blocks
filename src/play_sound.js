@@ -33,10 +33,9 @@ const PLAY_OCTAVE_OPTIONS = ['2', '3', '4', '5', '6', '7', '8', 'rest'].map((oct
 const PLAY_STEP_OPTIONS = ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'rest'].map((step) => [step, step]);
 
 const MCPR_TOOLBOX = [
-  // Block for colour picker.
   {
     type: 'play_sound',
-    message0: 'Duration: %1 Step: %2 Octave: %3',
+    message0: 'Play Note with Duration: %1 Step: %2 Octave: %3',
     args0: [
       {
         type: 'field_dropdown',
@@ -52,13 +51,60 @@ const MCPR_TOOLBOX = [
         type: 'field_dropdown',
         name: 'OCTAVE',
         options: PLAY_OCTAVE_OPTIONS,
-      }
-
-
+      },
     ],
     previousStatement: null,
     nextStatement: null,
     colour: 355,
   },
+  {
+    type: 'measure',
+    message0: 'Measure',
+    args0: [],
+    message1: '%1',
+    args1: [
+      {
+        type: 'input_statement',
+        name: 'NOTES',
+      },
+    ],
+    colour: 355,
+    tooltip: 'A measure that groups a set of notes',
+    helpUrl: '',
+  },
 ];
+
 Blockly.defineBlocksWithJsonArray(MCPR_TOOLBOX);
+
+
+// const MCPR_TOOLBOX = [
+//   // Block for colour picker.
+//   {
+//     type: 'play_sound',
+//     message0: 'Play Note with Duration: %1 Step: %2 Octave: %3',
+//     args0: [
+//       {
+//         type: 'field_dropdown',
+//         name: 'DURATION',
+//         options: PLAY_DURATION_OPTIONS,
+//       },
+//       {
+//         type: 'field_dropdown',
+//         name: 'STEP',
+//         options: PLAY_STEP_OPTIONS,
+//       },
+//       {
+//         type: 'field_dropdown',
+//         name: 'OCTAVE',
+//         options: PLAY_OCTAVE_OPTIONS,
+//       }
+
+
+//     ],
+//     previousStatement: null,
+//     nextStatement: null,
+//     colour: 355,
+//   },
+  
+// ];
+// Blockly.defineBlocksWithJsonArray(MCPR_TOOLBOX);

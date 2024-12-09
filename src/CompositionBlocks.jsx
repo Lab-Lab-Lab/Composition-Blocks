@@ -67,6 +67,39 @@ export default function CompositionBlocks({ flatJSON }) {
   //   existing note array with the updated version
   // whenever anything is changed, we replace all measures and all notes within measures
 
+  // return (
+  //   <div>
+  //     <div className='split-container'>
+  //       {toolbox.contents && <BlocklyWorkspace
+  //         toolboxConfiguration={toolbox} // this must be a JSON toolbox definition
+  //         initialXml={xml}
+  //         onXmlChange={willSetXml}
+  //         className="fill-height"
+  //         workspaceConfiguration={{
+  //           grid: {
+  //             spacing: 20,
+  //             length: 3,
+  //             colour: "#ccc",
+  //             snap: true,
+  //           },
+  //         }}
+  //         onInject={(workspace) => {
+  //           const xmlNotes = notesFromJSON(flatJSON);
+  //           const allNotesFromScore = xmlNotes.map(note => newBlocklyBlockForNote(workspace, note)).filter(n => n !== undefined);
+  //           allNotesFromScore.forEach((note, i) => {
+  //             if (i > 0) {
+  //               const prevNote = allNotesFromScore[i - 1];
+  //               prevNote.nextConnection.connect(note.previousConnection);
+  //               prevNote.initSvg();
+  //             }
+  //           })
+  //         }}
+  //       />}
+  //       {xml && <pre ref={renderedXMLRef} dangerouslySetInnerHTML={{ __html: xml }}></pre>}
+  //     </div>
+  //     {xml && <pre>{xml}</pre>}
+  //   </div>
+  // )
   return (
     <div>
       <div className='split-container'>
@@ -84,20 +117,35 @@ export default function CompositionBlocks({ flatJSON }) {
             },
           }}
           onInject={(workspace) => {
-            const xmlNotes = notesFromJSON(flatJSON);
-            const allNotesFromScore = xmlNotes.map(note => newBlocklyBlockForNote(workspace, note)).filter(n => n !== undefined);
-            allNotesFromScore.forEach((note, i) => {
-              if (i > 0) {
-                const prevNote = allNotesFromScore[i - 1];
-                prevNote.nextConnection.connect(note.previousConnection);
-                prevNote.initSvg();
-              }
-            })
+            const measures = flatJSON['score-partwise']['part'][0]['measure']; // Extract measures from JSON
+            
+            measures.forEach((measure, measureIndex) => {
+              // Create a measure block for each measure
+              const measureBlock = workspace.newBlock('measure');
+              measureBlock.initSvg();
+              measureBlock.moveBy(20, measureIndex * 100); // Adjust positioning as needed
+  
+              // Process notes in this measure
+              measure['note'].forEach(note => {
+                const noteBlock = newBlocklyBlockForNote(workspace, note);
+                if (noteBlock) {
+                  // Connect notes to the measure block's inputs
+                  const notesInput = measureBlock.getInput('NOTES');
+                  if (notesInput && notesInput.connection) {
+                    notesInput.connection.connect(noteBlock.previousConnection);
+                  }
+                }
+              });
+  
+              // Render the measure block
+              measureBlock.render();
+            });
           }}
         />}
         {xml && <pre ref={renderedXMLRef} dangerouslySetInnerHTML={{ __html: xml }}></pre>}
       </div>
       {xml && <pre>{xml}</pre>}
     </div>
-  )
+  );
+  
 }
