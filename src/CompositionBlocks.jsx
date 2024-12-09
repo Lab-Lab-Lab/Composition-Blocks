@@ -120,13 +120,8 @@ export default function CompositionBlocks({ flatJSON }) {
             onInject={(workspace) => {
               const measures = flatJSON['score-partwise']['part'][0]['measure']; // Extract measures from JSON
               
-              // Initialize a dummy start block to connect all measure blocks to
-              const startBlock = workspace.newBlock('measure');
-              startBlock.initSvg();
-              startBlock.moveBy(50, 0); // Adjust positioning as needed
-              startBlock.render();
-
-              let previousMeasureBlock = startBlock; // Use the dummy block as the starting reference
+              // Initialize the first measure block directly
+              let previousMeasureBlock = null;
 
               measures.forEach((measure, measureIndex) => {
                 // Create a measure block for each measure
@@ -148,13 +143,7 @@ export default function CompositionBlocks({ flatJSON }) {
                 });
 
                 // Connect the current measure block to the previous one
-                console.log(
-                  `Connecting measure ${measureIndex} (previousConnection: ${
-                    measureBlock.previousConnection ? 'exists' : 'null'
-                  }) to previous block`
-                );
-
-                if (previousMeasureBlock.nextConnection && measureBlock.previousConnection) {
+                if (previousMeasureBlock && previousMeasureBlock.nextConnection && measureBlock.previousConnection) {
                   previousMeasureBlock.nextConnection.connect(measureBlock.previousConnection);
                   console.log(`Connected measure ${measureIndex - 1} to measure ${measureIndex}`);
                 }
