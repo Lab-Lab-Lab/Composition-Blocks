@@ -1,0 +1,29 @@
+<div id="embed-container"></div>
+<script src="https://prod.flat-cdn.com/embed-js/v2.3.0/embed.min.js"></script>
+<script>
+  var container = document.getElementById("embed-container");
+  var embed = new Flat.Embed(container, {
+    "width": "100%",
+    "height": "450",
+    "score": "67a10b14e95ef02937db2c6b",
+    "embedParams": {
+      "appId": "60a51c906bcde01fc75a3ad0",
+      "sharingKey": "6206dfe3c7fa86fdde321a36cb82a9552ec8bc68d33c25577cb3c1ac11f9bac1711d222ba8ea74adbe884eea75da109f14b97324e2ea9a094faedb74c38680df"
+    },
+  });
+
+  // You can now use the `embed` instance.
+  // Check out the docs at https://flat.io/developers/docs/embed/javascript.html
+
+
+  // pasted below from the sdk docs
+  embed
+      .getJSON()
+      .then(function (data) {
+        console.log(data);
+      })
+      .catch(function (error) {
+        // Unable to get the data
+      });
+
+</script>

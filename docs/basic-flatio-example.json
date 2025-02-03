@@ -1,0 +1,298 @@
+{
+  "score-partwise": {
+    "$version": "3.1",
+    "part-list": {
+      "score-part": [
+        {
+          "part-name": "Piano",
+          "voiceMapping": {
+            "0": [
+              0
+            ],
+            "1": [
+              1
+            ]
+          },
+          "staffMapping": [
+            {
+              "mainVoiceIdx": 0,
+              "voices": [
+                0
+              ],
+              "staffUuid": "aa3b1a89-8396-75c1-7a35-707e16b5c7f6"
+            },
+            {
+              "mainVoiceIdx": 1,
+              "voices": [
+                1
+              ],
+              "staffUuid": "30a1905e-3b17-e73e-5a15-4de9c0d892dd"
+            }
+          ],
+          "voiceIdxToUuidMapping": {
+            "0": "b9c5404f-d299-639a-924e-c72e10b9054e",
+            "1": "068f6218-5d3a-840d-8873-2faf0c7d21b1"
+          },
+          "voiceUuidToIdxMapping": {
+            "b9c5404f-d299-639a-924e-c72e10b9054e": 0,
+            "068f6218-5d3a-840d-8873-2faf0c7d21b1": 1
+          },
+          "part-abbreviation": "Pno.",
+          "score-instrument": {
+            "instrument-name": "Piano",
+            "$id": "P1-I1"
+          },
+          "midi-instrument": {
+            "midi-program": 1,
+            "volume": "100",
+            "$id": "P1-I1",
+            "midi-channel": "1"
+          },
+          "$id": "P1",
+          "uuid": "d957c8e6-cad3-b243-6e7d-20dbc49eb025"
+        }
+      ]
+    },
+    "measure-list": {
+      "score-measure": [
+        {
+          "uuid": "9f949a8d-23ed-e414-fdcb-0ea064bdd558"
+        }
+      ]
+    },
+    "part": [
+      {
+        "measure": [
+          {
+            "note": [
+              {
+                "staff": "1",
+                "voice": "1",
+                "duration": "1",
+                "pitch": {
+                  "octave": "5",
+                  "step": "D"
+                },
+                "$adagio-location": {
+                  "timePos": 0
+                },
+                "type": "quarter"
+              },
+              {
+                "rest": {},
+                "voice": "1",
+                "staff": "1",
+                "duration": "1",
+                "$adagio-location": {
+                  "timePos": 1
+                },
+                "type": "quarter"
+              },
+              {
+                "rest": {},
+                "voice": "1",
+                "staff": "1",
+                "duration": "1",
+                "$adagio-location": {
+                  "timePos": 2
+                },
+                "type": "quarter"
+              },
+              {
+                "rest": {},
+                "voice": "1",
+                "staff": "1",
+                "duration": "1",
+                "$adagio-location": {
+                  "timePos": 3
+                },
+                "type": "quarter"
+              },
+              {
+                "rest": {},
+                "voice": "2",
+                "staff": "2",
+                "duration": "1",
+                "$adagio-location": {
+                  "timePos": 0
+                },
+                "type": "quarter",
+                "backup": {
+                  "duration": 4
+                }
+              },
+              {
+                "rest": {},
+                "voice": "2",
+                "staff": "2",
+                "duration": "1",
+                "$adagio-location": {
+                  "timePos": 1
+                },
+                "type": "quarter"
+              },
+              {
+                "rest": {},
+                "voice": "2",
+                "staff": "2",
+                "duration": "1",
+                "$adagio-location": {
+                  "timePos": 2
+                },
+                "type": "quarter"
+              },
+              {
+                "rest": {},
+                "voice": "2",
+                "staff": "2",
+                "duration": "1",
+                "$adagio-location": {
+                  "timePos": 3
+                },
+                "type": "quarter"
+              }
+            ],
+            "barline": {
+              "$location": "right",
+              "bar-style": "light-heavy",
+              "$adagio-location": {
+                "dpq": 1,
+                "timePos": 4
+              },
+              "noteBefore": 7
+            },
+            "harmony": [],
+            "$number": "1",
+            "attributes": [
+              {
+                "staves": "2",
+                "divisions": "1",
+                "time": {
+                  "beats": "4",
+                  "beat-type": "4"
+                },
+                "clef": [
+                  {
+                    "sign": "G",
+                    "line": "2",
+                    "$number": "1"
+                  },
+                  {
+                    "sign": "F",
+                    "line": "4",
+                    "$number": "2"
+                  }
+                ],
+                "key": {
+                  "fifths": "0"
+                },
+                "staff-details": {
+                  "staff-lines": "5"
+                },
+                "$adagio-time": {
+                  "beats": "4",
+                  "beat-type": "4"
+                },
+                "noteBefore": -1,
+                "$adagio-location": {
+                  "timePos": 0,
+                  "dpq": 1
+                }
+              }
+            ],
+            "sound": [
+              {
+                "$adagio-swing": {
+                  "swing": false
+                },
+                "noteBefore": -1,
+                "$adagio-location": {
+                  "timePos": 0,
+                  "dpq": 1
+                }
+              },
+              {
+                "$tempo": "80",
+                "noteBefore": -1,
+                "$adagio-location": {
+                  "timePos": 0,
+                  "dpq": 1
+                }
+              }
+            ],
+            "direction": [
+              {
+                "$placement": "above",
+                "staff": "1",
+                "$adagio-location": {
+                  "timePos": 0
+                },
+                "direction-type": {
+                  "metronome": {
+                    "per-minute": "80",
+                    "beat-unit": "quarter"
+                  }
+                },
+                "noteBefore": -1,
+                "$adagio-isFirst": true
+              }
+            ],
+            "$adagio-beatsList": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "$adagio-restsInsideBeams": false
+          }
+        ],
+        "$id": "P1",
+        "uuid": "d957c8e6-cad3-b243-6e7d-20dbc49eb025"
+      }
+    ],
+    "defaults": {
+      "scaling": {
+        "millimeters": "7",
+        "tenths": "40"
+      },
+      "page-layout": {
+        "page-height": "1596.5714285714287",
+        "page-width": "1233.7142857142858",
+        "page-margins": {
+          "$type": "both",
+          "top-margin": "38.857142857142854",
+          "bottom-margin": "38.857142857142854",
+          "left-margin": "38.857142857142854",
+          "right-margin": "38.857142857142854"
+        }
+      },
+      "system-layout": {
+        "system-distance": "115.2"
+      },
+      "staff-layout": {
+        "staff-distance": "72.57142857142857"
+      },
+      "$adagio-measureNumberingStart": 1,
+      "word-font": {
+        "$font-family": "Century Schoolbook L"
+      }
+    },
+    "$adagio-formatVersion": 60,
+    "credit": [
+      {
+        "credit-type": "title",
+        "credit-words": "1 note"
+      }
+    ],
+    "work": {
+      "work-title": "1 note"
+    },
+    "identification": {
+      "encoding": {
+        "software": "Flat",
+        "encoding-date": "2025-02-03"
+      },
+      "source": "https://flat.io/score/67a10b14e95ef02937db2c6b-1-note?sharingKey=6206dfe3c7fa86fdde321a36cb82a9552ec8bc68d33c25577cb3c1ac11f9bac1711d222ba8ea74adbe884eea75da109f14b97324e2ea9a094faedb74c38680df"
+    }
+  }
+}
