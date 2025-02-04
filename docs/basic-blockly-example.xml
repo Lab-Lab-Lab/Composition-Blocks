@@ -1,0 +1,11 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="measure" id="1B6kk,4pi:MR?Q5lJ|?t" x="50" y="0">
+    <statement name="NOTES">
+      <block type="play_sound" id="p%q@D158I]~hc|*`av@k">
+        <field name="DURATION">quarter</field>
+        <field name="STEP">C</field>
+        <field name="OCTAVE">5</field>
+      </block>
+    </statement>
+  </block>
+</xml>
