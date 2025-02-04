@@ -47,8 +47,8 @@ export default function CompositionBlocks({ flatJSON }) {
   field name="DURATION">quarter</field><field name="STEP">B</field><field name="OCTAVE">4</field><next><block type="play_sound" id="bybO-9o%tEVjns!qZqDx"><field name="DURATION">quarter</field><field name="STEP">B</field><field name="OCTAVE">4</field><next><block type="play_sound" id="(P.daZ`-]?=k{B%X@T]J"><field name="DURATION">quarter</field><field name="STEP">C</field><field name="OCTAVE">5</field><next><block type="play_sound" id="_W_}[O$Lfy2${uwkuS@g"><field name="DURATION">quarter</field><field name="STEP">G</field><field name="OCTAVE">4</field><next><block type="play_sound" id="M.iaNZPgiz5*VbF4^_C-"><field name="DURATION">quarter</field><field n */}
 
   const willSetXml = (newXml) => {
-    // console.log('willSetXml', newXml);
-    // console.log('current ref value', renderedXMLRef.current);
+    console.log('willSetXml', newXml);
+    console.log('current ref value', renderedXMLRef.current);
 
     // const allBlocks = document.evaluate("//block",
     //   document,
