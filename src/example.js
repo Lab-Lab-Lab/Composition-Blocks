@@ -1,1980 +1,2002 @@
-const exampleMusicXMLJSON = {
-  "score-partwise": {
-    "$version": "3.1",
-    "identification": {
-      "creator": {
-        "content": "Brittany J. Green",
-        "$type": "composer"
-      },
-      "encoding": {
-        "software": "Flat",
-        "encoding-date": "2024-08-12"
-      },
-      "source": "https://flat.io/score/62ec0df2c6f0b1001227613f-freedom-2040-the-tomorrow-we-ll-build-melody-concert-pitch-tc?sharingKey=30bc11ca0306e5d4955a135fd0bd723010fb082fe006f4dd505c36ade58ded13f494a810a480215bfe02b41e60f6972b5e69f40b5f2772291e75ada7fd8cd0b3"
-    },
-    "defaults": {
-      "scaling": {
-        "millimeters": "7.2319",
-        "tenths": "40"
-      },
-      "page-layout": {
-        "page-height": "1545",
-        "page-width": "1194",
-        "page-margins": {
-          "$type": "both",
-          "left-margin": "70",
-          "right-margin": "70",
-          "top-margin": "70",
-          "bottom-margin": "70"
-        }
-      },
-      "system-layout": {
-        "system-margins": {
-          "left-margin": "0",
-          "right-margin": "0"
-        },
-        "system-distance": "121",
-        "top-system-distance": "70"
-      },
-      "appearance": {
-        "line-width": [
-          {
-            "content": "0.7487",
-            "$type": "stem"
-          },
-          {
-            "content": "5",
-            "$type": "beam"
-          },
-          {
-            "content": "0.7487",
-            "$type": "staff"
-          },
-          {
-            "content": "0.7487",
-            "$type": "light barline"
-          },
-          {
-            "content": "5",
-            "$type": "heavy barline"
-          },
-          {
-            "content": "0.7487",
-            "$type": "leger"
-          },
-          {
-            "content": "0.7487",
-            "$type": "ending"
-          },
-          {
-            "content": "0.7487",
-            "$type": "wedge"
-          },
-          {
-            "content": "0.7487",
-            "$type": "enclosure"
-          },
-          {
-            "content": "0.7487",
-            "$type": "tuplet bracket"
-          }
-        ],
-        "note-size": [
-          {
-            "content": "60",
-            "$type": "grace"
-          },
-          {
-            "content": "60",
-            "$type": "cue"
-          }
-        ],
-        "distance": [
-          {
-            "content": "120",
-            "$type": "hyphen"
-          },
-          {
-            "content": "7.5",
-            "$type": "beam"
-          }
-        ]
-      },
-      "music-font": {
-        "$font-family": "Bravura"
-      },
-      "staff-layout": {
-        "staff-distance": "70.24433413072636"
-      },
-      "$adagio-systemBreakPolicy": {
-        "maxNbMeasuresPerLine": 4,
-        "forbiddenCounts": {}
-      }
-    },
-    "credit": [
-      {
-        "credit-type": "title",
-        "credit-words": "Freedom 2040: The Tomorrow We'll Build Melody - Concert Pitch TC"
-      }
-    ],
-    "part-list": {
-      "score-part": [
-        {
-          "$id": "P1",
-          "part-name": {
-            "content": "Concert Pitch",
-            "$print-object": "no"
-          },
-          "part-abbreviation": {
-            "content": "Ob.",
-            "$print-object": "no"
-          },
-          "score-instrument": {
-            "$id": "P1-I1",
-            "instrument-name": "SmartMusicSoftSynth",
-            "instrument-sound": "wind.reed.oboe",
-            "virtual-instrument": {}
-          },
-          "midi-device": "SmartMusicSoftSynth",
-          "midi-instrument": {
-            "$id": "P1-I1",
-            "midi-channel": "2",
-            "midi-bank": "15489",
-            "midi-program": 69,
-            "pan": "-56"
-          },
-          "uuid": "b6e5faf5-e2d7-b2ab-0eaf-f6b5b8467ca8",
-          "voiceMapping": {
-            "0": [
-              0
-            ]
-          },
-          "staffMapping": [
-            {
-              "voices": [
-                0
-              ],
-              "mainVoiceIdx": 0,
-              "staffUuid": "74e64bc4-a81b-7f02-6ea3-61645a6a7739"
-            }
-          ],
-          "voiceIdxToUuidMapping": {
-            "0": "97cd248f-79db-20ff-cb25-904a5dc735de"
-          },
-          "voiceUuidToIdxMapping": {
-            "97cd248f-79db-20ff-cb25-904a5dc735de": 0
-          }
-        }
-      ]
-    },
-    "part": [
-      {
-        "$id": "P1",
-        "measure": [
-          {
-            "$number": "1",
-            "$width": "178",
-            "harmony": [
-              {
-                "$default-y": "39",
-                "root": {
-                  "root-step": "E",
-                  "root-alter": "-1"
-                },
-                "kind": {
-                  "content": "major",
-                  "$halign": "center",
-                  "$text": ""
-                },
-                "$adagio-location": {
-                  "timePos": 0,
-                  "dpq": 2
-                },
-                "staff": "1",
-                "$placement": "above",
-                "noteBefore": -1
-              }
-            ],
-            "note": [
-              {
-                "staff": "1",
-                "voice": "1",
-                "duration": "2",
-                "pitch": {
-                  "octave": "5",
-                  "step": "D"
-                },
-                "$adagio-location": {
-                  "timePos": 0
-                },
-                "type": "quarter",
-                "$color": "#E75B5C"
-              },
-              {
-                "staff": "1",
-                "voice": "1",
-                "duration": "2",
-                "pitch": {
-                  "octave": "4",
-                  "step": "B",
-                  "alter": "-1"
-                },
-                "$adagio-location": {
-                  "timePos": 2
-                },
-                "type": "quarter",
-                "$color": "#E75B5C"
-              },
-              {
-                "staff": "1",
-                "voice": "1",
-                "duration": "2",
-                "pitch": {
-                  "octave": "4",
-                  "step": "B",
-                  "alter": "-1"
-                },
-                "$adagio-location": {
-                  "timePos": 4
-                },
-                "type": "quarter",
-                "$color": "#E75B5C"
-              },
-              {
-                "staff": "1",
-                "voice": "1",
-                "duration": "2",
-                "pitch": {
-                  "octave": "5",
-                  "step": "C"
-                },
-                "$adagio-location": {
-                  "timePos": 6
-                },
-                "type": "quarter",
-                "$color": "#E75B5C"
-              }
-            ],
-            "attributes": [
-              {
-                "divisions": "2",
-                "time": {
-                  "beats": "4",
-                  "beat-type": "4"
-                },
-                "clef": {
-                  "sign": "G",
-                  "line": "2"
-                },
-                "key": {
-                  "fifths": "-3"
-                },
-                "staff-details": {
-                  "staff-lines": "5"
-                },
-                "$adagio-time": {
-                  "beats": "4",
-                  "beat-type": "4"
-                },
-                "noteBefore": -1,
-                "$adagio-location": {
-                  "timePos": 0,
-                  "dpq": 1
-                }
-              }
-            ],
-            "$adagio-restsInsideBeams": false,
-            "sound": [
-              {
-                "$adagio-swing": {
-                  "swing": false
-                },
-                "noteBefore": -1,
-                "$adagio-location": {
-                  "timePos": 0,
-                  "dpq": 2
-                }
-              },
-              {
-                "$tempo": "120",
-                "noteBefore": -1,
-                "$adagio-location": {
-                  "timePos": 0,
-                  "dpq": 2
-                }
-              }
-            ],
-            "direction": [
-              {
-                "$placement": "above",
-                "staff": "1",
-                "$adagio-location": {
-                  "timePos": 0
-                },
-                "direction-type": {
-                  "metronome": {
-                    "per-minute": "120",
-                    "beat-unit": "quarter"
-                  }
-                },
-                "noteBefore": -1,
-                "$adagio-isFirst": true
-              }
-            ],
-            "$adagio-beatsList": [
-              1,
-              1,
-              1,
-              1
-            ]
-          },
-          {
-            "$number": "2",
-            "$width": "44",
-            "harmony": [
-              {
-                "$default-y": "39",
-                "root": {
-                  "root-step": "E",
-                  "root-alter": "-1"
-                },
-                "kind": {
-                  "content": "major",
-                  "$halign": "center",
-                  "$text": ""
-                },
-                "$adagio-location": {
-                  "timePos": 0,
-                  "dpq": 2
-                },
-                "staff": "1",
-                "$placement": "above",
-                "noteBefore": -1
-              }
-            ],
-            "note": [
-              {
-                "staff": "1",
-                "voice": "1",
-                "duration": "2",
-                "pitch": {
-                  "octave": "4",
-                  "step": "G"
-                },
-                "$adagio-location": {
-                  "timePos": 0
-                },
-                "type": "quarter",
-                "$color": "#E75B5C"
-              },
-              {
-                "staff": "1",
-                "voice": "1",
-                "duration": "2",
-                "pitch": {
-                  "octave": "4",
-                  "step": "B",
-                  "alter": "-1"
-                },
-                "$adagio-location": {
-                  "timePos": 2
-                },
-                "type": "quarter",
-                "$color": "#E75B5C"
-              },
-              {
-                "staff": "1",
-                "voice": "1",
-                "duration": "2",
-                "pitch": {
-                  "octave": "4",
-                  "step": "B",
-                  "alter": "-1"
-                },
-                "$adagio-location": {
-                  "timePos": 4
-                },
-                "type": "quarter",
-                "$color": "#E75B5C"
-              },
-              {
-                "rest": {},
-                "voice": "1",
-                "staff": "1",
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 6
-                },
-                "type": "quarter",
-                "$color": "#E75B5C"
-              }
-            ],
-            "attributes": [
-              {
-                "$adagio-time": {
-                  "beats": "4",
-                  "beat-type": "4"
-                },
-                "noteBefore": -1,
-                "$adagio-location": {
-                  "timePos": 0,
-                  "dpq": 1
-                }
-              }
-            ],
-            "$adagio-restsInsideBeams": false,
-            "$adagio-beatsList": [
-              1,
-              1,
-              1,
-              1
-            ]
-          },
-          {
-            "$number": "3",
-            "$width": "65",
-            "harmony": [
-              {
-                "$default-y": "39",
-                "root": {
-                  "root-step": "A",
-                  "root-alter": "-1"
-                },
-                "kind": {
-                  "content": "major",
-                  "$halign": "center",
-                  "$text": ""
-                },
-                "$adagio-location": {
-                  "timePos": 0,
-                  "dpq": 2
-                },
-                "staff": "1",
-                "$placement": "above",
-                "noteBefore": -1
-              }
-            ],
-            "note": [
-              {
-                "staff": "1",
-                "voice": "1",
-                "duration": "2",
-                "pitch": {
-                  "octave": "5",
-                  "step": "E",
-                  "alter": "-1"
-                },
-                "$adagio-location": {
-                  "timePos": 0
-                },
-                "type": "quarter",
-                "$color": "#265C5C"
-              },
-              {
-                "staff": "1",
-                "voice": "1",
-                "duration": "2",
-                "pitch": {
-                  "octave": "4",
-                  "step": "B",
-                  "alter": "-1"
-                },
-                "$adagio-location": {
-                  "timePos": 2
-                },
-                "type": "quarter",
-                "$color": "#265C5C"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 4
-                },
-                "$color": "#265C5C",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 6
-                },
-                "$color": "#265C5C",
-                "type": "quarter"
-              }
-            ],
-            "attributes": [
-              {
-                "$adagio-time": {
-                  "beats": "4",
-                  "beat-type": "4"
-                },
-                "noteBefore": -1,
-                "$adagio-location": {
-                  "timePos": 0,
-                  "dpq": 1
-                }
-              }
-            ],
-            "$adagio-restsInsideBeams": false,
-            "$adagio-beatsList": [
-              1,
-              1,
-              1,
-              1
-            ]
-          },
-          {
-            "$number": "4",
-            "$width": "44",
-            "harmony": [
-              {
-                "$default-y": "39",
-                "root": {
-                  "root-step": "E",
-                  "root-alter": "-1"
-                },
-                "kind": {
-                  "content": "major",
-                  "$halign": "center",
-                  "$text": ""
-                },
-                "$adagio-location": {
-                  "timePos": 0,
-                  "dpq": 2
-                },
-                "staff": "1",
-                "$placement": "above",
-                "noteBefore": -1
-              }
-            ],
-            "note": [
-              {
-                "staff": "1",
-                "voice": "1",
-                "duration": "2",
-                "pitch": {
-                  "octave": "5",
-                  "step": "D"
-                },
-                "$adagio-location": {
-                  "timePos": 0
-                },
-                "type": "quarter",
-                "$color": "#E75B5C"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 2
-                },
-                "$color": "#E75B5C",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 4
-                },
-                "$color": "#E75B5C",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 6
-                },
-                "$color": "#E75B5C",
-                "type": "quarter"
-              }
-            ],
-            "attributes": [
-              {
-                "$adagio-time": {
-                  "beats": "4",
-                  "beat-type": "4"
-                },
-                "noteBefore": -1,
-                "$adagio-location": {
-                  "timePos": 0,
-                  "dpq": 1
-                }
-              }
-            ],
-            "$adagio-restsInsideBeams": false,
-            "$adagio-beatsList": [
-              1,
-              1,
-              1,
-              1
-            ]
-          },
-          {
-            "$number": "5",
-            "$width": "63",
-            "harmony": [
-              {
-                "$default-y": "39",
-                "root": {
-                  "root-step": "E",
-                  "root-alter": "-1"
-                },
-                "kind": {
-                  "content": "major",
-                  "$halign": "center",
-                  "$text": ""
-                },
-                "$adagio-location": {
-                  "timePos": 0,
-                  "dpq": 2
-                },
-                "staff": "1",
-                "$placement": "above",
-                "noteBefore": -1
-              }
-            ],
-            "note": [
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 0
-                },
-                "$color": "#E75B5C",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 2
-                },
-                "$color": "#E75B5C",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 4
-                },
-                "$color": "#E75B5C",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 6
-                },
-                "$color": "#E75B5C",
-                "type": "quarter"
-              }
-            ],
-            "attributes": [
-              {
-                "$adagio-time": {
-                  "beats": "4",
-                  "beat-type": "4"
-                },
-                "noteBefore": -1,
-                "$adagio-location": {
-                  "timePos": 0,
-                  "dpq": 1
-                }
-              }
-            ],
-            "$adagio-restsInsideBeams": false,
-            "$adagio-beatsList": [
-              1,
-              1,
-              1,
-              1
-            ]
-          },
-          {
-            "$number": "6",
-            "$width": "55",
-            "harmony": [
-              {
-                "$default-y": "39",
-                "root": {
-                  "root-step": "C"
-                },
-                "kind": {
-                  "content": "minor",
-                  "$halign": "center",
-                  "$text": "m"
-                },
-                "$adagio-location": {
-                  "timePos": 0,
-                  "dpq": 2
-                },
-                "staff": "1",
-                "$placement": "above",
-                "noteBefore": -1
-              }
-            ],
-            "note": [
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 0
-                },
-                "$color": "#265C5C",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 2
-                },
-                "$color": "#265C5C",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 4
-                },
-                "$color": "#265C5C",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 6
-                },
-                "$color": "#265C5C",
-                "type": "quarter"
-              }
-            ],
-            "attributes": [
-              {
-                "$adagio-time": {
-                  "beats": "4",
-                  "beat-type": "4"
-                },
-                "noteBefore": -1,
-                "$adagio-location": {
-                  "timePos": 0,
-                  "dpq": 1
-                }
-              }
-            ],
-            "$adagio-restsInsideBeams": false,
-            "$adagio-beatsList": [
-              1,
-              1,
-              1,
-              1
-            ]
-          },
-          {
-            "$number": "7",
-            "$width": "63",
-            "harmony": [
-              {
-                "$default-y": "39",
-                "root": {
-                  "root-step": "B",
-                  "root-alter": "-1"
-                },
-                "kind": {
-                  "content": "major",
-                  "$halign": "center",
-                  "$text": ""
-                },
-                "bass": {
-                  "bass-step": "D"
-                },
-                "$adagio-location": {
-                  "timePos": 0,
-                  "dpq": 2
-                },
-                "staff": "1",
-                "$placement": "above",
-                "noteBefore": -1
-              }
-            ],
-            "note": [
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 0
-                },
-                "$color": "#4390E2",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 2
-                },
-                "$color": "#4390E2",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 4
-                },
-                "$color": "#4390E2",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 6
-                },
-                "$color": "#4390E2",
-                "type": "quarter"
-              }
-            ],
-            "attributes": [
-              {
-                "$adagio-time": {
-                  "beats": "4",
-                  "beat-type": "4"
-                },
-                "noteBefore": -1,
-                "$adagio-location": {
-                  "timePos": 0,
-                  "dpq": 1
-                }
-              }
-            ],
-            "$adagio-restsInsideBeams": false,
-            "$adagio-beatsList": [
-              1,
-              1,
-              1,
-              1
-            ]
-          },
-          {
-            "$number": "8",
-            "$width": "44",
-            "harmony": [
-              {
-                "$default-y": "39",
-                "root": {
-                  "root-step": "E",
-                  "root-alter": "-1"
-                },
-                "kind": {
-                  "content": "major",
-                  "$halign": "center",
-                  "$text": ""
-                },
-                "$adagio-location": {
-                  "timePos": 0,
-                  "dpq": 2
-                },
-                "staff": "1",
-                "$placement": "above",
-                "noteBefore": -1
-              }
-            ],
-            "note": [
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 0
-                },
-                "$color": "#E75B5C",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 2
-                },
-                "$color": "#E75B5C",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 4
-                },
-                "$color": "#E75B5C",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 6
-                },
-                "$color": "#E75B5C",
-                "type": "quarter"
-              }
-            ],
-            "attributes": [
-              {
-                "$adagio-time": {
-                  "beats": "4",
-                  "beat-type": "4"
-                },
-                "noteBefore": -1,
-                "$adagio-location": {
-                  "timePos": 0,
-                  "dpq": 1
-                }
-              }
-            ],
-            "$adagio-restsInsideBeams": false,
-            "$adagio-beatsList": [
-              1,
-              1,
-              1,
-              1
-            ]
-          },
-          {
-            "$number": "9",
-            "$width": "62",
-            "harmony": [
-              {
-                "$default-y": "39",
-                "root": {
-                  "root-step": "E",
-                  "root-alter": "-1"
-                },
-                "kind": {
-                  "content": "major",
-                  "$halign": "center",
-                  "$text": ""
-                },
-                "$adagio-location": {
-                  "timePos": 0,
-                  "dpq": 2
-                },
-                "staff": "1",
-                "$placement": "above",
-                "noteBefore": -1
-              }
-            ],
-            "note": [
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 0
-                },
-                "$color": "#E75B5C",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 2
-                },
-                "$color": "#E75B5C",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 4
-                },
-                "$color": "#E75B5C",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 6
-                },
-                "$color": "#E75B5C",
-                "type": "quarter"
-              }
-            ],
-            "attributes": [
-              {
-                "$adagio-time": {
-                  "beats": "4",
-                  "beat-type": "4"
-                },
-                "noteBefore": -1,
-                "$adagio-location": {
-                  "timePos": 0,
-                  "dpq": 1
-                }
-              }
-            ],
-            "$adagio-restsInsideBeams": false,
-            "$adagio-beatsList": [
-              1,
-              1,
-              1,
-              1
-            ]
-          },
-          {
-            "$number": "10",
-            "$width": "44",
-            "harmony": [
-              {
-                "$default-y": "39",
-                "root": {
-                  "root-step": "A",
-                  "root-alter": "-1"
-                },
-                "kind": {
-                  "content": "major",
-                  "$halign": "center",
-                  "$text": ""
-                },
-                "$adagio-location": {
-                  "timePos": 0,
-                  "dpq": 2
-                },
-                "staff": "1",
-                "$placement": "above",
-                "noteBefore": -1
-              }
-            ],
-            "note": [
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 0
-                },
-                "$color": "#265C5C",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 2
-                },
-                "$color": "#265C5C",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 4
-                },
-                "$color": "#265C5C",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 6
-                },
-                "$color": "#265C5C",
-                "type": "quarter"
-              }
-            ],
-            "attributes": [
-              {
-                "$adagio-time": {
-                  "beats": "4",
-                  "beat-type": "4"
-                },
-                "noteBefore": -1,
-                "$adagio-location": {
-                  "timePos": 0,
-                  "dpq": 1
-                }
-              }
-            ],
-            "$adagio-restsInsideBeams": false,
-            "$adagio-beatsList": [
-              1,
-              1,
-              1,
-              1
-            ]
-          },
-          {
-            "$number": "11",
-            "$width": "67",
-            "harmony": [
-              {
-                "$default-y": "39",
-                "root": {
-                  "root-step": "B",
-                  "root-alter": "-1"
-                },
-                "kind": {
-                  "content": "major",
-                  "$halign": "center",
-                  "$text": ""
-                },
-                "$adagio-location": {
-                  "timePos": 0,
-                  "dpq": 2
-                },
-                "staff": "1",
-                "$placement": "above",
-                "noteBefore": -1
-              }
-            ],
-            "note": [
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 0
-                },
-                "$color": "#4390E2",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 2
-                },
-                "$color": "#4390E2",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 4
-                },
-                "$color": "#4390E2",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 6
-                },
-                "$color": "#4390E2",
-                "type": "quarter"
-              }
-            ],
-            "attributes": [
-              {
-                "$adagio-time": {
-                  "beats": "4",
-                  "beat-type": "4"
-                },
-                "noteBefore": -1,
-                "$adagio-location": {
-                  "timePos": 0,
-                  "dpq": 1
-                }
-              }
-            ],
-            "$adagio-restsInsideBeams": false,
-            "$adagio-beatsList": [
-              1,
-              1,
-              1,
-              1
-            ]
-          },
-          {
-            "$number": "12",
-            "$width": "44",
-            "harmony": [
-              {
-                "$default-y": "39",
-                "root": {
-                  "root-step": "E",
-                  "root-alter": "-1"
-                },
-                "kind": {
-                  "content": "major",
-                  "$halign": "center",
-                  "$text": ""
-                },
-                "$adagio-location": {
-                  "timePos": 0,
-                  "dpq": 2
-                },
-                "staff": "1",
-                "$placement": "above",
-                "noteBefore": -1
-              }
-            ],
-            "note": [
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 0
-                },
-                "$color": "#E75B5C",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 2
-                },
-                "$color": "#E75B5C",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 4
-                },
-                "$color": "#E75B5C",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 6
-                },
-                "$color": "#E75B5C",
-                "type": "quarter"
-              }
-            ],
-            "attributes": [
-              {
-                "$adagio-time": {
-                  "beats": "4",
-                  "beat-type": "4"
-                },
-                "noteBefore": -1,
-                "$adagio-location": {
-                  "timePos": 0,
-                  "dpq": 1
-                }
-              }
-            ],
-            "$adagio-restsInsideBeams": false,
-            "$adagio-beatsList": [
-              1,
-              1,
-              1,
-              1
-            ]
-          },
-          {
-            "$number": "13",
-            "$width": "63",
-            "harmony": [
-              {
-                "root": {
-                  "root-step": "C"
-                },
-                "kind": "minor",
-                "$adagio-kind": "minor",
-                "$adagio-location": {
-                  "timePos": 0,
-                  "dpq": 2
-                },
-                "$type": "explicit",
-                "staff": "1",
-                "$placement": "above",
-                "noteBefore": -1
-              }
-            ],
-            "note": [
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 0
-                },
-                "$color": "#265C5C",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 2
-                },
-                "$color": "#265C5C",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 4
-                },
-                "$color": "#265C5C",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 6
-                },
-                "$color": "#265C5C",
-                "type": "quarter"
-              }
-            ],
-            "attributes": [
-              {
-                "$adagio-time": {
-                  "beats": "4",
-                  "beat-type": "4"
-                },
-                "noteBefore": -1,
-                "$adagio-location": {
-                  "timePos": 0,
-                  "dpq": 1
-                }
-              }
-            ],
-            "$adagio-restsInsideBeams": false,
-            "$adagio-beatsList": [
-              1,
-              1,
-              1,
-              1
-            ]
-          },
-          {
-            "$number": "14",
-            "$width": "51",
-            "harmony": [
-              {
-                "$default-y": "39",
-                "root": {
-                  "root-step": "A",
-                  "root-alter": "-1"
-                },
-                "kind": {
-                  "content": "major",
-                  "$halign": "center",
-                  "$text": ""
-                },
-                "$adagio-location": {
-                  "timePos": 0,
-                  "dpq": 2
-                },
-                "staff": "1",
-                "$placement": "above",
-                "noteBefore": -1
-              }
-            ],
-            "note": [
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 0
-                },
-                "$color": "#265C5C",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 2
-                },
-                "$color": "#265C5C",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 4
-                },
-                "$color": "#265C5C",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 6
-                },
-                "$color": "#265C5C",
-                "type": "quarter"
-              }
-            ],
-            "attributes": [
-              {
-                "$adagio-time": {
-                  "beats": "4",
-                  "beat-type": "4"
-                },
-                "noteBefore": -1,
-                "$adagio-location": {
-                  "timePos": 0,
-                  "dpq": 1
-                }
-              }
-            ],
-            "$adagio-restsInsideBeams": false,
-            "$adagio-beatsList": [
-              1,
-              1,
-              1,
-              1
-            ]
-          },
-          {
-            "$number": "15",
-            "$width": "52",
-            "harmony": [
-              {
-                "root": {
-                  "root-step": "B",
-                  "root-alter": "-1"
-                },
-                "kind": "major",
-                "$adagio-kind": "major",
-                "$adagio-location": {
-                  "timePos": 0,
-                  "dpq": 2
-                },
-                "$type": "explicit",
-                "staff": "1",
-                "$placement": "above",
-                "noteBefore": -1
-              }
-            ],
-            "note": [
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 0
-                },
-                "$color": "#4390E2",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 2
-                },
-                "$color": "#4390E2",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 4
-                },
-                "$color": "#4390E2",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 6
-                },
-                "$color": "#4390E2",
-                "type": "quarter"
-              }
-            ],
-            "attributes": [
-              {
-                "$adagio-time": {
-                  "beats": "4",
-                  "beat-type": "4"
-                },
-                "noteBefore": -1,
-                "$adagio-location": {
-                  "timePos": 0,
-                  "dpq": 1
-                }
-              }
-            ],
-            "$adagio-restsInsideBeams": false,
-            "$adagio-beatsList": [
-              1,
-              1,
-              1,
-              1
-            ]
-          },
-          {
-            "$number": "16",
-            "$width": "45",
-            "harmony": [
-              {
-                "$default-y": "39",
-                "root": {
-                  "root-step": "E",
-                  "root-alter": "-1"
-                },
-                "kind": {
-                  "content": "major",
-                  "$halign": "center",
-                  "$text": ""
-                },
-                "$adagio-location": {
-                  "timePos": 0,
-                  "dpq": 2
-                },
-                "staff": "1",
-                "$placement": "above",
-                "noteBefore": -1
-              }
-            ],
-            "note": [
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 0
-                },
-                "$color": "#E75B5C",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 2
-                },
-                "$color": "#E75B5C",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 4
-                },
-                "$color": "#E75B5C",
-                "type": "quarter"
-              },
-              {
-                "rest": {},
-                "duration": "2",
-                "$adagio-location": {
-                  "timePos": 6
-                },
-                "$color": "#E75B5C",
-                "type": "quarter"
-              }
-            ],
-            "barline": {
-              "$location": "right",
-              "bar-style": "light-heavy",
-              "$adagio-location": {
-                "timePos": 8,
-                "dpq": 2
-              },
-              "noteBefore": 3
-            },
-            "attributes": [
-              {
-                "$adagio-time": {
-                  "beats": "4",
-                  "beat-type": "4"
-                },
-                "noteBefore": -1,
-                "$adagio-location": {
-                  "timePos": 0,
-                  "dpq": 1
-                }
-              }
-            ],
-            "$adagio-restsInsideBeams": false,
-            "$adagio-beatsList": [
-              1,
-              1,
-              1,
-              1
-            ]
-          }
-        ],
-        "uuid": "b6e5faf5-e2d7-b2ab-0eaf-f6b5b8467ca8"
-      }
-    ],
-    "measure-list": {
-      "score-measure": [
-        {
-          "uuid": "09e1557e-c84c-90f3-bc12-88fbdb31fd5e"
-        },
-        {
-          "uuid": "8877cbde-0786-34a9-7ab2-bbeab81d7f8a"
-        },
-        {
-          "uuid": "021a0181-4919-0be6-a4cb-ffdf3588bbb0"
-        },
-        {
-          "uuid": "82a58227-7f71-ad90-7f7c-f5057e64cefc"
-        },
-        {
-          "uuid": "00c6ca03-4d14-2e67-6a25-844f605c708e"
-        },
-        {
-          "uuid": "b1acc977-a545-b2e9-15f8-2c0230d91100"
-        },
-        {
-          "uuid": "0bd0a05d-0b97-d661-6478-fec8ed2be305"
-        },
-        {
-          "uuid": "bf46866c-aece-a3f9-9702-d70d5939aac1"
-        },
-        {
-          "uuid": "a6dce6d1-6677-6333-833f-0e8764384902"
-        },
-        {
-          "uuid": "1eeb47f3-c65d-9979-bb17-e0c73c774e82"
-        },
-        {
-          "uuid": "1058e12e-a8c5-4f09-deff-94dc1a34e1c2"
-        },
-        {
-          "uuid": "9b8596be-3d62-8d79-c878-ccdd88955afb"
-        },
-        {
-          "uuid": "4ef9641c-f53f-7266-361b-b11b77133968"
-        },
-        {
-          "uuid": "70ded463-98b0-2f3e-990d-a4e27a289cf7"
-        },
-        {
-          "uuid": "e651000a-d725-1296-9cec-e55b414ea215"
-        },
-        {
-          "uuid": "7db8c140-f73f-7197-41b5-9596918bf44e"
-        }
-      ]
-    },
-    "$adagio-formatVersion": 59,
-    "work": {
-      "work-title": "Freedom 2040: The Tomorrow We'll Build Melody - Concert Pitch TC"
-    }
-  }
-};
-
-// const exampleMusicXMLJSON = 
-// {
-//     "score-partwise": {
-//       "$version": "3.1",
-//       "part-list": {
-//         "score-part": [
+// const exampleMusicXMLJSON = {
+//   "score-partwise": {
+//     "$version": "3.1",
+//     "identification": {
+//       "creator": {
+//         "content": "Brittany J. Green",
+//         "$type": "composer"
+//       },
+//       "encoding": {
+//         "software": "Flat",
+//         "encoding-date": "2024-08-12"
+//       },
+//       "source": "https://flat.io/score/62ec0df2c6f0b1001227613f-freedom-2040-the-tomorrow-we-ll-build-melody-concert-pitch-tc?sharingKey=30bc11ca0306e5d4955a135fd0bd723010fb082fe006f4dd505c36ade58ded13f494a810a480215bfe02b41e60f6972b5e69f40b5f2772291e75ada7fd8cd0b3"
+//     },
+//     "defaults": {
+//       "scaling": {
+//         "millimeters": "7.2319",
+//         "tenths": "40"
+//       },
+//       "page-layout": {
+//         "page-height": "1545",
+//         "page-width": "1194",
+//         "page-margins": {
+//           "$type": "both",
+//           "left-margin": "70",
+//           "right-margin": "70",
+//           "top-margin": "70",
+//           "bottom-margin": "70"
+//         }
+//       },
+//       "system-layout": {
+//         "system-margins": {
+//           "left-margin": "0",
+//           "right-margin": "0"
+//         },
+//         "system-distance": "121",
+//         "top-system-distance": "70"
+//       },
+//       "appearance": {
+//         "line-width": [
 //           {
-//             "part-name": "Piano",
-//             "voiceMapping": {
-//               "0": [
+//             "content": "0.7487",
+//             "$type": "stem"
+//           },
+//           {
+//             "content": "5",
+//             "$type": "beam"
+//           },
+//           {
+//             "content": "0.7487",
+//             "$type": "staff"
+//           },
+//           {
+//             "content": "0.7487",
+//             "$type": "light barline"
+//           },
+//           {
+//             "content": "5",
+//             "$type": "heavy barline"
+//           },
+//           {
+//             "content": "0.7487",
+//             "$type": "leger"
+//           },
+//           {
+//             "content": "0.7487",
+//             "$type": "ending"
+//           },
+//           {
+//             "content": "0.7487",
+//             "$type": "wedge"
+//           },
+//           {
+//             "content": "0.7487",
+//             "$type": "enclosure"
+//           },
+//           {
+//             "content": "0.7487",
+//             "$type": "tuplet bracket"
+//           }
+//         ],
+//         "note-size": [
+//           {
+//             "content": "60",
+//             "$type": "grace"
+//           },
+//           {
+//             "content": "60",
+//             "$type": "cue"
+//           }
+//         ],
+//         "distance": [
+//           {
+//             "content": "120",
+//             "$type": "hyphen"
+//           },
+//           {
+//             "content": "7.5",
+//             "$type": "beam"
+//           }
+//         ]
+//       },
+//       "music-font": {
+//         "$font-family": "Bravura"
+//       },
+//       "staff-layout": {
+//         "staff-distance": "70.24433413072636"
+//       },
+//       "$adagio-systemBreakPolicy": {
+//         "maxNbMeasuresPerLine": 4,
+//         "forbiddenCounts": {}
+//       }
+//     },
+//     "credit": [
+//       {
+//         "credit-type": "title",
+//         "credit-words": "Freedom 2040: The Tomorrow We'll Build Melody - Concert Pitch TC"
+//       }
+//     ],
+//     "part-list": {
+//       "score-part": [
+//         {
+//           "$id": "P1",
+//           "part-name": {
+//             "content": "Concert Pitch",
+//             "$print-object": "no"
+//           },
+//           "part-abbreviation": {
+//             "content": "Ob.",
+//             "$print-object": "no"
+//           },
+//           "score-instrument": {
+//             "$id": "P1-I1",
+//             "instrument-name": "SmartMusicSoftSynth",
+//             "instrument-sound": "wind.reed.oboe",
+//             "virtual-instrument": {}
+//           },
+//           "midi-device": "SmartMusicSoftSynth",
+//           "midi-instrument": {
+//             "$id": "P1-I1",
+//             "midi-channel": "2",
+//             "midi-bank": "15489",
+//             "midi-program": 69,
+//             "pan": "-56"
+//           },
+//           "uuid": "b6e5faf5-e2d7-b2ab-0eaf-f6b5b8467ca8",
+//           "voiceMapping": {
+//             "0": [
+//               0
+//             ]
+//           },
+//           "staffMapping": [
+//             {
+//               "voices": [
 //                 0
 //               ],
-//               "1": [
-//                 1
-//               ]
-//             },
-//             "staffMapping": [
-//               {
-//                 "mainVoiceIdx": 0,
-//                 "voices": [
-//                   0
-//                 ],
-//                 "staffUuid": "aa3b1a89-8396-75c1-7a35-707e16b5c7f6"
-//               },
-//               {
-//                 "mainVoiceIdx": 1,
-//                 "voices": [
-//                   1
-//                 ],
-//                 "staffUuid": "30a1905e-3b17-e73e-5a15-4de9c0d892dd"
-//               }
-//             ],
-//             "voiceIdxToUuidMapping": {
-//               "0": "b9c5404f-d299-639a-924e-c72e10b9054e",
-//               "1": "068f6218-5d3a-840d-8873-2faf0c7d21b1"
-//             },
-//             "voiceUuidToIdxMapping": {
-//               "b9c5404f-d299-639a-924e-c72e10b9054e": 0,
-//               "068f6218-5d3a-840d-8873-2faf0c7d21b1": 1
-//             },
-//             "part-abbreviation": "Pno.",
-//             "score-instrument": {
-//               "instrument-name": "Piano",
-//               "$id": "P1-I1"
-//             },
-//             "midi-instrument": {
-//               "midi-program": 1,
-//               "volume": "100",
-//               "$id": "P1-I1",
-//               "midi-channel": "1"
-//             },
-//             "$id": "P1",
-//             "uuid": "d957c8e6-cad3-b243-6e7d-20dbc49eb025"
-//           }
-//         ]
-//       },
-//       "measure-list": {
-//         "score-measure": [
-//           {
-//             "uuid": "9f949a8d-23ed-e414-fdcb-0ea064bdd558"
-//           }
-//         ]
-//       },
-//       "part": [
-//         {
-//           "measure": [
-//             {
-//               "note": [
-//                 {
-//                   "staff": "1",
-//                   "voice": "1",
-//                   "duration": "1",
-//                   "pitch": {
-//                     "octave": "5",
-//                     "step": "D"
-//                   },
-//                   "$adagio-location": {
-//                     "timePos": 0
-//                   },
-//                   "type": "quarter"
-//                 },
-//                 {
-//                   "rest": {},
-//                   "voice": "1",
-//                   "staff": "1",
-//                   "duration": "1",
-//                   "$adagio-location": {
-//                     "timePos": 1
-//                   },
-//                   "type": "quarter"
-//                 },
-//                 {
-//                   "rest": {},
-//                   "voice": "1",
-//                   "staff": "1",
-//                   "duration": "1",
-//                   "$adagio-location": {
-//                     "timePos": 2
-//                   },
-//                   "type": "quarter"
-//                 },
-//                 {
-//                   "rest": {},
-//                   "voice": "1",
-//                   "staff": "1",
-//                   "duration": "1",
-//                   "$adagio-location": {
-//                     "timePos": 3
-//                   },
-//                   "type": "quarter"
-//                 },
-//                 {
-//                   "rest": {},
-//                   "voice": "2",
-//                   "staff": "2",
-//                   "duration": "1",
-//                   "$adagio-location": {
-//                     "timePos": 0
-//                   },
-//                   "type": "quarter",
-//                   "backup": {
-//                     "duration": 4
-//                   }
-//                 },
-//                 {
-//                   "rest": {},
-//                   "voice": "2",
-//                   "staff": "2",
-//                   "duration": "1",
-//                   "$adagio-location": {
-//                     "timePos": 1
-//                   },
-//                   "type": "quarter"
-//                 },
-//                 {
-//                   "rest": {},
-//                   "voice": "2",
-//                   "staff": "2",
-//                   "duration": "1",
-//                   "$adagio-location": {
-//                     "timePos": 2
-//                   },
-//                   "type": "quarter"
-//                 },
-//                 {
-//                   "rest": {},
-//                   "voice": "2",
-//                   "staff": "2",
-//                   "duration": "1",
-//                   "$adagio-location": {
-//                     "timePos": 3
-//                   },
-//                   "type": "quarter"
-//                 }
-//               ],
-//               "barline": {
-//                 "$location": "right",
-//                 "bar-style": "light-heavy",
-//                 "$adagio-location": {
-//                   "dpq": 1,
-//                   "timePos": 4
-//                 },
-//                 "noteBefore": 7
-//               },
-//               "harmony": [],
-//               "$number": "1",
-//               "attributes": [
-//                 {
-//                   "staves": "2",
-//                   "divisions": "1",
-//                   "time": {
-//                     "beats": "4",
-//                     "beat-type": "4"
-//                   },
-//                   "clef": [
-//                     {
-//                       "sign": "G",
-//                       "line": "2",
-//                       "$number": "1"
-//                     },
-//                     {
-//                       "sign": "F",
-//                       "line": "4",
-//                       "$number": "2"
-//                     }
-//                   ],
-//                   "key": {
-//                     "fifths": "0"
-//                   },
-//                   "staff-details": {
-//                     "staff-lines": "5"
-//                   },
-//                   "$adagio-time": {
-//                     "beats": "4",
-//                     "beat-type": "4"
-//                   },
-//                   "noteBefore": -1,
-//                   "$adagio-location": {
-//                     "timePos": 0,
-//                     "dpq": 1
-//                   }
-//                 }
-//               ],
-//               "sound": [
-//                 {
-//                   "$adagio-swing": {
-//                     "swing": false
-//                   },
-//                   "noteBefore": -1,
-//                   "$adagio-location": {
-//                     "timePos": 0,
-//                     "dpq": 1
-//                   }
-//                 },
-//                 {
-//                   "$tempo": "80",
-//                   "noteBefore": -1,
-//                   "$adagio-location": {
-//                     "timePos": 0,
-//                     "dpq": 1
-//                   }
-//                 }
-//               ],
-//               "direction": [
-//                 {
-//                   "$placement": "above",
-//                   "staff": "1",
-//                   "$adagio-location": {
-//                     "timePos": 0
-//                   },
-//                   "direction-type": {
-//                     "metronome": {
-//                       "per-minute": "80",
-//                       "beat-unit": "quarter"
-//                     }
-//                   },
-//                   "noteBefore": -1,
-//                   "$adagio-isFirst": true
-//                 }
-//               ],
-//               "$adagio-beatsList": [
-//                 1,
-//                 1,
-//                 1,
-//                 1
-//               ],
-//               "$adagio-restsInsideBeams": false
+//               "mainVoiceIdx": 0,
+//               "staffUuid": "74e64bc4-a81b-7f02-6ea3-61645a6a7739"
 //             }
 //           ],
-//           "$id": "P1",
-//           "uuid": "d957c8e6-cad3-b243-6e7d-20dbc49eb025"
-//         }
-//       ],
-//       "defaults": {
-//         "scaling": {
-//           "millimeters": "7",
-//           "tenths": "40"
-//         },
-//         "page-layout": {
-//           "page-height": "1596.5714285714287",
-//           "page-width": "1233.7142857142858",
-//           "page-margins": {
-//             "$type": "both",
-//             "top-margin": "38.857142857142854",
-//             "bottom-margin": "38.857142857142854",
-//             "left-margin": "38.857142857142854",
-//             "right-margin": "38.857142857142854"
+//           "voiceIdxToUuidMapping": {
+//             "0": "97cd248f-79db-20ff-cb25-904a5dc735de"
+//           },
+//           "voiceUuidToIdxMapping": {
+//             "97cd248f-79db-20ff-cb25-904a5dc735de": 0
 //           }
-//         },
-//         "system-layout": {
-//           "system-distance": "115.2"
-//         },
-//         "staff-layout": {
-//           "staff-distance": "72.57142857142857"
-//         },
-//         "$adagio-measureNumberingStart": 1,
-//         "word-font": {
-//           "$font-family": "Century Schoolbook L"
 //         }
-//       },
-//       "$adagio-formatVersion": 60,
-//       "credit": [
-//         {
-//           "credit-type": "title",
-//           "credit-words": "1 note"
-//         }
-//       ],
-//       "work": {
-//         "work-title": "1 note"
-//       },
-//       "identification": {
-//         "encoding": {
-//           "software": "Flat",
-//           "encoding-date": "2025-02-03"
-//         },
-//         "source": "https://flat.io/score/67a10b14e95ef02937db2c6b-1-note?sharingKey=6206dfe3c7fa86fdde321a36cb82a9552ec8bc68d33c25577cb3c1ac11f9bac1711d222ba8ea74adbe884eea75da109f14b97324e2ea9a094faedb74c38680df"
+//       ]
+//     },
+//     "part": [
+//       {
+//         "$id": "P1",
+//         "measure": [
+//           {
+//             "$number": "1",
+//             "$width": "178",
+//             "harmony": [
+//               {
+//                 "$default-y": "39",
+//                 "root": {
+//                   "root-step": "E",
+//                   "root-alter": "-1"
+//                 },
+//                 "kind": {
+//                   "content": "major",
+//                   "$halign": "center",
+//                   "$text": ""
+//                 },
+//                 "$adagio-location": {
+//                   "timePos": 0,
+//                   "dpq": 2
+//                 },
+//                 "staff": "1",
+//                 "$placement": "above",
+//                 "noteBefore": -1
+//               }
+//             ],
+//             "note": [
+//               {
+//                 "staff": "1",
+//                 "voice": "1",
+//                 "duration": "2",
+//                 "pitch": {
+//                   "octave": "5",
+//                   "step": "D"
+//                 },
+//                 "$adagio-location": {
+//                   "timePos": 0
+//                 },
+//                 "type": "quarter",
+//                 "$color": "#E75B5C"
+//               },
+//               {
+//                 "staff": "1",
+//                 "voice": "1",
+//                 "duration": "2",
+//                 "pitch": {
+//                   "octave": "4",
+//                   "step": "B",
+//                   "alter": "-1"
+//                 },
+//                 "$adagio-location": {
+//                   "timePos": 2
+//                 },
+//                 "type": "quarter",
+//                 "$color": "#E75B5C"
+//               },
+//               {
+//                 "staff": "1",
+//                 "voice": "1",
+//                 "duration": "2",
+//                 "pitch": {
+//                   "octave": "4",
+//                   "step": "B",
+//                   "alter": "-1"
+//                 },
+//                 "$adagio-location": {
+//                   "timePos": 4
+//                 },
+//                 "type": "quarter",
+//                 "$color": "#E75B5C"
+//               },
+//               {
+//                 "staff": "1",
+//                 "voice": "1",
+//                 "duration": "2",
+//                 "pitch": {
+//                   "octave": "5",
+//                   "step": "C"
+//                 },
+//                 "$adagio-location": {
+//                   "timePos": 6
+//                 },
+//                 "type": "quarter",
+//                 "$color": "#E75B5C"
+//               }
+//             ],
+//             "attributes": [
+//               {
+//                 "divisions": "2",
+//                 "time": {
+//                   "beats": "4",
+//                   "beat-type": "4"
+//                 },
+//                 "clef": {
+//                   "sign": "G",
+//                   "line": "2"
+//                 },
+//                 "key": {
+//                   "fifths": "-3"
+//                 },
+//                 "staff-details": {
+//                   "staff-lines": "5"
+//                 },
+//                 "$adagio-time": {
+//                   "beats": "4",
+//                   "beat-type": "4"
+//                 },
+//                 "noteBefore": -1,
+//                 "$adagio-location": {
+//                   "timePos": 0,
+//                   "dpq": 1
+//                 }
+//               }
+//             ],
+//             "$adagio-restsInsideBeams": false,
+//             "sound": [
+//               {
+//                 "$adagio-swing": {
+//                   "swing": false
+//                 },
+//                 "noteBefore": -1,
+//                 "$adagio-location": {
+//                   "timePos": 0,
+//                   "dpq": 2
+//                 }
+//               },
+//               {
+//                 "$tempo": "120",
+//                 "noteBefore": -1,
+//                 "$adagio-location": {
+//                   "timePos": 0,
+//                   "dpq": 2
+//                 }
+//               }
+//             ],
+//             "direction": [
+//               {
+//                 "$placement": "above",
+//                 "staff": "1",
+//                 "$adagio-location": {
+//                   "timePos": 0
+//                 },
+//                 "direction-type": {
+//                   "metronome": {
+//                     "per-minute": "120",
+//                     "beat-unit": "quarter"
+//                   }
+//                 },
+//                 "noteBefore": -1,
+//                 "$adagio-isFirst": true
+//               }
+//             ],
+//             "$adagio-beatsList": [
+//               1,
+//               1,
+//               1,
+//               1
+//             ]
+//           },
+//           {
+//             "$number": "2",
+//             "$width": "44",
+//             "harmony": [
+//               {
+//                 "$default-y": "39",
+//                 "root": {
+//                   "root-step": "E",
+//                   "root-alter": "-1"
+//                 },
+//                 "kind": {
+//                   "content": "major",
+//                   "$halign": "center",
+//                   "$text": ""
+//                 },
+//                 "$adagio-location": {
+//                   "timePos": 0,
+//                   "dpq": 2
+//                 },
+//                 "staff": "1",
+//                 "$placement": "above",
+//                 "noteBefore": -1
+//               }
+//             ],
+//             "note": [
+//               {
+//                 "staff": "1",
+//                 "voice": "1",
+//                 "duration": "2",
+//                 "pitch": {
+//                   "octave": "4",
+//                   "step": "G"
+//                 },
+//                 "$adagio-location": {
+//                   "timePos": 0
+//                 },
+//                 "type": "quarter",
+//                 "$color": "#E75B5C"
+//               },
+//               {
+//                 "staff": "1",
+//                 "voice": "1",
+//                 "duration": "2",
+//                 "pitch": {
+//                   "octave": "4",
+//                   "step": "B",
+//                   "alter": "-1"
+//                 },
+//                 "$adagio-location": {
+//                   "timePos": 2
+//                 },
+//                 "type": "quarter",
+//                 "$color": "#E75B5C"
+//               },
+//               {
+//                 "staff": "1",
+//                 "voice": "1",
+//                 "duration": "2",
+//                 "pitch": {
+//                   "octave": "4",
+//                   "step": "B",
+//                   "alter": "-1"
+//                 },
+//                 "$adagio-location": {
+//                   "timePos": 4
+//                 },
+//                 "type": "quarter",
+//                 "$color": "#E75B5C"
+//               },
+//               {
+//                 "rest": {},
+//                 "voice": "1",
+//                 "staff": "1",
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 6
+//                 },
+//                 "type": "quarter",
+//                 "$color": "#E75B5C"
+//               }
+//             ],
+//             "attributes": [
+//               {
+//                 "$adagio-time": {
+//                   "beats": "4",
+//                   "beat-type": "4"
+//                 },
+//                 "noteBefore": -1,
+//                 "$adagio-location": {
+//                   "timePos": 0,
+//                   "dpq": 1
+//                 }
+//               }
+//             ],
+//             "$adagio-restsInsideBeams": false,
+//             "$adagio-beatsList": [
+//               1,
+//               1,
+//               1,
+//               1
+//             ]
+//           },
+//           {
+//             "$number": "3",
+//             "$width": "65",
+//             "harmony": [
+//               {
+//                 "$default-y": "39",
+//                 "root": {
+//                   "root-step": "A",
+//                   "root-alter": "-1"
+//                 },
+//                 "kind": {
+//                   "content": "major",
+//                   "$halign": "center",
+//                   "$text": ""
+//                 },
+//                 "$adagio-location": {
+//                   "timePos": 0,
+//                   "dpq": 2
+//                 },
+//                 "staff": "1",
+//                 "$placement": "above",
+//                 "noteBefore": -1
+//               }
+//             ],
+//             "note": [
+//               {
+//                 "staff": "1",
+//                 "voice": "1",
+//                 "duration": "2",
+//                 "pitch": {
+//                   "octave": "5",
+//                   "step": "E",
+//                   "alter": "-1"
+//                 },
+//                 "$adagio-location": {
+//                   "timePos": 0
+//                 },
+//                 "type": "quarter",
+//                 "$color": "#265C5C"
+//               },
+//               {
+//                 "staff": "1",
+//                 "voice": "1",
+//                 "duration": "2",
+//                 "pitch": {
+//                   "octave": "4",
+//                   "step": "B",
+//                   "alter": "-1"
+//                 },
+//                 "$adagio-location": {
+//                   "timePos": 2
+//                 },
+//                 "type": "quarter",
+//                 "$color": "#265C5C"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 4
+//                 },
+//                 "$color": "#265C5C",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 6
+//                 },
+//                 "$color": "#265C5C",
+//                 "type": "quarter"
+//               }
+//             ],
+//             "attributes": [
+//               {
+//                 "$adagio-time": {
+//                   "beats": "4",
+//                   "beat-type": "4"
+//                 },
+//                 "noteBefore": -1,
+//                 "$adagio-location": {
+//                   "timePos": 0,
+//                   "dpq": 1
+//                 }
+//               }
+//             ],
+//             "$adagio-restsInsideBeams": false,
+//             "$adagio-beatsList": [
+//               1,
+//               1,
+//               1,
+//               1
+//             ]
+//           },
+//           {
+//             "$number": "4",
+//             "$width": "44",
+//             "harmony": [
+//               {
+//                 "$default-y": "39",
+//                 "root": {
+//                   "root-step": "E",
+//                   "root-alter": "-1"
+//                 },
+//                 "kind": {
+//                   "content": "major",
+//                   "$halign": "center",
+//                   "$text": ""
+//                 },
+//                 "$adagio-location": {
+//                   "timePos": 0,
+//                   "dpq": 2
+//                 },
+//                 "staff": "1",
+//                 "$placement": "above",
+//                 "noteBefore": -1
+//               }
+//             ],
+//             "note": [
+//               {
+//                 "staff": "1",
+//                 "voice": "1",
+//                 "duration": "2",
+//                 "pitch": {
+//                   "octave": "5",
+//                   "step": "D"
+//                 },
+//                 "$adagio-location": {
+//                   "timePos": 0
+//                 },
+//                 "type": "quarter",
+//                 "$color": "#E75B5C"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 2
+//                 },
+//                 "$color": "#E75B5C",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 4
+//                 },
+//                 "$color": "#E75B5C",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 6
+//                 },
+//                 "$color": "#E75B5C",
+//                 "type": "quarter"
+//               }
+//             ],
+//             "attributes": [
+//               {
+//                 "$adagio-time": {
+//                   "beats": "4",
+//                   "beat-type": "4"
+//                 },
+//                 "noteBefore": -1,
+//                 "$adagio-location": {
+//                   "timePos": 0,
+//                   "dpq": 1
+//                 }
+//               }
+//             ],
+//             "$adagio-restsInsideBeams": false,
+//             "$adagio-beatsList": [
+//               1,
+//               1,
+//               1,
+//               1
+//             ]
+//           },
+//           {
+//             "$number": "5",
+//             "$width": "63",
+//             "harmony": [
+//               {
+//                 "$default-y": "39",
+//                 "root": {
+//                   "root-step": "E",
+//                   "root-alter": "-1"
+//                 },
+//                 "kind": {
+//                   "content": "major",
+//                   "$halign": "center",
+//                   "$text": ""
+//                 },
+//                 "$adagio-location": {
+//                   "timePos": 0,
+//                   "dpq": 2
+//                 },
+//                 "staff": "1",
+//                 "$placement": "above",
+//                 "noteBefore": -1
+//               }
+//             ],
+//             "note": [
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 0
+//                 },
+//                 "$color": "#E75B5C",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 2
+//                 },
+//                 "$color": "#E75B5C",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 4
+//                 },
+//                 "$color": "#E75B5C",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 6
+//                 },
+//                 "$color": "#E75B5C",
+//                 "type": "quarter"
+//               }
+//             ],
+//             "attributes": [
+//               {
+//                 "$adagio-time": {
+//                   "beats": "4",
+//                   "beat-type": "4"
+//                 },
+//                 "noteBefore": -1,
+//                 "$adagio-location": {
+//                   "timePos": 0,
+//                   "dpq": 1
+//                 }
+//               }
+//             ],
+//             "$adagio-restsInsideBeams": false,
+//             "$adagio-beatsList": [
+//               1,
+//               1,
+//               1,
+//               1
+//             ]
+//           },
+//           {
+//             "$number": "6",
+//             "$width": "55",
+//             "harmony": [
+//               {
+//                 "$default-y": "39",
+//                 "root": {
+//                   "root-step": "C"
+//                 },
+//                 "kind": {
+//                   "content": "minor",
+//                   "$halign": "center",
+//                   "$text": "m"
+//                 },
+//                 "$adagio-location": {
+//                   "timePos": 0,
+//                   "dpq": 2
+//                 },
+//                 "staff": "1",
+//                 "$placement": "above",
+//                 "noteBefore": -1
+//               }
+//             ],
+//             "note": [
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 0
+//                 },
+//                 "$color": "#265C5C",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 2
+//                 },
+//                 "$color": "#265C5C",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 4
+//                 },
+//                 "$color": "#265C5C",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 6
+//                 },
+//                 "$color": "#265C5C",
+//                 "type": "quarter"
+//               }
+//             ],
+//             "attributes": [
+//               {
+//                 "$adagio-time": {
+//                   "beats": "4",
+//                   "beat-type": "4"
+//                 },
+//                 "noteBefore": -1,
+//                 "$adagio-location": {
+//                   "timePos": 0,
+//                   "dpq": 1
+//                 }
+//               }
+//             ],
+//             "$adagio-restsInsideBeams": false,
+//             "$adagio-beatsList": [
+//               1,
+//               1,
+//               1,
+//               1
+//             ]
+//           },
+//           {
+//             "$number": "7",
+//             "$width": "63",
+//             "harmony": [
+//               {
+//                 "$default-y": "39",
+//                 "root": {
+//                   "root-step": "B",
+//                   "root-alter": "-1"
+//                 },
+//                 "kind": {
+//                   "content": "major",
+//                   "$halign": "center",
+//                   "$text": ""
+//                 },
+//                 "bass": {
+//                   "bass-step": "D"
+//                 },
+//                 "$adagio-location": {
+//                   "timePos": 0,
+//                   "dpq": 2
+//                 },
+//                 "staff": "1",
+//                 "$placement": "above",
+//                 "noteBefore": -1
+//               }
+//             ],
+//             "note": [
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 0
+//                 },
+//                 "$color": "#4390E2",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 2
+//                 },
+//                 "$color": "#4390E2",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 4
+//                 },
+//                 "$color": "#4390E2",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 6
+//                 },
+//                 "$color": "#4390E2",
+//                 "type": "quarter"
+//               }
+//             ],
+//             "attributes": [
+//               {
+//                 "$adagio-time": {
+//                   "beats": "4",
+//                   "beat-type": "4"
+//                 },
+//                 "noteBefore": -1,
+//                 "$adagio-location": {
+//                   "timePos": 0,
+//                   "dpq": 1
+//                 }
+//               }
+//             ],
+//             "$adagio-restsInsideBeams": false,
+//             "$adagio-beatsList": [
+//               1,
+//               1,
+//               1,
+//               1
+//             ]
+//           },
+//           {
+//             "$number": "8",
+//             "$width": "44",
+//             "harmony": [
+//               {
+//                 "$default-y": "39",
+//                 "root": {
+//                   "root-step": "E",
+//                   "root-alter": "-1"
+//                 },
+//                 "kind": {
+//                   "content": "major",
+//                   "$halign": "center",
+//                   "$text": ""
+//                 },
+//                 "$adagio-location": {
+//                   "timePos": 0,
+//                   "dpq": 2
+//                 },
+//                 "staff": "1",
+//                 "$placement": "above",
+//                 "noteBefore": -1
+//               }
+//             ],
+//             "note": [
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 0
+//                 },
+//                 "$color": "#E75B5C",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 2
+//                 },
+//                 "$color": "#E75B5C",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 4
+//                 },
+//                 "$color": "#E75B5C",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 6
+//                 },
+//                 "$color": "#E75B5C",
+//                 "type": "quarter"
+//               }
+//             ],
+//             "attributes": [
+//               {
+//                 "$adagio-time": {
+//                   "beats": "4",
+//                   "beat-type": "4"
+//                 },
+//                 "noteBefore": -1,
+//                 "$adagio-location": {
+//                   "timePos": 0,
+//                   "dpq": 1
+//                 }
+//               }
+//             ],
+//             "$adagio-restsInsideBeams": false,
+//             "$adagio-beatsList": [
+//               1,
+//               1,
+//               1,
+//               1
+//             ]
+//           },
+//           {
+//             "$number": "9",
+//             "$width": "62",
+//             "harmony": [
+//               {
+//                 "$default-y": "39",
+//                 "root": {
+//                   "root-step": "E",
+//                   "root-alter": "-1"
+//                 },
+//                 "kind": {
+//                   "content": "major",
+//                   "$halign": "center",
+//                   "$text": ""
+//                 },
+//                 "$adagio-location": {
+//                   "timePos": 0,
+//                   "dpq": 2
+//                 },
+//                 "staff": "1",
+//                 "$placement": "above",
+//                 "noteBefore": -1
+//               }
+//             ],
+//             "note": [
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 0
+//                 },
+//                 "$color": "#E75B5C",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 2
+//                 },
+//                 "$color": "#E75B5C",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 4
+//                 },
+//                 "$color": "#E75B5C",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 6
+//                 },
+//                 "$color": "#E75B5C",
+//                 "type": "quarter"
+//               }
+//             ],
+//             "attributes": [
+//               {
+//                 "$adagio-time": {
+//                   "beats": "4",
+//                   "beat-type": "4"
+//                 },
+//                 "noteBefore": -1,
+//                 "$adagio-location": {
+//                   "timePos": 0,
+//                   "dpq": 1
+//                 }
+//               }
+//             ],
+//             "$adagio-restsInsideBeams": false,
+//             "$adagio-beatsList": [
+//               1,
+//               1,
+//               1,
+//               1
+//             ]
+//           },
+//           {
+//             "$number": "10",
+//             "$width": "44",
+//             "harmony": [
+//               {
+//                 "$default-y": "39",
+//                 "root": {
+//                   "root-step": "A",
+//                   "root-alter": "-1"
+//                 },
+//                 "kind": {
+//                   "content": "major",
+//                   "$halign": "center",
+//                   "$text": ""
+//                 },
+//                 "$adagio-location": {
+//                   "timePos": 0,
+//                   "dpq": 2
+//                 },
+//                 "staff": "1",
+//                 "$placement": "above",
+//                 "noteBefore": -1
+//               }
+//             ],
+//             "note": [
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 0
+//                 },
+//                 "$color": "#265C5C",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 2
+//                 },
+//                 "$color": "#265C5C",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 4
+//                 },
+//                 "$color": "#265C5C",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 6
+//                 },
+//                 "$color": "#265C5C",
+//                 "type": "quarter"
+//               }
+//             ],
+//             "attributes": [
+//               {
+//                 "$adagio-time": {
+//                   "beats": "4",
+//                   "beat-type": "4"
+//                 },
+//                 "noteBefore": -1,
+//                 "$adagio-location": {
+//                   "timePos": 0,
+//                   "dpq": 1
+//                 }
+//               }
+//             ],
+//             "$adagio-restsInsideBeams": false,
+//             "$adagio-beatsList": [
+//               1,
+//               1,
+//               1,
+//               1
+//             ]
+//           },
+//           {
+//             "$number": "11",
+//             "$width": "67",
+//             "harmony": [
+//               {
+//                 "$default-y": "39",
+//                 "root": {
+//                   "root-step": "B",
+//                   "root-alter": "-1"
+//                 },
+//                 "kind": {
+//                   "content": "major",
+//                   "$halign": "center",
+//                   "$text": ""
+//                 },
+//                 "$adagio-location": {
+//                   "timePos": 0,
+//                   "dpq": 2
+//                 },
+//                 "staff": "1",
+//                 "$placement": "above",
+//                 "noteBefore": -1
+//               }
+//             ],
+//             "note": [
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 0
+//                 },
+//                 "$color": "#4390E2",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 2
+//                 },
+//                 "$color": "#4390E2",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 4
+//                 },
+//                 "$color": "#4390E2",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 6
+//                 },
+//                 "$color": "#4390E2",
+//                 "type": "quarter"
+//               }
+//             ],
+//             "attributes": [
+//               {
+//                 "$adagio-time": {
+//                   "beats": "4",
+//                   "beat-type": "4"
+//                 },
+//                 "noteBefore": -1,
+//                 "$adagio-location": {
+//                   "timePos": 0,
+//                   "dpq": 1
+//                 }
+//               }
+//             ],
+//             "$adagio-restsInsideBeams": false,
+//             "$adagio-beatsList": [
+//               1,
+//               1,
+//               1,
+//               1
+//             ]
+//           },
+//           {
+//             "$number": "12",
+//             "$width": "44",
+//             "harmony": [
+//               {
+//                 "$default-y": "39",
+//                 "root": {
+//                   "root-step": "E",
+//                   "root-alter": "-1"
+//                 },
+//                 "kind": {
+//                   "content": "major",
+//                   "$halign": "center",
+//                   "$text": ""
+//                 },
+//                 "$adagio-location": {
+//                   "timePos": 0,
+//                   "dpq": 2
+//                 },
+//                 "staff": "1",
+//                 "$placement": "above",
+//                 "noteBefore": -1
+//               }
+//             ],
+//             "note": [
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 0
+//                 },
+//                 "$color": "#E75B5C",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 2
+//                 },
+//                 "$color": "#E75B5C",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 4
+//                 },
+//                 "$color": "#E75B5C",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 6
+//                 },
+//                 "$color": "#E75B5C",
+//                 "type": "quarter"
+//               }
+//             ],
+//             "attributes": [
+//               {
+//                 "$adagio-time": {
+//                   "beats": "4",
+//                   "beat-type": "4"
+//                 },
+//                 "noteBefore": -1,
+//                 "$adagio-location": {
+//                   "timePos": 0,
+//                   "dpq": 1
+//                 }
+//               }
+//             ],
+//             "$adagio-restsInsideBeams": false,
+//             "$adagio-beatsList": [
+//               1,
+//               1,
+//               1,
+//               1
+//             ]
+//           },
+//           {
+//             "$number": "13",
+//             "$width": "63",
+//             "harmony": [
+//               {
+//                 "root": {
+//                   "root-step": "C"
+//                 },
+//                 "kind": "minor",
+//                 "$adagio-kind": "minor",
+//                 "$adagio-location": {
+//                   "timePos": 0,
+//                   "dpq": 2
+//                 },
+//                 "$type": "explicit",
+//                 "staff": "1",
+//                 "$placement": "above",
+//                 "noteBefore": -1
+//               }
+//             ],
+//             "note": [
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 0
+//                 },
+//                 "$color": "#265C5C",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 2
+//                 },
+//                 "$color": "#265C5C",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 4
+//                 },
+//                 "$color": "#265C5C",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 6
+//                 },
+//                 "$color": "#265C5C",
+//                 "type": "quarter"
+//               }
+//             ],
+//             "attributes": [
+//               {
+//                 "$adagio-time": {
+//                   "beats": "4",
+//                   "beat-type": "4"
+//                 },
+//                 "noteBefore": -1,
+//                 "$adagio-location": {
+//                   "timePos": 0,
+//                   "dpq": 1
+//                 }
+//               }
+//             ],
+//             "$adagio-restsInsideBeams": false,
+//             "$adagio-beatsList": [
+//               1,
+//               1,
+//               1,
+//               1
+//             ]
+//           },
+//           {
+//             "$number": "14",
+//             "$width": "51",
+//             "harmony": [
+//               {
+//                 "$default-y": "39",
+//                 "root": {
+//                   "root-step": "A",
+//                   "root-alter": "-1"
+//                 },
+//                 "kind": {
+//                   "content": "major",
+//                   "$halign": "center",
+//                   "$text": ""
+//                 },
+//                 "$adagio-location": {
+//                   "timePos": 0,
+//                   "dpq": 2
+//                 },
+//                 "staff": "1",
+//                 "$placement": "above",
+//                 "noteBefore": -1
+//               }
+//             ],
+//             "note": [
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 0
+//                 },
+//                 "$color": "#265C5C",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 2
+//                 },
+//                 "$color": "#265C5C",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 4
+//                 },
+//                 "$color": "#265C5C",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 6
+//                 },
+//                 "$color": "#265C5C",
+//                 "type": "quarter"
+//               }
+//             ],
+//             "attributes": [
+//               {
+//                 "$adagio-time": {
+//                   "beats": "4",
+//                   "beat-type": "4"
+//                 },
+//                 "noteBefore": -1,
+//                 "$adagio-location": {
+//                   "timePos": 0,
+//                   "dpq": 1
+//                 }
+//               }
+//             ],
+//             "$adagio-restsInsideBeams": false,
+//             "$adagio-beatsList": [
+//               1,
+//               1,
+//               1,
+//               1
+//             ]
+//           },
+//           {
+//             "$number": "15",
+//             "$width": "52",
+//             "harmony": [
+//               {
+//                 "root": {
+//                   "root-step": "B",
+//                   "root-alter": "-1"
+//                 },
+//                 "kind": "major",
+//                 "$adagio-kind": "major",
+//                 "$adagio-location": {
+//                   "timePos": 0,
+//                   "dpq": 2
+//                 },
+//                 "$type": "explicit",
+//                 "staff": "1",
+//                 "$placement": "above",
+//                 "noteBefore": -1
+//               }
+//             ],
+//             "note": [
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 0
+//                 },
+//                 "$color": "#4390E2",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 2
+//                 },
+//                 "$color": "#4390E2",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 4
+//                 },
+//                 "$color": "#4390E2",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 6
+//                 },
+//                 "$color": "#4390E2",
+//                 "type": "quarter"
+//               }
+//             ],
+//             "attributes": [
+//               {
+//                 "$adagio-time": {
+//                   "beats": "4",
+//                   "beat-type": "4"
+//                 },
+//                 "noteBefore": -1,
+//                 "$adagio-location": {
+//                   "timePos": 0,
+//                   "dpq": 1
+//                 }
+//               }
+//             ],
+//             "$adagio-restsInsideBeams": false,
+//             "$adagio-beatsList": [
+//               1,
+//               1,
+//               1,
+//               1
+//             ]
+//           },
+//           {
+//             "$number": "16",
+//             "$width": "45",
+//             "harmony": [
+//               {
+//                 "$default-y": "39",
+//                 "root": {
+//                   "root-step": "E",
+//                   "root-alter": "-1"
+//                 },
+//                 "kind": {
+//                   "content": "major",
+//                   "$halign": "center",
+//                   "$text": ""
+//                 },
+//                 "$adagio-location": {
+//                   "timePos": 0,
+//                   "dpq": 2
+//                 },
+//                 "staff": "1",
+//                 "$placement": "above",
+//                 "noteBefore": -1
+//               }
+//             ],
+//             "note": [
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 0
+//                 },
+//                 "$color": "#E75B5C",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 2
+//                 },
+//                 "$color": "#E75B5C",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 4
+//                 },
+//                 "$color": "#E75B5C",
+//                 "type": "quarter"
+//               },
+//               {
+//                 "rest": {},
+//                 "duration": "2",
+//                 "$adagio-location": {
+//                   "timePos": 6
+//                 },
+//                 "$color": "#E75B5C",
+//                 "type": "quarter"
+//               }
+//             ],
+//             "barline": {
+//               "$location": "right",
+//               "bar-style": "light-heavy",
+//               "$adagio-location": {
+//                 "timePos": 8,
+//                 "dpq": 2
+//               },
+//               "noteBefore": 3
+//             },
+//             "attributes": [
+//               {
+//                 "$adagio-time": {
+//                   "beats": "4",
+//                   "beat-type": "4"
+//                 },
+//                 "noteBefore": -1,
+//                 "$adagio-location": {
+//                   "timePos": 0,
+//                   "dpq": 1
+//                 }
+//               }
+//             ],
+//             "$adagio-restsInsideBeams": false,
+//             "$adagio-beatsList": [
+//               1,
+//               1,
+//               1,
+//               1
+//             ]
+//           }
+//         ],
+//         "uuid": "b6e5faf5-e2d7-b2ab-0eaf-f6b5b8467ca8"
 //       }
+//     ],
+//     "measure-list": {
+//       "score-measure": [
+//         {
+//           "uuid": "09e1557e-c84c-90f3-bc12-88fbdb31fd5e"
+//         },
+//         {
+//           "uuid": "8877cbde-0786-34a9-7ab2-bbeab81d7f8a"
+//         },
+//         {
+//           "uuid": "021a0181-4919-0be6-a4cb-ffdf3588bbb0"
+//         },
+//         {
+//           "uuid": "82a58227-7f71-ad90-7f7c-f5057e64cefc"
+//         },
+//         {
+//           "uuid": "00c6ca03-4d14-2e67-6a25-844f605c708e"
+//         },
+//         {
+//           "uuid": "b1acc977-a545-b2e9-15f8-2c0230d91100"
+//         },
+//         {
+//           "uuid": "0bd0a05d-0b97-d661-6478-fec8ed2be305"
+//         },
+//         {
+//           "uuid": "bf46866c-aece-a3f9-9702-d70d5939aac1"
+//         },
+//         {
+//           "uuid": "a6dce6d1-6677-6333-833f-0e8764384902"
+//         },
+//         {
+//           "uuid": "1eeb47f3-c65d-9979-bb17-e0c73c774e82"
+//         },
+//         {
+//           "uuid": "1058e12e-a8c5-4f09-deff-94dc1a34e1c2"
+//         },
+//         {
+//           "uuid": "9b8596be-3d62-8d79-c878-ccdd88955afb"
+//         },
+//         {
+//           "uuid": "4ef9641c-f53f-7266-361b-b11b77133968"
+//         },
+//         {
+//           "uuid": "70ded463-98b0-2f3e-990d-a4e27a289cf7"
+//         },
+//         {
+//           "uuid": "e651000a-d725-1296-9cec-e55b414ea215"
+//         },
+//         {
+//           "uuid": "7db8c140-f73f-7197-41b5-9596918bf44e"
+//         }
+//       ]
+//     },
+//     "$adagio-formatVersion": 59,
+//     "work": {
+//       "work-title": "Freedom 2040: The Tomorrow We'll Build Melody - Concert Pitch TC"
 //     }
 //   }
+// };
+
+const exampleMusicXMLJSON =
+{
+    "score-partwise": {
+        "$version": "3.1",
+        "part-list": {
+            "score-part": [
+                {
+                    "part-name": "Piano",
+                    "voiceMapping": {
+                        "0": [
+                            0
+                        ],
+                        "1": [
+                            1
+                        ]
+                    },
+                    "staffMapping": [
+                        {
+                            "mainVoiceIdx": 0,
+                            "voices": [
+                                0
+                            ],
+                            "staffUuid": "6e35ea48-9685-0af9-0b27-be6c320d2433"
+                        },
+                        {
+                            "mainVoiceIdx": 1,
+                            "voices": [
+                                1
+                            ],
+                            "staffUuid": "dd1a215f-0159-9dbe-755f-22e6952556e3"
+                        }
+                    ],
+                    "voiceIdxToUuidMapping": {
+                        "0": "e6344782-969e-be4b-6fe9-a136740f06c4",
+                        "1": "8c1d7947-b6e0-36b3-f6e0-38f9e3ffd7d5"
+                    },
+                    "voiceUuidToIdxMapping": {
+                        "e6344782-969e-be4b-6fe9-a136740f06c4": 0,
+                        "8c1d7947-b6e0-36b3-f6e0-38f9e3ffd7d5": 1
+                    },
+                    "part-abbreviation": "Pno.",
+                    "score-instrument": {
+                        "instrument-name": "Piano",
+                        "$id": "P1-I1"
+                    },
+                    "midi-instrument": {
+                        "midi-program": 1,
+                        "volume": "100",
+                        "$id": "P1-I1",
+                        "midi-channel": "1"
+                    },
+                    "$id": "P1",
+                    "uuid": "f1e75a2f-850a-395e-7d5c-b83628bb348a"
+                }
+            ]
+        },
+        "measure-list": {
+            "score-measure": [
+                {
+                    "uuid": "6200e63d-9199-829d-50e7-865910839cb2"
+                }
+            ]
+        },
+        "part": [
+            {
+                "measure": [
+                    {
+                        "note": [
+                            {
+                                "staff": "1",
+                                "voice": "1",
+                                "duration": "1",
+                                "pitch": {
+                                    "octave": "4",
+                                    "step": "A"
+                                },
+                                "type": "eighth"
+                            },
+                            {
+                                "staff": "1",
+                                "voice": "1",
+                                "duration": "1",
+                                "pitch": {
+                                    "octave": "7",
+                                    "step": "E"
+                                },
+                                "type": "quarter"
+                            },
+                            {
+                                "staff": "1",
+                                "voice": "1",
+                                "duration": "2",
+                                "pitch": {
+                                    "octave": "2",
+                                    "step": "C"
+                                },
+                                "type": "half"
+                            },
+                            {
+                                "staff": "1",
+                                "voice": "1",
+                                "duration": "4",
+                                "pitch": {
+                                    "octave": "5",
+                                    "step": "G"
+                                },
+                                "type": "whole"
+                            }
+                        ],
+                        "harmony": [],
+                        "$number": "1",
+                        "barline": {
+                            "$location": "right",
+                            "bar-style": "light-heavy",
+                            "$adagio-location": {
+                                "dpq": 1,
+                                "timePos": 4
+                            },
+                            "noteBefore": 7
+                        },
+                        "attributes": [
+                            {
+                                "staves": "2",
+                                "divisions": "1",
+                                "time": {
+                                    "beats": "4",
+                                    "beat-type": "4"
+                                },
+                                "clef": [
+                                    {
+                                        "sign": "G",
+                                        "line": "2",
+                                        "$number": "1"
+                                    },
+                                    {
+                                        "sign": "F",
+                                        "line": "4",
+                                        "$number": "2"
+                                    }
+                                ],
+                                "key": {
+                                    "fifths": "0"
+                                },
+                                "staff-details": {
+                                    "staff-lines": "5"
+                                },
+                                "$adagio-time": {
+                                    "beats": "4",
+                                    "beat-type": "4"
+                                },
+                                "noteBefore": -1,
+                                "$adagio-location": {
+                                    "timePos": 0,
+                                    "dpq": 1
+                                }
+                            }
+                        ],
+                        "sound": [
+                            {
+                                "$adagio-swing": {
+                                    "swing": false
+                                },
+                                "noteBefore": -1,
+                                "$adagio-location": {
+                                    "timePos": 0,
+                                    "dpq": 1
+                                }
+                            },
+                            {
+                                "$tempo": "80",
+                                "noteBefore": -1,
+                                "$adagio-location": {
+                                    "timePos": 0,
+                                    "dpq": 1
+                                }
+                            }
+                        ],
+                        "direction": [
+                            {
+                                "$placement": "above",
+                                "staff": "1",
+                                "$adagio-location": {
+                                    "timePos": 0
+                                },
+                                "direction-type": {
+                                    "metronome": {
+                                        "per-minute": "80",
+                                        "beat-unit": "quarter"
+                                    }
+                                },
+                                "noteBefore": -1,
+                                "$adagio-isFirst": true
+                            }
+                        ],
+                        "$adagio-beatsList": [
+                            1,
+                            1,
+                            1,
+                            1
+                        ],
+                        "$adagio-restsInsideBeams": false
+                    },
+                    {
+                        "note": [
+                            {
+                                "staff": "1",
+                                "voice": "1",
+                                "duration": "1",
+                                "pitch": {
+                                    "octave": "4",
+                                    "step": "A"
+                                },
+                                "type": "quarter"
+                            },
+                            {
+                                "staff": "1",
+                                "voice": "1",
+                                "duration": "1",
+                                "pitch": {
+                                    "octave": "7",
+                                    "step": "E"
+                                },
+                                "type": "quarter"
+                            },
+                            {
+                                "staff": "1",
+                                "voice": "1",
+                                "duration": "2",
+                                "pitch": {
+                                    "octave": "2",
+                                    "step": "C"
+                                },
+                                "type": "half"
+                            },
+                            {
+                                "staff": "1",
+                                "voice": "1",
+                                "duration": "4",
+                                "pitch": {
+                                    "octave": "5",
+                                    "step": "G"
+                                },
+                                "type": "whole"
+                            }
+                        ]
+                    },
+                    {
+                        "note": [
+                            {
+                                "staff": "1",
+                                "voice": "1",
+                                "duration": "4",
+                                "pitch": {
+                                    "octave": "2",
+                                    "step": "C"
+                                },
+                                "type": "whole"
+                            },
+                            {
+                                "staff": "1",
+                                "voice": "1",
+                                "duration": "4",
+                                "pitch": {
+                                    "octave": "2",
+                                    "step": "C"
+                                },
+                                "type": "whole"
+                            }
+                        ]
+                    }
+                ],
+                "$id": "P1",
+                "uuid": "f1e75a2f-850a-395e-7d5c-b83628bb348a"
+            }
+        ],
+        "defaults": {
+            "scaling": {
+                "millimeters": "7",
+                "tenths": "40"
+            },
+            "page-layout": {
+                "page-height": "1596.5714285714287",
+                "page-width": "1233.7142857142858",
+                "page-margins": {
+                    "$type": "both",
+                    "top-margin": "38.857142857142854",
+                    "bottom-margin": "38.857142857142854",
+                    "left-margin": "38.857142857142854",
+                    "right-margin": "38.857142857142854"
+                }
+            },
+            "system-layout": {
+                "system-distance": "115.2"
+            },
+            "staff-layout": {
+                "staff-distance": "72.57142857142857"
+            },
+            "$adagio-measureNumberingStart": 1,
+            "word-font": {
+                "$font-family": "Century Schoolbook L"
+            }
+        },
+        "$adagio-formatVersion": 60,
+        "credit": [
+            {
+                "credit-type": "title",
+                "credit-words": "no notes"
+            }
+        ],
+        "work": {
+            "work-title": "no notes"
+        },
+        "identification": {
+            "encoding": {
+                "software": "Flat",
+                "encoding-date": "2025-02-06"
+            },
+            "source": "https://flat.io/score/67a10afde95ef02937db2abd-no-notes?sharingKey=67103fb611c0c9ae52c740071b02f3e21670e69e117e5b824197213a6d92d21b159f7315a10a8bd728d8cd4d8ff269ef5a4ae208f7fdd0e770a95eb9b4c5a52c"
+        }
+    }
+}
 
 
 export default exampleMusicXMLJSON;
