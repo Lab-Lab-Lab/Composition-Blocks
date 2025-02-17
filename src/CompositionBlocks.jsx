@@ -1,23 +1,38 @@
 import { useEffect, useRef, useState } from 'react';
 import { BlocklyWorkspace } from 'react-blockly';
-import { buildToolBox, newBlocklyBlockForNote, notesFromJSON } from './blockly-setup';
+import { buildToolBox, notesFromJSON, blocklyNoteFromMusicXMLNote, newBlocklyBlockForNote, extractMeasures, recreateMusicJSON} from './blockly-setup';
+
 
 
 
 export default function CompositionBlocks({ flatJSON }) {
-  console.log("composition blocks", flatJSON)
+  console.log("composition blocks", flatJSON) 
   const [xml, setXml] = useState('');
   const renderedXMLRef = useRef(null);
 
 
+  // const willSetXml = (newXml) => {
+  //   console.log('willSetXml', newXml);
+  //   console.log('current ref value', renderedXMLRef.current);
+
+
+  //   setXml(newXml);
+
+
+  // };
+
   const willSetXml = (newXml) => {
     console.log('willSetXml', newXml);
-    console.log('current ref value', renderedXMLRef.current);
-
-
+    
     setXml(newXml);
 
-  };
+    // Update JSON with the new measures
+    const updatedJSON = recreateMusicJSON(newXml, flatJSON);
+
+    console.log("Updated JSON:", updatedJSON);
+    // TODO: Pass this back to flat?
+};
+
 
   const [toolbox, setToolbox] = useState({});
   useEffect(() => {
@@ -41,7 +56,6 @@ export default function CompositionBlocks({ flatJSON }) {
 
   return (
     <div>
-
       {toolbox.contents && (
         <BlocklyWorkspace
           toolboxConfiguration={toolbox} // this must be a JSON toolbox definition

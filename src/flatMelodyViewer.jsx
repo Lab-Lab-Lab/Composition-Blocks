@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Embed from 'flat-embed';
 
 function FlatMelodyViewer({
-  height = 300,
+  height = 400,
   width = '100%',
   score,
   onLoad,
