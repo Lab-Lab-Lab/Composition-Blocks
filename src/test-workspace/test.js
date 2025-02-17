@@ -88,90 +88,95 @@ function recreateMusicJSON(xmlString, originalJSON) {
 }
 
 // Sample XML input string
-const xmlInput = `
-<xml xmlns="https://developers.google.com/blockly/xml">
-  <block type="measure" id="xgDH!0F-1Q|=AxD1N+3X" x="50" y="0">
-    <statement name="NOTES">
-      <block type="play_sound" id="vY[0lYK*k|EYpQ~:bpnr">
-        <field name="DURATION">whole</field>
-        <field name="STEP">G</field>
-        <field name="OCTAVE">5</field>
-        <next>
-          <block type="play_sound" id="@|i_~Z\`Jb3yCahwJcmUy">
-            <field name="DURATION">half</field>
-            <field name="STEP">C</field>
-            <field name="OCTAVE">2</field>
-            <next>
-              <block type="play_sound" id="DDuHNqz}p[M)#fNZck2}">
-                <field name="DURATION">quarter</field>
-                <field name="STEP">E</field>
-                <field name="OCTAVE">7</field>
-                <next>
-                  <block type="play_sound" id=":9DPS9+IWIFPOIo|PShH">
-                    <field name="DURATION">eighth</field>
-                    <field name="STEP">A</field>
-                    <field name="OCTAVE">4</field>
-                  </block>
-                </next>
-              </block>
-            </next>
-          </block>
-        </next>
-      </block>
-    </statement>
-    <next>
-      <block type="measure" id="u}Ofn7*i_k^/Vcj7=q9l">
-        <statement name="NOTES">
-          <block type="play_sound" id="FqeqJ9O1*WR?LuUV5asR">
-            <field name="DURATION">whole</field>
-            <field name="STEP">G</field>
-            <field name="OCTAVE">5</field>
-            <next>
-              <block type="play_sound" id="kL:(,_{xK=#c0f^Lhkco">
-                <field name="DURATION">half</field>
-                <field name="STEP">C</field>
-                <field name="OCTAVE">2</field>
-                <next>
-                  <block type="play_sound" id="9:nkr~scB([;CWEyT-r,">
-                    <field name="DURATION">quarter</field>
-                    <field name="STEP">E</field>
-                    <field name="OCTAVE">7</field>
-                    <next>
-                      <block type="play_sound" id="}V;rfP+oLkP@ny8ZK{GM">
-                        <field name="DURATION">quarter</field>
-                        <field name="STEP">A</field>
-                        <field name="OCTAVE">4</field>
-                      </block>
-                    </next>
-                  </block>
-                </next>
-              </block>
-            </next>
-          </block>
-        </statement>
-        <next>
-          <block type="measure" id="84@Z6~FP1L8eX_j5wo%E">
-            <statement name="NOTES">
-              <block type="play_sound" id="ZJX{fzXna(#bf:6J}goA">
-                <field name="DURATION">whole</field>
-                <field name="STEP">C</field>
-                <field name="OCTAVE">2</field>
-                <next>
-                  <block type="play_sound" id="RdmN|Z88(,he0q;*P]6P">
-                    <field name="DURATION">whole</field>
-                    <field name="STEP">C</field>
-                    <field name="OCTAVE">2</field>
-                  </block>
-                </next>
-              </block>
-            </statement>
-          </block>
-        </next>
-      </block>
-    </next>
-  </block>
-</xml>
-`;
+// const xmlInput = `
+// <xml xmlns="https://developers.google.com/blockly/xml">
+//   <block type="measure" id="xgDH!0F-1Q|=AxD1N+3X" x="50" y="0">
+//     <statement name="NOTES">
+//       <block type="play_sound" id="vY[0lYK*k|EYpQ~:bpnr">
+//         <field name="DURATION">whole</field>
+//         <field name="STEP">G</field>
+//         <field name="OCTAVE">5</field>
+//         <next>
+//           <block type="play_sound" id="@|i_~Z\`Jb3yCahwJcmUy">
+//             <field name="DURATION">half</field>
+//             <field name="STEP">C</field>
+//             <field name="OCTAVE">2</field>
+//             <next>
+//               <block type="play_sound" id="DDuHNqz}p[M)#fNZck2}">
+//                 <field name="DURATION">quarter</field>
+//                 <field name="STEP">E</field>
+//                 <field name="OCTAVE">7</field>
+//                 <next>
+//                   <block type="play_sound" id=":9DPS9+IWIFPOIo|PShH">
+//                     <field name="DURATION">eighth</field>
+//                     <field name="STEP">A</field>
+//                     <field name="OCTAVE">4</field>
+//                   </block>
+//                 </next>
+//               </block>
+//             </next>
+//           </block>
+//         </next>
+//       </block>
+//     </statement>
+//     <next>
+//       <block type="measure" id="u}Ofn7*i_k^/Vcj7=q9l">
+//         <statement name="NOTES">
+//           <block type="play_sound" id="FqeqJ9O1*WR?LuUV5asR">
+//             <field name="DURATION">whole</field>
+//             <field name="STEP">G</field>
+//             <field name="OCTAVE">5</field>
+//             <next>
+//               <block type="play_sound" id="kL:(,_{xK=#c0f^Lhkco">
+//                 <field name="DURATION">half</field>
+//                 <field name="STEP">C</field>
+//                 <field name="OCTAVE">2</field>
+//                 <next>
+//                   <block type="play_sound" id="9:nkr~scB([;CWEyT-r,">
+//                     <field name="DURATION">quarter</field>
+//                     <field name="STEP">E</field>
+//                     <field name="OCTAVE">7</field>
+//                     <next>
+//                       <block type="play_sound" id="}V;rfP+oLkP@ny8ZK{GM">
+//                         <field name="DURATION">quarter</field>
+//                         <field name="STEP">A</field>
+//                         <field name="OCTAVE">4</field>
+//                       </block>
+//                     </next>
+//                   </block>
+//                 </next>
+//               </block>
+//             </next>
+//           </block>
+//         </statement>
+//         <next>
+//           <block type="measure" id="84@Z6~FP1L8eX_j5wo%E">
+//             <statement name="NOTES">
+//               <block type="play_sound" id="ZJX{fzXna(#bf:6J}goA">
+//                 <field name="DURATION">whole</field>
+//                 <field name="STEP">C</field>
+//                 <field name="OCTAVE">2</field>
+//                 <next>
+//                   <block type="play_sound" id="RdmN|Z88(,he0q;*P]6P">
+//                     <field name="DURATION">whole</field>
+//                     <field name="STEP">C</field>
+//                     <field name="OCTAVE">2</field>
+//                   </block>
+//                 </next>
+//               </block>
+//             </statement>
+//           </block>
+//         </next>
+//       </block>
+//     </next>
+//   </block>
+// </xml>
+// `;
+
+const xmlInput = 
+`<xml xmlns="https://developers.google.com/blockly/xml"><block type="measure" id="N4?k,/FHq,j-Pyv@^p3" x="50" y="0"><statement name="NOTES"><block type="play_sound" id="3rq!NhBXmnAwFj~4%kok"><field name="DURATION">whole</field><field name="STEP">E</field><field name="OCTAVE">5</field></block></statement><next><block type="measure" id="X4nI/IBa*}GV~ANXw]FZ"><statement name="NOTES"><block type="play_sound" id="/-@#%Nb%+jQv0W,W}:B*"><field name="DURATION">whole</field><field name="STEP">F</field><field name="OCTAVE">2</field></block></statement><next><block type="measure" id="j^:O9)D.dtgQLl(lXp"><statement name="NOTES"><block type="play_sound" id="%/T)m~/PJ^yUdt(JiFZ2"><field name="DURATION">whole</field><field name="STEP">A</field><field name="OCTAVE">3</field></block></statement></block></next></block></next></block></xml>`
+
+
 
 export {
     recreateMusicJSON

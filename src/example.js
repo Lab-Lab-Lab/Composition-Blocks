@@ -1676,20 +1676,18 @@
 //   }
 // };
 
-const exampleMusicXMLJSON =
+
+const exampleMusicXMLJSON = 
 {
     "score-partwise": {
         "$version": "3.1",
         "part-list": {
             "score-part": [
                 {
-                    "part-name": "Piano",
+                    "part-name": "Trumpet",
                     "voiceMapping": {
                         "0": [
                             0
-                        ],
-                        "1": [
-                            1
                         ]
                     },
                     "staffMapping": [
@@ -1698,44 +1696,35 @@ const exampleMusicXMLJSON =
                             "voices": [
                                 0
                             ],
-                            "staffUuid": "6e35ea48-9685-0af9-0b27-be6c320d2433"
-                        },
-                        {
-                            "mainVoiceIdx": 1,
-                            "voices": [
-                                1
-                            ],
-                            "staffUuid": "dd1a215f-0159-9dbe-755f-22e6952556e3"
+                            "staffUuid": "55c57734-7ee9-2308-bd98-252db0f2a6e7"
                         }
                     ],
                     "voiceIdxToUuidMapping": {
-                        "0": "e6344782-969e-be4b-6fe9-a136740f06c4",
-                        "1": "8c1d7947-b6e0-36b3-f6e0-38f9e3ffd7d5"
+                        "0": "fdc36069-82ee-b5db-60e3-543faf0ba49a"
                     },
                     "voiceUuidToIdxMapping": {
-                        "e6344782-969e-be4b-6fe9-a136740f06c4": 0,
-                        "8c1d7947-b6e0-36b3-f6e0-38f9e3ffd7d5": 1
+                        "fdc36069-82ee-b5db-60e3-543faf0ba49a": 0
                     },
-                    "part-abbreviation": "Pno.",
+                    "part-abbreviation": "Tpt.",
                     "score-instrument": {
-                        "instrument-name": "Piano",
+                        "instrument-name": "Trumpet",
                         "$id": "P1-I1"
                     },
                     "midi-instrument": {
-                        "midi-program": 1,
+                        "midi-program": 257,
                         "volume": "100",
                         "$id": "P1-I1",
                         "midi-channel": "1"
                     },
                     "$id": "P1",
-                    "uuid": "f1e75a2f-850a-395e-7d5c-b83628bb348a"
+                    "uuid": "6aa64ca4-9919-c2e5-9d0a-78dde542ddc2"
                 }
             ]
         },
         "measure-list": {
             "score-measure": [
                 {
-                    "uuid": "6200e63d-9199-829d-50e7-865910839cb2"
+                    "uuid": "6a24e9a2-f8fa-ee43-b9c6-725681665b80"
                 }
             ]
         },
@@ -1747,40 +1736,10 @@ const exampleMusicXMLJSON =
                             {
                                 "staff": "1",
                                 "voice": "1",
-                                "duration": "1",
-                                "pitch": {
-                                    "octave": "4",
-                                    "step": "A"
-                                },
-                                "type": "eighth"
-                            },
-                            {
-                                "staff": "1",
-                                "voice": "1",
-                                "duration": "1",
-                                "pitch": {
-                                    "octave": "7",
-                                    "step": "E"
-                                },
-                                "type": "quarter"
-                            },
-                            {
-                                "staff": "1",
-                                "voice": "1",
-                                "duration": "2",
-                                "pitch": {
-                                    "octave": "2",
-                                    "step": "C"
-                                },
-                                "type": "half"
-                            },
-                            {
-                                "staff": "1",
-                                "voice": "1",
                                 "duration": "4",
                                 "pitch": {
                                     "octave": "5",
-                                    "step": "G"
+                                    "step": "E"
                                 },
                                 "type": "whole"
                             }
@@ -1794,30 +1753,25 @@ const exampleMusicXMLJSON =
                                 "dpq": 1,
                                 "timePos": 4
                             },
-                            "noteBefore": 7
+                            "noteBefore": 0
                         },
                         "attributes": [
                             {
-                                "staves": "2",
                                 "divisions": "1",
                                 "time": {
                                     "beats": "4",
                                     "beat-type": "4"
                                 },
-                                "clef": [
-                                    {
-                                        "sign": "G",
-                                        "line": "2",
-                                        "$number": "1"
-                                    },
-                                    {
-                                        "sign": "F",
-                                        "line": "4",
-                                        "$number": "2"
-                                    }
-                                ],
+                                "clef": {
+                                    "sign": "G",
+                                    "line": "2"
+                                },
                                 "key": {
-                                    "fifths": "0"
+                                    "fifths": "2"
+                                },
+                                "transpose": {
+                                    "chromatic": "-2",
+                                    "diatonic": "-1"
                                 },
                                 "staff-details": {
                                     "staff-lines": "5"
@@ -1883,40 +1837,10 @@ const exampleMusicXMLJSON =
                             {
                                 "staff": "1",
                                 "voice": "1",
-                                "duration": "1",
-                                "pitch": {
-                                    "octave": "4",
-                                    "step": "A"
-                                },
-                                "type": "quarter"
-                            },
-                            {
-                                "staff": "1",
-                                "voice": "1",
-                                "duration": "1",
-                                "pitch": {
-                                    "octave": "7",
-                                    "step": "E"
-                                },
-                                "type": "quarter"
-                            },
-                            {
-                                "staff": "1",
-                                "voice": "1",
-                                "duration": "2",
-                                "pitch": {
-                                    "octave": "2",
-                                    "step": "C"
-                                },
-                                "type": "half"
-                            },
-                            {
-                                "staff": "1",
-                                "voice": "1",
                                 "duration": "4",
                                 "pitch": {
-                                    "octave": "5",
-                                    "step": "G"
+                                    "octave": "2",
+                                    "step": "F"
                                 },
                                 "type": "whole"
                             }
@@ -1929,18 +1853,8 @@ const exampleMusicXMLJSON =
                                 "voice": "1",
                                 "duration": "4",
                                 "pitch": {
-                                    "octave": "2",
-                                    "step": "C"
-                                },
-                                "type": "whole"
-                            },
-                            {
-                                "staff": "1",
-                                "voice": "1",
-                                "duration": "4",
-                                "pitch": {
-                                    "octave": "2",
-                                    "step": "C"
+                                    "octave": "3",
+                                    "step": "A"
                                 },
                                 "type": "whole"
                             }
@@ -1948,7 +1862,7 @@ const exampleMusicXMLJSON =
                     }
                 ],
                 "$id": "P1",
-                "uuid": "f1e75a2f-850a-395e-7d5c-b83628bb348a"
+                "uuid": "6aa64ca4-9919-c2e5-9d0a-78dde542ddc2"
             }
         ],
         "defaults": {
@@ -1982,18 +1896,18 @@ const exampleMusicXMLJSON =
         "credit": [
             {
                 "credit-type": "title",
-                "credit-words": "no notes"
+                "credit-words": "one note - E5 Half"
             }
         ],
         "work": {
-            "work-title": "no notes"
+            "work-title": "one note - E5 Half"
         },
         "identification": {
             "encoding": {
                 "software": "Flat",
-                "encoding-date": "2025-02-06"
+                "encoding-date": "2025-02-10"
             },
-            "source": "https://flat.io/score/67a10afde95ef02937db2abd-no-notes?sharingKey=67103fb611c0c9ae52c740071b02f3e21670e69e117e5b824197213a6d92d21b159f7315a10a8bd728d8cd4d8ff269ef5a4ae208f7fdd0e770a95eb9b4c5a52c"
+            "source": "https://flat.io/score/67a26884ad9eb655c27e1bbe-one-note-e5-half?sharingKey=d61fc1be1b3df01d6c52162d81e4d58834ce3f30ad9eb9a49d3f642d0a822b04c929b2ee20aaa2af838b5e3fe39d6200f5d82895241a832fdbe7b01f2cbe7586"
         }
     }
 }
