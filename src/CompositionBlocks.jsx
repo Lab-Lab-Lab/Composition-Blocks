@@ -5,16 +5,14 @@ import { buildToolBox, notesFromJSON, blocklyNoteFromMusicXMLNote, newBlocklyBlo
 
 
 
-export default function CompositionBlocks({ flatJSON }) {
-  console.log("composition blocks", flatJSON) 
+export default function CompositionBlocks({ flatJSON, onChange }) {
+  // console.log("composition blocks", flatJSON) 
   const [xml, setXml] = useState('');
   const renderedXMLRef = useRef(null);
-
 
   // const willSetXml = (newXml) => {
   //   console.log('willSetXml', newXml);
   //   console.log('current ref value', renderedXMLRef.current);
-
 
   //   setXml(newXml);
 
@@ -23,14 +21,12 @@ export default function CompositionBlocks({ flatJSON }) {
 
   const willSetXml = (newXml) => {
     console.log('willSetXml', newXml);
-    
     setXml(newXml);
 
     // Update JSON with the new measures
     const updatedJSON = recreateMusicJSON(newXml, flatJSON);
-
     console.log("Updated JSON:", updatedJSON);
-    // TODO: Pass this back to flat?
+    onChange(updatedJSON);
 };
 
 
@@ -72,7 +68,7 @@ export default function CompositionBlocks({ flatJSON }) {
           }}
           onInject={(workspace) => {
             const measures = flatJSON['score-partwise']['part'][0]['measure']; // Extract measures from JSON
-            console.log("measures", measures)
+            // console.log("measures", measures)
             // Initialize the first measure block directly (to prevent typeError)
             let previousMeasureBlock = null;
 

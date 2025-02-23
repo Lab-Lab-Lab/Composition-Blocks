@@ -2,15 +2,17 @@ import React, { useEffect, useState } from 'react';
 // import Col from 'react-bootstrap/Col';
 // import Row from 'react-bootstrap/Row';
 import Embed from 'flat-embed';
-
+ 
+// https://flat.io/developers/docs/embed/javascript
 function FlatMelodyViewer({
   height = 400,
   width = '100%',
   score,
   onLoad,
   debugMsg,
+  flatJSON
 }) {
-  // const [embed, setEmbed] = useState();
+  const [embed, setEmbed] = useState();
   const editorRef = React.createRef();
 
   const embedParams = {
@@ -34,6 +36,18 @@ function FlatMelodyViewer({
   };
 
   useEffect(() => {
+    console.log("Melody Viewer");
+    console.log(flatJSON);
+    console.log(embed) // TODO: embed is undefined on first 2 loads?
+    console.log(editorRef.current);
+    if (flatJSON && embed) {
+      embed.loadJSON(flatJSON);
+    } 
+
+
+  }, [flatJSON, embed])
+
+  useEffect(() => {
     if (!editorRef.current) return;
     const loadParams = {
       score: score.scoreId,
@@ -41,12 +55,13 @@ function FlatMelodyViewer({
     if (score.sharingKey) {
       loadParams.sharingKey = score.sharingKey;
     }
-    const embed = new Embed(editorRef.current, allParams);
+    const embedObject = new Embed(editorRef.current, allParams);
 
-    embed
+    embedObject
       .ready()
-      .then(() => embed.loadFlatScore(loadParams))
-      .then(() => embed.getJSON())
+      .then(() => setEmbed(embedObject))
+      .then(() => embedObject.loadFlatScore(loadParams))
+      .then(() => embedObject.getJSON())
       .then((jsonData) => onLoad && onLoad(JSON.stringify(jsonData)))
       .catch((e) => {
         if (e && e.message) {
