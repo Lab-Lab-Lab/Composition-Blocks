@@ -15,7 +15,7 @@ export default function CompositionBlocks({ flatJSON, onChange }) {
   //   console.log('current ref value', renderedXMLRef.current);
 
   //   setXml(newXml);
-
+  // rip out the score make it work with the flatJSON
 
   // };
 
