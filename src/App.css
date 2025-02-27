@@ -14,3 +14,8 @@ pre {
   word-wrap: break-word;
   max-width: 50vw;
 }
+
+/* 2-27 */
+.split-container > div {
+  min-width: 400px; /* This guarantees it always takes up space */
+}

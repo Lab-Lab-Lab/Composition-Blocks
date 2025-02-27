@@ -149,7 +149,13 @@ function recreateMusicJSON(xmlString, originalJSON) {
   // Update or add measures in the JSON
   for (let i = 0; i < newMeasures.length; i++) {
       if (existingMeasures[i]) {
-          existingMeasures[i].note = newMeasures[i].note; // Update existing measure notes
+          // existingMeasures[i].note = newMeasures[i].note; // Update existing measure notes
+          // 2-27
+          existingMeasures[i].note = newMeasures[i].note.map((note, index) => ({
+            ...existingMeasures[i].note[index], // Preserve original fields like timepos
+            ...note // Overwrite updated fields
+          }));
+          
       } else {
           existingMeasures.push(newMeasures[i]); // Add new measure if it doesn't exist
       }

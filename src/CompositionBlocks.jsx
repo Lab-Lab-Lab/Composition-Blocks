@@ -20,13 +20,17 @@ export default function CompositionBlocks({ flatJSON, onChange }) {
   // };
 
   const willSetXml = (newXml) => {
-    console.log('willSetXml', newXml);
+    console.log('Updated XML', newXml);
     setXml(newXml);
 
     // Update JSON with the new measures
     const updatedJSON = recreateMusicJSON(newXml, flatJSON);
-    console.log("Updated JSON:", updatedJSON);
+    console.log("Composition Blocks --> Updated JSON:", updatedJSON);
     onChange(updatedJSON);
+
+    // 2-27
+    setXml(newXml);        // This needs to go **AFTER** onChange()
+
 };
 
 
