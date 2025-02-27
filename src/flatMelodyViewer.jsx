@@ -40,24 +40,29 @@ function FlatMelodyViewer({
     console.log(flatJSON);
     console.log(embed) // TODO: embed is undefined on first 2 loads?
     console.log(editorRef.current);
+    console.log('flatJSON && embed', flatJSON && embed && true)
     if (flatJSON && embed) {
-      embed.loadJSON(flatJSON);
+      embed.loadJSON(flatJSON)
+        .then(()=>{
+          console.log('loadedJSON');
+        })
+        .catch((e) => {
+          console.error('error loading JSON', e);
+        });
     } 
-
-
   }, [flatJSON, embed])
 
   useEffect(() => {
-    if (!editorRef.current) return;
-    const loadParams = {
-      score: score.scoreId,
-    };
-    if (score.sharingKey) {
-      loadParams.sharingKey = score.sharingKey;
-    }
-    const embedObject = new Embed(editorRef.current, allParams);
-
-    embedObject
+    if (!editorRef.current || (!score && !flatJSON)) return;
+    if (score) {
+      const loadParams = {
+        score: score.scoreId,
+      };
+      if (score.sharingKey) {
+        loadParams.sharingKey = score.sharingKey;
+      }
+      const embedObject = new Embed(editorRef.current, allParams);
+      embedObject
       .ready()
       .then(() => setEmbed(embedObject))
       .then(() => embedObject.loadFlatScore(loadParams))
@@ -79,6 +84,11 @@ function FlatMelodyViewer({
         console.error('score', score);
         throw e;
       });
+    } else {
+      const embedObject = new Embed(editorRef.current);
+    }
+
+    
   }, [editorRef.current]);
 
   return <div ref={editorRef} />;
