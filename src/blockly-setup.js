@@ -87,7 +87,18 @@ function extractMeasures(xmlDoc) {
   function processMeasure(measureBlock) {
       if (measureBlock.getAttribute("type") !== "measure") return null; // change/remove this if adding more blocks?
 
-      let measure = { note: [] };
+      let measure = { note: [
+              {
+                "rest": {},
+                "voice": "1",
+                "staff": "1",
+                "duration": "4",
+                "$adagio-location": {
+                  "timePos": 1
+                },
+                "type": "whole"
+              },
+      ] };
       let notesStatement = measureBlock.getElementsByTagName("statement")[0]; // Find the NOTES statement inside measure
 
       if (notesStatement) {
