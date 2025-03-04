@@ -116,15 +116,40 @@ function extractMeasures(xmlDoc) {
                   }
 
                   // Push formatted note data into extractedNotes array
-                  extractedNotes.push({
-                      staff: "1",
-                      voice: "1",
-                      duration: noteData.duration === "quarter" ? "1" :
-                          noteData.duration === "half" ? "2" :
-                              noteData.duration === "whole" ? "4" : "1",
-                      pitch: { octave: noteData.octave, step: noteData.step },
-                      type: noteData.duration
-                  });
+                  // extractedNotes.push({
+                  //     staff: "1",
+                  //     voice: "1",
+                  //     duration: noteData.duration === "quarter" ? "1" :
+                  //         noteData.duration === "half" ? "2" :
+                  //             noteData.duration === "whole" ? "4" : "1",
+                  //     pitch: { octave: noteData.octave, step: noteData.step },
+                  //     type: noteData.duration
+                  // });
+
+                  // Added case to fix when fields are rests
+
+                  extractedNotes.push(
+                    noteData.step === "rest" && noteData.octave === "rest"
+                      ? {
+                          rest: {},
+                          voice: "1",
+                          staff: "1",
+                          duration: noteData.duration === "quarter" ? "1" :
+                                    noteData.duration === "half" ? "2" :
+                                    noteData.duration === "whole" ? "4" : "1",
+                          type: noteData.duration
+                        }
+                      : {
+                          staff: "1",
+                          voice: "1",
+                          duration: noteData.duration === "quarter" ? "1" :
+                                    noteData.duration === "half" ? "2" :
+                                    noteData.duration === "whole" ? "4" : "1",
+                          pitch: { octave: noteData.octave, step: noteData.step },
+                          type: noteData.duration
+                        }
+                  );
+                  
               }
 
               // Move to the next note in the <next> chain

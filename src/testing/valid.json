@@ -239,7 +239,11 @@
                                 "$adagio-location": {
                                     "timePos": 0
                                 },
-                                "type": "whole"
+                                "type": "whole",
+                                "pitch": {
+                                    "octave": "rest",
+                                    "step": "rest"
+                                }
                             }
                         ],
                         "barline": {

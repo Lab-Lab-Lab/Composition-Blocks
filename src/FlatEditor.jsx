@@ -9,7 +9,6 @@ function FlatEditor({
 }) {
   const [embed, setEmbed] = useState(null);
   const editorRef = useRef(null);
-  // const [lastJSON, setLastJSON] = useState(null);
   console.log("FlatEditor: flatJSON:", flatJSON);
 
   const embedParams = useMemo(() => ({
@@ -55,7 +54,9 @@ function FlatEditor({
               }
             });
           });
+          console.log("FlatEditor attempting to load: flatJSON:", flatJSON);
           embed.loadJSON(flatJSON);
+          console.log("FlatEditor loaded: flatJSON", flatJSON);
         })
         .catch((e) => {
           console.error("Flat.io Initialization Error:", e);
