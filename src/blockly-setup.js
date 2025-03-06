@@ -62,21 +62,22 @@ function newBlocklyBlockForNote(currWork, noteObj) {
   return newB;
 }
 
-function createBlocksFromJSON(workspace, json) {
-  for (let part of json['score-partwise']['part']) {
-    for (let measure of part['measure']) {
-      const measureBlock = workspace.newBlock('measure');
-      measureBlock.initSvg();
+// function createBlocksFromJSON(workspace, json) {
+//   for (let part of json['score-partwise']['part']) {
+//     for (let measure of part['measure']) {
+//       const measureBlock = workspace.newBlock('measure');
+//       measureBlock.initSvg();
       
-      for (let note of measure['note']) {
-        const noteBlock = newBlocklyBlockForNote(workspace, note);
-        measureBlock.getInput('NOTES').connection.connect(noteBlock.previousConnection);
-      }
+//       for (let note of measure['note']) {
+//         const noteBlock = newBlocklyBlockForNote(workspace, note);
+//         measureBlock.getInput('NOTES').connection.connect(noteBlock.previousConnection);
+//       }
 
-      measureBlock.render();
-    }
-  }
-}
+//       measureBlock.render();
+//     }
+//   }
+// }
+
 
 // 
 // Function to extract measure blocks from the XML string
@@ -170,6 +171,7 @@ function recreateMusicJSON(xmlString, originalJSON) {
 
   let newMeasures = extractMeasures(xmlDoc); // Extract measure data from the XML
 
+  console.log("recreate JSON: originalJSON", originalJSON);
   let updatedJSON = JSON.parse(JSON.stringify(originalJSON)); // Deep copy original JSON to avoid modifying input
   let existingMeasures = updatedJSON?.["score-partwise"]?.["part"]?.[0]?.["measure"] || []; // Locate the measures section in JSON
 
