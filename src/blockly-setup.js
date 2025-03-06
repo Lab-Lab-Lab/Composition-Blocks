@@ -78,6 +78,7 @@ function createBlocksFromJSON(workspace, json) {
   }
 }
 
+// 
 // Function to extract measure blocks from the XML string
 function extractMeasures(xmlDoc) {
   let measureBlocks = xmlDoc.getElementsByTagName("block"); // Get all <block> elements from input
@@ -104,6 +105,7 @@ function extractMeasures(xmlDoc) {
       if (notesStatement) {
           let noteBlock = notesStatement.getElementsByTagName("block")[0]; // Get the first note block inside the statement
           let extractedNotes = []; 
+          let timePos = 0; // Initialize timePos for first note
 
           // Traverse through the linked notes using the <next> tag
           while (noteBlock) {
@@ -115,41 +117,30 @@ function extractMeasures(xmlDoc) {
                       noteData[field.getAttribute("name").toLowerCase()] = field.textContent; // Store note attributes
                   }
 
-                  // Push formatted note data into extractedNotes array
-                  // extractedNotes.push({
-                  //     staff: "1",
-                  //     voice: "1",
-                  //     duration: noteData.duration === "quarter" ? "1" :
-                  //         noteData.duration === "half" ? "2" :
-                  //             noteData.duration === "whole" ? "4" : "1",
-                  //     pitch: { octave: noteData.octave, step: noteData.step },
-                  //     type: noteData.duration
-                  // });
+                  let duration = noteData.duration === "quarter" ? "1" :
+                                 noteData.duration === "half" ? "2" :
+                                 noteData.duration === "whole" ? "4" : "1";
 
-                  // Added case to fix when fields are rests
-
-                  extractedNotes.push(
-                    noteData.step === "rest" && noteData.octave === "rest"
+                  let noteObject = noteData.step === "rest" && noteData.octave === "rest"
                       ? {
                           rest: {},
                           voice: "1",
                           staff: "1",
-                          duration: noteData.duration === "quarter" ? "1" :
-                                    noteData.duration === "half" ? "2" :
-                                    noteData.duration === "whole" ? "4" : "1",
-                          type: noteData.duration
+                          duration: duration,
+                          type: noteData.duration,
+                          "$adagio-location": { timePos }
                         }
                       : {
                           staff: "1",
                           voice: "1",
-                          duration: noteData.duration === "quarter" ? "1" :
-                                    noteData.duration === "half" ? "2" :
-                                    noteData.duration === "whole" ? "4" : "1",
+                          duration: duration,
                           pitch: { octave: noteData.octave, step: noteData.step },
-                          type: noteData.duration
-                        }
-                  );
-                  
+                          type: noteData.duration,
+                          "$adagio-location": { timePos }
+                        };
+
+                  extractedNotes.push(noteObject);
+                  timePos += parseInt(duration); // Update timePos for next note
               }
 
               // Move to the next note in the <next> chain
@@ -185,13 +176,11 @@ function recreateMusicJSON(xmlString, originalJSON) {
   // Update or add measures in the JSON
   for (let i = 0; i < newMeasures.length; i++) {
       if (existingMeasures[i]) {
-          // existingMeasures[i].note = newMeasures[i].note; // Update existing measure notes
-          // 2-27
           existingMeasures[i].note = newMeasures[i].note.map((note, index) => ({
-            ...existingMeasures[i].note[index], // Preserve original fields like timepos
-            ...note // Overwrite updated fields
+            ...existingMeasures[i].note[index], // Preserve original fields
+            ...note, // Overwrite updated fields
+            "$adagio-location": { timePos: index === 0 ? 0 : existingMeasures[i].note[index - 1]["$adagio-location"].timePos + parseInt(existingMeasures[i].note[index - 1].duration) }
           }));
-          
       } else {
           existingMeasures.push(newMeasures[i]); // Add new measure if it doesn't exist
       }
@@ -205,8 +194,6 @@ function recreateMusicJSON(xmlString, originalJSON) {
   return updatedJSON;
 }
 
-
-
 export {
   buildToolBox,
   notesFromJSON,
@@ -215,3 +202,4 @@ export {
   extractMeasures,
   recreateMusicJSON
 }
+

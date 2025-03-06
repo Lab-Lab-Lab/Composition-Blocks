@@ -44,9 +44,7 @@ function App() {
 
   return (
     <div className='split-container'>
-      <div style={{ width: '100%', display: 'block' }}>
-        <FlatEditor flatJSON={flatJSON} onScoreUpdate={setFlatJSON} />
-      </div>
+      <FlatEditor flatJSON={flatJSON} onScoreUpdate={setFlatJSON} />
       <CompositionBlocks flatJSON={flatJSON} onChange={setFlatJSON} />
     </div>
 
