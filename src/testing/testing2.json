@@ -65,7 +65,7 @@
                             {
                                 "staff": "1",
                                 "voice": "1",
-                                "duration": "4",
+                                "duration": "2",
                                 "pitch": {
                                     "octave": "4",
                                     "step": "E"
@@ -73,26 +73,12 @@
                                 "$adagio-location": {
                                     "timePos": 0
                                 },
-                                "type": "whole"
+                                "type": "half"
                             },
                             {
                                 "staff": "1",
                                 "voice": "1",
-                                "duration": "4",
-                                "pitch": {
-                                    "octave": "4",
-                                    "step": "F"
-                                },
-                                "$adagio-location": {
-                                    "timePos": 0
-                                },
-                                "chord": {},
-                                "type": "whole"
-                            },
-                            {
-                                "staff": "1",
-                                "voice": "1",
-                                "duration": "4",
+                                "duration": "2",
                                 "pitch": {
                                     "octave": "5",
                                     "step": "C"
@@ -101,7 +87,20 @@
                                     "timePos": 0
                                 },
                                 "chord": {},
-                                "type": "whole"
+                                "type": "half"
+                            },
+                            {
+                                "staff": "1",
+                                "voice": "1",
+                                "duration": "2",
+                                "pitch": {
+                                    "octave": "4",
+                                    "step": "E"
+                                },
+                                "type": "half",
+                                "$adagio-location": {
+                                    "timePos": 2
+                                }
                             }
                         ],
                         "harmony": [],

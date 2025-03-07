@@ -65,7 +65,7 @@
                             {
                                 "staff": "1",
                                 "voice": "1",
-                                "duration": "4",
+                                "duration": "2",
                                 "pitch": {
                                     "octave": "4",
                                     "step": "E"
@@ -73,7 +73,20 @@
                                 "$adagio-location": {
                                     "timePos": 0
                                 },
-                                "type": "whole"
+                                "type": "half"
+                            },
+                            {
+                                "staff": "1",
+                                "voice": "1",
+                                "duration": "2",
+                                "pitch": {
+                                    "octave": "4",
+                                    "step": "E"
+                                },
+                                "type": "half",
+                                "$adagio-location": {
+                                    "timePos": 2
+                                }
                             }
                         ],
                         "harmony": [],
