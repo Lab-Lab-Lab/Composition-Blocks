@@ -3,7 +3,7 @@ import './App.css'
 import CompositionBlocks from './CompositionBlocks';
 // import exampleJson from './example';
 import exampleJson from './threeNotes';
-import FlatEditor from './FlatEditor'
+import FlatEditor from './FlatEditor';
 
 function App() {
   const [flatJSON, setFlatJSON] = useState(exampleJson);

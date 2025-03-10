@@ -49,7 +49,7 @@ function FlatEditor({
             embed.getJSON().then((json) => {
               console.log('JSON:', json);
               if (onScoreUpdate && JSON.stringify(json) !== JSON.stringify(flatJSON)) {
-                console.log('would update')
+                console.log('would update', json);
                 onScoreUpdate(json);
               }
             });
