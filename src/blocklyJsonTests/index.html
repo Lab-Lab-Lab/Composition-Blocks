@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music to Blockly</title>
+    <script type="module" src="flatJsonToBlockly.js"></script>
+</head>
+<body>
+    <div id="blocklyContainer"></div>
+
+    <script type="module">
+        import { threeNotes, flatJsonToBlockly } from './flatJsonToBlockly.js';
+
+        const blocklyJson = flatJsonToBlockly(threeNotes);
+        console.log(blocklyJson);  // You can now use this data to create Blockly blocks
+    </script>
+</body>
+</html>

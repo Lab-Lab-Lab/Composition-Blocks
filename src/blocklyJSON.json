@@ -1,0 +1,83 @@
+{
+    "blocks": {
+        "languageVersion": 0,
+        "blocks": [
+            {
+                "type": "measure",
+                "id": "W_R@/#Cg)Ku#n^l6O?I{",
+                "x": 50,
+                "y": 0,
+                "inputs": {
+                    "NOTES": {
+                        "block": {
+                            "type": "play_sound",
+                            "id": "$_(%aD-L_#.jP;Jqzqk5",
+                            "fields": {
+                                "DURATION": "whole",
+                                "STEP": "E",
+                                "OCTAVE": "4"
+                            }
+                        }
+                    }
+                },
+                "next": {
+                    "block": {
+                        "type": "measure",
+                        "id": "$TeRVt:VDV37QYKx1-kz",
+                        "inputs": {
+                            "NOTES": {
+                                "block": {
+                                    "type": "play_sound",
+                                    "id": "3!^^H%WSr,8@?.TW!EWm",
+                                    "fields": {
+                                        "DURATION": "half",
+                                        "STEP": "F",
+                                        "OCTAVE": "4"
+                                    }
+                                }
+                            }
+                        },
+                        "next": {
+                            "block": {
+                                "type": "measure",
+                                "id": "Vbk5#gf8}){QLmDGeczv",
+                                "inputs": {
+                                    "NOTES": {
+                                        "block": {
+                                            "type": "play_sound",
+                                            "id": "K^5_=EAM_iQemCW4dXT[",
+                                            "fields": {
+                                                "DURATION": "whole",
+                                                "STEP": "A",
+                                                "OCTAVE": "4"
+                                            }
+                                        }
+                                    }
+                                },
+                                "next": {
+                                    "block": {
+                                        "type": "measure",
+                                        "id": "j#{}D6T-ONO^c$mZ.0`m",
+                                        "inputs": {
+                                            "NOTES": {
+                                                "block": {
+                                                    "type": "play_sound",
+                                                    "id": "tzz[Pn)!n%sY5h3v(|LJ",
+                                                    "fields": {
+                                                        "DURATION": "whole",
+                                                        "STEP": "rest",
+                                                        "OCTAVE": "rest"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

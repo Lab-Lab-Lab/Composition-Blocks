@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { BlocklyWorkspace } from 'react-blockly';
+// import { BlocklyWorkspace } from 'react-blockly';
+import BlocklyWorkspace from './BlocklyWorkspace';
 import { buildToolBox, notesFromJSON, blocklyNoteFromMusicXMLNote, newBlocklyBlockForNote, extractMeasures, recreateMusicJSON } from './blockly-setup';
 
 
@@ -44,6 +45,9 @@ function changeBlocks(workspace, json) {
 export default function CompositionBlocks({ flatJSON, onChange }) {
   console.log("composition blocks", flatJSON) 
   const [xml, setXml] = useState('');
+  const [blocklyJSON, setBlocklyJSON] = useState({});
+  // useEffect(() => {setBlocklyJSON(flatToBlockly(flatJSON))}, [flatJSON])
+
   const renderedXMLRef = useRef(null);
   const onInject = useCallback((workspace)=>{
     changeBlocks(workspace, flatJSON);
@@ -96,8 +100,11 @@ export default function CompositionBlocks({ flatJSON, onChange }) {
   return flatJSON && toolbox.contents && (<BlocklyWorkspace
     toolboxConfiguration={toolbox} // this must be a JSON toolbox definition
     onXmlChange={willSetXml}
+    // call component with new blockly json
+    onJsonChange={(Json ) => {console.log("OnJsonChange", Json)}}
     // changeBlocks = {{}}
     className="fill-height"
+    // updateJson={blocklyJSON}
     workspaceConfiguration={{
       grid: {
         spacing: 20,
