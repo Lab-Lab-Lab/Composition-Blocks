@@ -196,12 +196,284 @@ function recreateMusicJSON(xmlString, originalJSON) {
   return updatedJSON;
 }
 
+function blockly2Flat(blocklyJSON) {
+  const outputTemplate = {
+    "score-partwise": {
+      "$version": "3.1",
+      "part-list": {
+        "score-part": [
+          {
+            "part-name": "Piano",
+            "voiceMapping": {
+              "0": [
+                0
+              ]
+            },
+            "staffMapping": [
+              {
+                "mainVoiceIdx": 0,
+                "voices": [
+                  0
+                ],
+                "staffUuid": "9e40a0e8-9da1-2b16-7990-bd40535b053c"
+              }
+            ],
+            "voiceIdxToUuidMapping": {
+              "0": "cdbee2bf-4377-2d9c-9376-ecc23ddc9a58"
+            },
+            "voiceUuidToIdxMapping": {
+              "cdbee2bf-4377-2d9c-9376-ecc23ddc9a58": 0
+            },
+            "part-abbreviation": "Pno.",
+            "score-instrument": {
+              "instrument-name": "Piano",
+              "$id": "P1-I1"
+            },
+            "midi-instrument": {
+              "midi-program": 1,
+              "volume": "100",
+              "$id": "P1-I1",
+              "midi-channel": "1"
+            },
+            "$id": "P1",
+            "uuid": "c3542208-3d69-bc97-7e45-ba83f61a8c49"
+          }
+        ]
+      },
+      "part": [
+        {
+          // "measure": [
+          //   {
+          //     "note": [
+          //       {
+          //         "staff": "1",
+          //         "voice": "1",
+          //         "duration": "4",
+          //         "pitch": {
+          //           "octave": "4",
+          //           "step": "C"
+          //         },
+          //         "$adagio-location": {
+          //           "timePos": 0
+          //         },
+          //         "type": "whole"
+          //       }
+          //     ],
+          //     "harmony": [],
+          //     "$number": "1",
+          //     "attributes": [
+          //       {
+          //         "divisions": "1",
+          //         "time": {
+          //           "beats": "4",
+          //           "beat-type": "4"
+          //         },
+          //         "clef": {
+          //           "sign": "G",
+          //           "line": "2"
+          //         },
+          //         "key": {
+          //           "fifths": "0"
+          //         },
+          //         "staff-details": {
+          //           "staff-lines": "5"
+          //         },
+          //         "$adagio-time": {
+          //           "beats": "4",
+          //           "beat-type": "4"
+          //         },
+          //         "noteBefore": -1,
+          //         "$adagio-location": {
+          //           "timePos": 0,
+          //           "dpq": 1
+          //         }
+          //       }
+          //     ],
+          //     "sound": [
+          //       {
+          //         "$adagio-swing": {
+          //           "swing": false
+          //         },
+          //         "noteBefore": -1,
+          //         "$adagio-location": {
+          //           "timePos": 0,
+          //           "dpq": 1
+          //         }
+          //       },
+          //       {
+          //         "$tempo": "80",
+          //         "noteBefore": -1,
+          //         "$adagio-location": {
+          //           "timePos": 0,
+          //           "dpq": 1
+          //         }
+          //       }
+          //     ],
+          //     "direction": [
+          //       {
+          //         "$placement": "above",
+          //         "staff": "1",
+          //         "$adagio-location": {
+          //           "timePos": 0
+          //         },
+          //         "direction-type": {
+          //           "metronome": {
+          //             "per-minute": "80",
+          //             "beat-unit": "quarter"
+          //           }
+          //         },
+          //         "noteBefore": -1,
+          //         "$adagio-isFirst": true
+          //       }
+          //     ],
+          //     "$adagio-beatsList": [
+          //       1,
+          //       1,
+          //       1,
+          //       1
+          //     ],
+          //     "$adagio-restsInsideBeams": false
+          //   },
+          //   {
+          //     "note": [
+          //       {
+          //         "staff": "1",
+          //         "voice": "1",
+          //         "duration": "4",
+          //         "pitch": {
+          //           "octave": "4",
+          //           "step": "G"
+          //         },
+          //         "$adagio-location": {
+          //           "timePos": 0
+          //         },
+          //         "type": "whole"
+          //       }
+          //     ],
+          //     "harmony": [],
+          //     "$number": "2",
+          //     "attributes": [
+          //       {
+          //         "$adagio-time": {
+          //           "beats": "4",
+          //           "beat-type": "4"
+          //         },
+          //         "noteBefore": -1,
+          //         "$adagio-location": {
+          //           "timePos": 0,
+          //           "dpq": 1
+          //         }
+          //       }
+          //     ],
+          //     "$adagio-beatsList": [
+          //       1,
+          //       1,
+          //       1,
+          //       1
+          //     ],
+          //     "$adagio-restsInsideBeams": false
+          //   },
+          //   {
+          //     "note": [
+          //       {
+          //         "staff": "1",
+          //         "voice": "1",
+          //         "duration": "4",
+          //         "pitch": {
+          //           "octave": "4",
+          //           "step": "A"
+          //         },
+          //         "$adagio-location": {
+          //           "timePos": 0
+          //         },
+          //         "type": "whole"
+          //       }
+          //     ],
+          //     "harmony": [],
+          //     "$number": "3",
+          //     "attributes": [
+          //       {
+          //         "$adagio-time": {
+          //           "beats": "4",
+          //           "beat-type": "4"
+          //         },
+          //         "noteBefore": -1,
+          //         "$adagio-location": {
+          //           "timePos": 0,
+          //           "dpq": 1
+          //         }
+          //       }
+          //     ],
+          //     "$adagio-beatsList": [
+          //       1,
+          //       1,
+          //       1,
+          //       1
+          //     ],
+          //     "$adagio-restsInsideBeams": false
+          //   },
+          //   {
+          //     "note": [
+          //       {
+          //         "rest": {},
+          //         "voice": "1",
+          //         "staff": "1",
+          //         "duration": "4",
+          //         "$adagio-location": {
+          //           "timePos": 0
+          //         },
+          //         "type": "whole"
+          //       }
+          //     ],
+          //     "barline": {
+          //       "$location": "right",
+          //       "bar-style": "light-heavy",
+          //       "$adagio-location": {
+          //         "dpq": 1,
+          //         "timePos": 4
+          //       },
+          //       "noteBefore": 0
+          //     },
+          //     "harmony": [],
+          //     "$number": "4",
+          //     "attributes": [
+          //       {
+          //         "$adagio-time": {
+          //           "beats": "4",
+          //           "beat-type": "4"
+          //         },
+          //         "noteBefore": -1,
+          //         "$adagio-location": {
+          //           "timePos": 0,
+          //           "dpq": 1
+          //         }
+          //       }
+          //     ],
+          //     "$adagio-beatsList": [
+          //       1,
+          //       1,
+          //       1,
+          //       1
+          //     ],
+          //     "$adagio-restsInsideBeams": false
+          //   }
+          // ],
+          "$id": "P1",
+          "uuid": "c3542208-3d69-bc97-7e45-ba83f61a8c49"
+        }
+      ]
+    }
+  };
+  return outputTemplate;
+}
+
 export {
   buildToolBox,
   notesFromJSON,
   blocklyNoteFromMusicXMLNote,
   newBlocklyBlockForNote,
   extractMeasures,
-  recreateMusicJSON
+  recreateMusicJSON,
+  blockly2Flat
 }
 

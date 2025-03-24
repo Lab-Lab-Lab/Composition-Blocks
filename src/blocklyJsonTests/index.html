@@ -7,10 +7,35 @@
     <script type="module" src="flatJsonToBlockly.js"></script>
 </head>
 <body>
+    <form id="test-flatjson">
+        <textarea name="flatjson" id="flatjson"></textarea>
+        <button type="submit">Test!</button>
+    </form>
+    <div id="flatContainer"></div>
     <div id="blocklyContainer"></div>
-
+    <script src="https://prod.flat-cdn.com/embed-js/v2.4.0/embed.min.js"></script>
     <script type="module">
         import { threeNotes, flatJsonToBlockly } from './flatJsonToBlockly.js';
+
+        document.getElementById('test-flatjson').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const flatJson = JSON.parse(document.getElementById('flatjson').value);
+            const container = document.getElementById('flatContainer');
+            const embed = new Flat.Embed(container, {
+                score: 'blank',
+                "embedParams": {
+                    "appId": "60a51c906bcde01fc75a3ad0"
+                }
+            });
+            embed.ready().then(()=>{
+                return embed.loadJSON(flatJson)
+            }).catch((error) => {
+                console.error(error);
+            });
+            // const blocklyJson = flatJsonToBlockly(flatJson);
+            // console.log(blocklyJson);  // You can now use this data to create Blockly blocks
+
+        });
 
         const blocklyJson = flatJsonToBlockly(threeNotes);
         console.log(blocklyJson);  // You can now use this data to create Blockly blocks
