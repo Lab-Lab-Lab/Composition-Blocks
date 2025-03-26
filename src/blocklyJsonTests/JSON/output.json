@@ -1,0 +1,81 @@
+{
+    "blocks": {
+        "languageVersion": 0,
+        "blocks": [
+            {
+                "type": "measure",
+                "id": "475bea5a-f451-481e-be52-dd7cf3d4dd82",
+                "inputs": {
+                    "NOTES": {
+                        "block": {
+                            "type": "play_sound",
+                            "id": "58566bf9-1afe-428a-bf7f-e1fa9cb2d7ff",
+                            "fields": {
+                                "DURATION": "whole",
+                                "STEP": "E",
+                                "OCTAVE": "4"
+                            }
+                        }
+                    }
+                },
+                "next": {
+                    "block": {
+                        "type": "measure",
+                        "id": "aec84f23-43c8-4012-873d-bdf86ef275a5",
+                        "inputs": {
+                            "NOTES": {
+                                "block": {
+                                    "type": "play_sound",
+                                    "id": "060d7ca9-e0f3-43d7-9c91-d5452f5daee0",
+                                    "fields": {
+                                        "DURATION": "whole",
+                                        "STEP": "F",
+                                        "OCTAVE": "4"
+                                    }
+                                }
+                            }
+                        },
+                        "next": {
+                            "block": {
+                                "type": "measure",
+                                "id": "0b47dd84-9d37-4a0e-8924-59938e5151d0",
+                                "inputs": {
+                                    "NOTES": {
+                                        "block": {
+                                            "type": "play_sound",
+                                            "id": "e1da2a0f-6ea2-4e2c-8c50-71e89c5313b3",
+                                            "fields": {
+                                                "DURATION": "whole",
+                                                "STEP": "A",
+                                                "OCTAVE": "4"
+                                            }
+                                        }
+                                    }
+                                },
+                                "next": {
+                                    "block": {
+                                        "type": "measure",
+                                        "id": "1405b35b-0e30-450a-a41b-fd42960126f0",
+                                        "inputs": {
+                                            "NOTES": {
+                                                "block": {
+                                                    "type": "play_sound",
+                                                    "id": "6f812fda-862a-4264-a1f4-5442d20a91b0",
+                                                    "fields": {
+                                                        "DURATION": "whole",
+                                                        "STEP": "rest",
+                                                        "OCTAVE": "rest"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

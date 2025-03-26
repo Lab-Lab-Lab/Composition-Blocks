@@ -101,7 +101,7 @@ export default function CompositionBlocks({ flatJSON, onChange }) {
     toolboxConfiguration={toolbox} // this must be a JSON toolbox definition
     onXmlChange={willSetXml}
     // call component with new blockly json
-    onJsonChange={(Json ) => {console.log("OnJsonChange", Json)}}
+    onJsonChange={(Json ) => {console.log("OnJsonChange --> Blockly", Json)}}
     // changeBlocks = {{}}
     className="fill-height"
     // updateJson={blocklyJSON}
