@@ -1,57 +1,74 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 // import { BlocklyWorkspace } from 'react-blockly';
 import BlocklyWorkspace from './BlocklyWorkspace';
+// Old Functions
 import { buildToolBox, notesFromJSON, blocklyNoteFromMusicXMLNote, newBlocklyBlockForNote, extractMeasures, recreateMusicJSON } from './blockly-setup';
 
+// New Functions
+import { generateBlocklyJson, convertFlatJsonToMeasures, updateFlatJsonNotes, parseBlocklyJSON } from './BlocklyJsonFunctions.js';
+import * as Blockly from "blockly";
 
-function changeBlocks(workspace, json) {
-  console.log("changeBlocks");
-  const measures = json['score-partwise']['part'][0]['measure']; // Extract measures from JSON
-      // console.log("measures", measures)
-      // Initialize the first measure block directly (to prevent typeError)
-      let previousMeasureBlock = null;
 
-      measures.forEach((measure, measureIndex) => {
-        // Create a measure block for each measure
-        const measureBlock = workspace.newBlock('measure');
-        measureBlock.initSvg();
-        measureBlock.moveBy(50, measureIndex * 100); // Adjust positioning
 
-        // console.log(`Created measure block ${measureIndex}`);
+// function changeBlocks(workspace, json) {
+//   console.log("changeBlocks");
+//   const measures = json['score-partwise']['part'][0]['measure']; // Extract measures from JSON
+//       // console.log("measures", measures)
+//       // Initialize the first measure block directly (to prevent typeError)
+//       let previousMeasureBlock = null;
 
-        // Process notes in this measure
-        measure['note'].forEach(note => {
-          const noteBlock = newBlocklyBlockForNote(workspace, note);
-          if (noteBlock) {
-            const notesInput = measureBlock.getInput('NOTES');
-            if (notesInput && notesInput.connection && noteBlock.previousConnection) {
-              notesInput.connection.connect(noteBlock.previousConnection);
-            }
-          }
-        });
+//       measures.forEach((measure, measureIndex) => {
+//         // Create a measure block for each measure
+//         const measureBlock = workspace.newBlock('measure');
+//         measureBlock.initSvg();
+//         measureBlock.moveBy(50, measureIndex * 100); // Adjust positioning
 
-        // Connect the current measure block to the previous one
-        if (previousMeasureBlock && previousMeasureBlock.nextConnection && measureBlock.previousConnection) {
-          previousMeasureBlock.nextConnection.connect(measureBlock.previousConnection);
-          // console.log(`Connected measure ${measureIndex - 1} to measure ${measureIndex}`);
-        }
+//         // console.log(`Created measure block ${measureIndex}`);
 
-        // Render the measure block
-        measureBlock.render();
-        previousMeasureBlock = measureBlock; // Update for the next measure
-      });
-}
+//         // Process notes in this measure
+//         measure['note'].forEach(note => {
+//           const noteBlock = newBlocklyBlockForNote(workspace, note);
+//           if (noteBlock) {
+//             const notesInput = measureBlock.getInput('NOTES');
+//             if (notesInput && notesInput.connection && noteBlock.previousConnection) {
+//               notesInput.connection.connect(noteBlock.previousConnection);
+//             }
+//           }
+//         });
+
+//         // Connect the current measure block to the previous one
+//         if (previousMeasureBlock && previousMeasureBlock.nextConnection && measureBlock.previousConnection) {
+//           previousMeasureBlock.nextConnection.connect(measureBlock.previousConnection);
+//           // console.log(`Connected measure ${measureIndex - 1} to measure ${measureIndex}`);
+//         }
+
+//         // Render the measure block
+//         measureBlock.render();
+//         previousMeasureBlock = measureBlock; // Update for the next measure
+//       });
+// }
 
 export default function CompositionBlocks({ flatJSON, onChange }) {
-  console.log("composition blocks", flatJSON) 
-  const [xml, setXml] = useState('');
+  console.log("composition blocks", flatJSON)
+  // const [xml, setXml] = useState('');
   const [blocklyJSON, setBlocklyJSON] = useState({});
   // useEffect(() => {setBlocklyJSON(flatToBlockly(flatJSON))}, [flatJSON])
 
   const renderedXMLRef = useRef(null);
-  const onInject = useCallback((workspace)=>{
-    changeBlocks(workspace, flatJSON);
-  },[flatJSON])
+
+  // const onInject = useCallback((workspace)=>{
+  //   changeBlocks(workspace, flatJSON);
+  // },[flatJSON])
+
+  const onInject = useCallback((workspace) => {
+    // NEW 3/27
+    const measures = convertFlatJsonToMeasures(flatJSON);
+    console.log("NEW measures: ", measures);
+    const blocks = generateBlocklyJson(measures);
+    console.log("NEW blocks: ", blocks);
+    Blockly.defineBlocksWithJsonArray(blocks);
+
+  }, [flatJSON])
 
   // const willSetXml = (newXml) => {
   //   console.log('willSetXml', newXml);
@@ -62,19 +79,19 @@ export default function CompositionBlocks({ flatJSON, onChange }) {
 
   // };
 
-  const willSetXml = (newXml) => {
-    console.log('Updated XML', newXml);
-    setXml(newXml);
+  // const willSetXml = (newXml) => {
+  //   // console.log('Updated XML', newXml);
+  //   // setXml(newXml);
 
-    // Update JSON with the new measures
-    const updatedJSON = recreateMusicJSON(newXml, flatJSON);
-    console.log("Composition Blocks --> Updated JSON:", updatedJSON);
-    onChange(updatedJSON);
+  //   // // Update JSON with the new measures
+  //   // const updatedJSON = recreateMusicJSON(newXml, flatJSON);
+  //   // console.log("Composition Blocks --> Updated JSON:", updatedJSON);
+  //   // onChange(updatedJSON);
 
-    // 2-27
-    setXml(newXml);        // This needs to go **AFTER** onChange()
+  //   // // 2-27
+  //   // setXml(newXml);        // This needs to go **AFTER** onChange()
 
-  };
+  // };
 
 
   const [toolbox, setToolbox] = useState({});
@@ -99,9 +116,15 @@ export default function CompositionBlocks({ flatJSON, onChange }) {
 
   return flatJSON && toolbox.contents && (<BlocklyWorkspace
     toolboxConfiguration={toolbox} // this must be a JSON toolbox definition
-    onXmlChange={willSetXml}
+    // onXmlChange={willSetXml}
     // call component with new blockly json
-    onJsonChange={(Json ) => {console.log("OnJsonChange --> Blockly", Json)}}
+    onJsonChange={(Json) => {
+      console.log("OnJsonChange --> Blockly", Json);
+      // NEW 3/27
+      let measures = parseBlocklyJSON(Json);
+      let updatedFlatJson = updateFlatJsonNotes(flatJSON, measures);
+      onChange(updatedFlatJson);
+    }}
     // changeBlocks = {{}}
     className="fill-height"
     // updateJson={blocklyJSON}

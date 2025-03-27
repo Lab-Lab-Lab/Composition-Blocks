@@ -4,14 +4,12 @@
         "blocks": [
             {
                 "type": "measure",
-                "id": "W_R@/#Cg)Ku#n^l6O?I{",
-                "x": 50,
-                "y": 0,
+                "id": "09b4fc29-11ca-45ea-aec0-9b632792e042",
                 "inputs": {
                     "NOTES": {
                         "block": {
                             "type": "play_sound",
-                            "id": "$_(%aD-L_#.jP;Jqzqk5",
+                            "id": "54742d9f-0318-4671-9721-d205aa1b4084",
                             "fields": {
                                 "DURATION": "whole",
                                 "STEP": "E",
@@ -23,14 +21,14 @@
                 "next": {
                     "block": {
                         "type": "measure",
-                        "id": "$TeRVt:VDV37QYKx1-kz",
+                        "id": "3229de17-e7e3-4d35-8555-972ad8e83809",
                         "inputs": {
                             "NOTES": {
                                 "block": {
                                     "type": "play_sound",
-                                    "id": "3!^^H%WSr,8@?.TW!EWm",
+                                    "id": "2dbbbcb4-ff90-4cfe-8fdf-7df2bab76d85",
                                     "fields": {
-                                        "DURATION": "half",
+                                        "DURATION": "whole",
                                         "STEP": "F",
                                         "OCTAVE": "4"
                                     }
@@ -40,12 +38,12 @@
                         "next": {
                             "block": {
                                 "type": "measure",
-                                "id": "Vbk5#gf8}){QLmDGeczv",
+                                "id": "f286a9b6-cf29-4cc0-ba83-cba8deceb6e2",
                                 "inputs": {
                                     "NOTES": {
                                         "block": {
                                             "type": "play_sound",
-                                            "id": "K^5_=EAM_iQemCW4dXT[",
+                                            "id": "0c57aedf-d30c-481e-9535-49e5442d803e",
                                             "fields": {
                                                 "DURATION": "whole",
                                                 "STEP": "A",
@@ -57,12 +55,12 @@
                                 "next": {
                                     "block": {
                                         "type": "measure",
-                                        "id": "j#{}D6T-ONO^c$mZ.0`m",
+                                        "id": "15efeea1-cce8-4988-aeed-1bf5ff303d35",
                                         "inputs": {
                                             "NOTES": {
                                                 "block": {
                                                     "type": "play_sound",
-                                                    "id": "tzz[Pn)!n%sY5h3v(|LJ",
+                                                    "id": "bd4b5788-94da-4f28-ad9b-338117479e31",
                                                     "fields": {
                                                         "DURATION": "whole",
                                                         "STEP": "rest",
