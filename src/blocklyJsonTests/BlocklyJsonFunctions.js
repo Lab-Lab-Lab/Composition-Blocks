@@ -111,6 +111,7 @@ function updateFlatJsonNotes(flatJson, newMeasures) {
                         note["rest"] = {};
                         note["voice"] = "1";
                         note["staff"] = "1";
+                        // Duration is number, type is word
                         note["duration"] = durationMapping[newNoteData.duration];
                         note["$adagio-location"] = {
                             "timePos": 0
@@ -122,7 +123,8 @@ function updateFlatJsonNotes(flatJson, newMeasures) {
                             octave: newNoteData.octave,
                             step: newNoteData.step
                         };
-                        note["duration"] = newNoteData.duration;
+                        // Duration is number, type is word
+                        note["duration"] = durationMapping[newNoteData.duration];
                         note["voice"] = "1";
                         note["staff"] = "1";
                         note["$adagio-location"] = {
@@ -138,4 +140,29 @@ function updateFlatJsonNotes(flatJson, newMeasures) {
     return updatedFlatJson;
 }
 
-export { generateBlocklyJson, convertFlatJsonToMeasures, updateFlatJsonNotes};
+function parseBlocklyJSON(blocklyJSON) {
+    const measures = [];
+
+    let currentBlock = blocklyJSON.blocks.blocks[0]; // Start from the first measure
+
+    while (currentBlock) {
+        if (currentBlock.type === "measure" && currentBlock.inputs && currentBlock.inputs.NOTES) {
+            const noteBlock = currentBlock.inputs.NOTES.block;
+            if (noteBlock && noteBlock.type === "play_sound") {
+                measures.push([
+                    {
+                        "duration": noteBlock.fields.DURATION,
+                        "step": noteBlock.fields.STEP,
+                        "octave": noteBlock.fields.OCTAVE
+                    }
+                ]);
+            }
+        }
+        currentBlock = currentBlock.next ? currentBlock.next.block : null;
+    }
+
+    return measures;
+}
+
+
+export { generateBlocklyJson, convertFlatJsonToMeasures, updateFlatJsonNotes, parseBlocklyJSON};
