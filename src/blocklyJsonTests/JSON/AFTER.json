@@ -65,7 +65,7 @@
                             {
                                 "staff": "1",
                                 "voice": "1",
-                                "duration": "half",
+                                "duration": "3",
                                 "pitch": {
                                     "octave": "4",
                                     "step": "E"
@@ -156,7 +156,7 @@
                             {
                                 "staff": "1",
                                 "voice": "1",
-                                "duration": "whole",
+                                "duration": "4",
                                 "pitch": {
                                     "octave": "4",
                                     "step": "G"
@@ -195,7 +195,7 @@
                             {
                                 "staff": "1",
                                 "voice": "1",
-                                "duration": "half",
+                                "duration": "3",
                                 "pitch": {
                                     "octave": "3",
                                     "step": "A"
