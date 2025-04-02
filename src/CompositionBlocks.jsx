@@ -5,48 +5,48 @@ import BlocklyWorkspace from './BlocklyWorkspace';
 import { buildToolBox, notesFromJSON, blocklyNoteFromMusicXMLNote, newBlocklyBlockForNote, extractMeasures, recreateMusicJSON } from './blockly-setup';
 
 // New Functions
-import { generateBlocklyJson, convertFlatJsonToMeasures, updateFlatJsonNotes, parseBlocklyJSON } from './BlocklyJsonFunctions.js';
+import { generateBlocklyJson, convertFlatJsonToMeasures, updateFlatJsonNotes, parseBlocklyJSON, validFlatJSON } from './BlocklyJsonFunctions.js';
 import * as Blockly from "blockly";
 
 
 
-// function changeBlocks(workspace, json) {
-//   console.log("changeBlocks");
-//   const measures = json['score-partwise']['part'][0]['measure']; // Extract measures from JSON
-//       // console.log("measures", measures)
-//       // Initialize the first measure block directly (to prevent typeError)
-//       let previousMeasureBlock = null;
+function changeBlocks(workspace, json) {
+  console.log("changeBlocks");
+  const measures = json['score-partwise']['part'][0]['measure']; // Extract measures from JSON
+      // console.log("measures", measures)
+      // Initialize the first measure block directly (to prevent typeError)
+      let previousMeasureBlock = null;
 
-//       measures.forEach((measure, measureIndex) => {
-//         // Create a measure block for each measure
-//         const measureBlock = workspace.newBlock('measure');
-//         measureBlock.initSvg();
-//         measureBlock.moveBy(50, measureIndex * 100); // Adjust positioning
+      measures.forEach((measure, measureIndex) => {
+        // Create a measure block for each measure
+        const measureBlock = workspace.newBlock('measure');
+        measureBlock.initSvg();
+        measureBlock.moveBy(50, measureIndex * 100); // Adjust positioning
 
-//         // console.log(`Created measure block ${measureIndex}`);
+        // console.log(`Created measure block ${measureIndex}`);
 
-//         // Process notes in this measure
-//         measure['note'].forEach(note => {
-//           const noteBlock = newBlocklyBlockForNote(workspace, note);
-//           if (noteBlock) {
-//             const notesInput = measureBlock.getInput('NOTES');
-//             if (notesInput && notesInput.connection && noteBlock.previousConnection) {
-//               notesInput.connection.connect(noteBlock.previousConnection);
-//             }
-//           }
-//         });
+        // Process notes in this measure
+        measure['note'].forEach(note => {
+          const noteBlock = newBlocklyBlockForNote(workspace, note);
+          if (noteBlock) {
+            const notesInput = measureBlock.getInput('NOTES');
+            if (notesInput && notesInput.connection && noteBlock.previousConnection) {
+              notesInput.connection.connect(noteBlock.previousConnection);
+            }
+          }
+        });
 
-//         // Connect the current measure block to the previous one
-//         if (previousMeasureBlock && previousMeasureBlock.nextConnection && measureBlock.previousConnection) {
-//           previousMeasureBlock.nextConnection.connect(measureBlock.previousConnection);
-//           // console.log(`Connected measure ${measureIndex - 1} to measure ${measureIndex}`);
-//         }
+        // Connect the current measure block to the previous one
+        if (previousMeasureBlock && previousMeasureBlock.nextConnection && measureBlock.previousConnection) {
+          previousMeasureBlock.nextConnection.connect(measureBlock.previousConnection);
+          // console.log(`Connected measure ${measureIndex - 1} to measure ${measureIndex}`);
+        }
 
-//         // Render the measure block
-//         measureBlock.render();
-//         previousMeasureBlock = measureBlock; // Update for the next measure
-//       });
-// }
+        // Render the measure block
+        measureBlock.render();
+        previousMeasureBlock = measureBlock; // Update for the next measure
+      });
+}
 
 export default function CompositionBlocks({ flatJSON, onChange }) {
   console.log("composition blocks", flatJSON)
@@ -60,13 +60,18 @@ export default function CompositionBlocks({ flatJSON, onChange }) {
   //   changeBlocks(workspace, flatJSON);
   // },[flatJSON])
 
+
+  // onInject assumes the current score info has been passed to this component via its flatJSON prop
+  // then it gets a list of measures (which each have a list of notes)
+  // then via generateBlocklyJson it creates the blocklyJSON for these flat measures/objects
   const onInject = useCallback((workspace) => {
     // NEW 3/27
-    const measures = convertFlatJsonToMeasures(flatJSON);
-    console.log("NEW measures: ", measures);
-    const blocks = generateBlocklyJson(measures);
-    console.log("NEW blocks: ", blocks);
-    Blockly.defineBlocksWithJsonArray(blocks);
+    // const measures = convertFlatJsonToMeasures(flatJSON);
+    // console.log("NEW measures: ", measures);
+    // const blocks = generateBlocklyJson(measures);
+    // console.log("NEW blocks: ", blocks);
+    // Blockly.defineBlocksWithJsonArray(blocks);
+    changeBlocks(workspace, flatJSON);
 
   }, [flatJSON])
 
@@ -99,6 +104,10 @@ export default function CompositionBlocks({ flatJSON, onChange }) {
     setToolbox(buildToolBox())
   }, []);
 
+  useEffect(()=>{
+    
+  }, [flatJSON])
+
   // change xml to JSON flatio: notes 11/18 
   // Blockly option:
   // - Instead of producing python or other code from xml use existing blockly tools to create JSON 
@@ -119,11 +128,17 @@ export default function CompositionBlocks({ flatJSON, onChange }) {
     // onXmlChange={willSetXml}
     // call component with new blockly json
     onJsonChange={(Json) => {
-      console.log("OnJsonChange --> Blockly", Json);
+      console.log("OnJsonChange --> Blockly", Json); // json is in blockyljson format
       // NEW 3/27
       let measures = parseBlocklyJSON(Json);
-      let updatedFlatJson = updateFlatJsonNotes(flatJSON, measures);
-      onChange(updatedFlatJson);
+      let updatedFlatJson = updateFlatJsonNotes(flatJSON, measures); //new flatJSON with the changes incorporated
+      console.log('updatedFlatJson', updatedFlatJson)
+      // if the json is bad, don't update (yet)
+      if (validFlatJSON(updatedFlatJson)) {
+        onChange(updatedFlatJson);
+      } else {
+        console.log('skipped update bc invalid json')
+      }
     }}
     // changeBlocks = {{}}
     className="fill-height"

@@ -111,6 +111,7 @@ function updateFlatJsonNotes(flatJson, newMeasures) {
                         note["rest"] = {};
                         note["voice"] = "1";
                         note["staff"] = "1";
+                        delete note.pitch 
                         // Duration is number, type is word
                         note["duration"] = durationMapping[newNoteData.duration];
                         note["$adagio-location"] = {
@@ -118,6 +119,8 @@ function updateFlatJsonNotes(flatJson, newMeasures) {
                         };
                         note["type"] = newNoteData.duration;  // Match the type to the duration
                     } else {
+                        console.log("Drop the rest property");
+                        delete note.rest;
                         // Handle regular notes with pitch
                         note["pitch"] = {
                             octave: newNoteData.octave,
@@ -164,5 +167,26 @@ function parseBlocklyJSON(blocklyJSON) {
     return measures;
 }
 
+function validFlatJSON(flatJSON) {
+    const measures = flatJSON['score-partwise']['part'][0]['measure']; // Extract measures from JSON
 
-export { generateBlocklyJson, convertFlatJsonToMeasures, updateFlatJsonNotes, parseBlocklyJSON};
+    return measures.every((measure, measureIndex) => {
+        return measure['note'].every(note => {
+            // check that the rest property is not on the note
+            return isValidNote(note) || isValidRest(note)
+
+        })
+    })
+}
+
+function isValidNote(note){
+    console.log('isValidNote', note, !note.rest && note.pitch && note.pitch.step && note.pitch.step !== "rest" && note.pitch.octave !== "rest")
+    return !note.rest && note.pitch && note.pitch.step && note.pitch.step !== "rest" && note.pitch.octave;
+}
+function isValidRest(note){
+    console.log('isValidRest', note, note.rest && !note.pitch)
+    return note.rest && !note.pitch;
+}
+
+
+export { generateBlocklyJson, convertFlatJsonToMeasures, updateFlatJsonNotes, parseBlocklyJSON, validFlatJSON};

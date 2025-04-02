@@ -54,9 +54,12 @@ function FlatEditor({
               }
             });
           });
+          console.log('flat editor instance', embed)
           console.log("FlatEditor attempting to load: flatJSON:", flatJSON);
-          embed.loadJSON(flatJSON);
-          console.log("FlatEditor loaded: flatJSON", flatJSON);
+          return embed.loadJSON(flatJSON);
+        })
+        .then(()=> {
+          console.log('loaded the following flatjson without throwing an error', flatJSON)
         })
         .catch((e) => {
           console.error("Flat.io Initialization Error:", e);
