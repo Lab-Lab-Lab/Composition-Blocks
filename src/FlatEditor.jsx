@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef, useMemo } from 'react';
 import Embed from 'flat-embed';
+import { convertFlatJsonToMeasures } from './BlocklyJsonFunctions';
 
 function FlatEditor({
   height = 400,
@@ -48,7 +49,9 @@ function FlatEditor({
             console.log('Cursor Position:', ev);
             embed.getJSON().then((json) => {
               console.log('JSON:', json);
-              if (onScoreUpdate && JSON.stringify(json) !== JSON.stringify(flatJSON)) {
+              console.log(convertFlatJsonToMeasures(json));
+              console.log(convertFlatJsonToMeasures(flatJSON));
+              if (onScoreUpdate && JSON.stringify(convertFlatJsonToMeasures(json)) !== JSON.stringify(convertFlatJsonToMeasures(flatJSON))) {
                 console.log('would update', json);
                 onScoreUpdate(json);
               }

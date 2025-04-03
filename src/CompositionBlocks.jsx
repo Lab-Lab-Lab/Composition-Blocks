@@ -12,40 +12,41 @@ import * as Blockly from "blockly";
 
 function changeBlocks(workspace, json) {
   console.log("changeBlocks");
+  workspace.clear();
   const measures = json['score-partwise']['part'][0]['measure']; // Extract measures from JSON
-      // console.log("measures", measures)
-      // Initialize the first measure block directly (to prevent typeError)
-      let previousMeasureBlock = null;
+  // console.log("measures", measures)
+  // Initialize the first measure block directly (to prevent typeError)
+  let previousMeasureBlock = null;
 
-      measures.forEach((measure, measureIndex) => {
-        // Create a measure block for each measure
-        const measureBlock = workspace.newBlock('measure');
-        measureBlock.initSvg();
-        measureBlock.moveBy(50, measureIndex * 100); // Adjust positioning
+  measures.forEach((measure, measureIndex) => {
+    // Create a measure block for each measure
+    const measureBlock = workspace.newBlock('measure');
+    measureBlock.initSvg();
+    measureBlock.moveBy(50, measureIndex * 100); // Adjust positioning
 
-        // console.log(`Created measure block ${measureIndex}`);
+    // console.log(`Created measure block ${measureIndex}`);
 
-        // Process notes in this measure
-        measure['note'].forEach(note => {
-          const noteBlock = newBlocklyBlockForNote(workspace, note);
-          if (noteBlock) {
-            const notesInput = measureBlock.getInput('NOTES');
-            if (notesInput && notesInput.connection && noteBlock.previousConnection) {
-              notesInput.connection.connect(noteBlock.previousConnection);
-            }
-          }
-        });
-
-        // Connect the current measure block to the previous one
-        if (previousMeasureBlock && previousMeasureBlock.nextConnection && measureBlock.previousConnection) {
-          previousMeasureBlock.nextConnection.connect(measureBlock.previousConnection);
-          // console.log(`Connected measure ${measureIndex - 1} to measure ${measureIndex}`);
+    // Process notes in this measure
+    measure['note'].forEach(note => {
+      const noteBlock = newBlocklyBlockForNote(workspace, note);
+      if (noteBlock) {
+        const notesInput = measureBlock.getInput('NOTES');
+        if (notesInput && notesInput.connection && noteBlock.previousConnection) {
+          notesInput.connection.connect(noteBlock.previousConnection);
         }
+      }
+    });
 
-        // Render the measure block
-        measureBlock.render();
-        previousMeasureBlock = measureBlock; // Update for the next measure
-      });
+    // Connect the current measure block to the previous one
+    if (previousMeasureBlock && previousMeasureBlock.nextConnection && measureBlock.previousConnection) {
+      previousMeasureBlock.nextConnection.connect(measureBlock.previousConnection);
+      // console.log(`Connected measure ${measureIndex - 1} to measure ${measureIndex}`);
+    }
+
+    // Render the measure block
+    measureBlock.render();
+    previousMeasureBlock = measureBlock; // Update for the next measure
+  });
 }
 
 export default function CompositionBlocks({ flatJSON, onChange }) {
@@ -53,6 +54,8 @@ export default function CompositionBlocks({ flatJSON, onChange }) {
   // const [xml, setXml] = useState('');
   const [blocklyJSON, setBlocklyJSON] = useState({});
   // useEffect(() => {setBlocklyJSON(flatToBlockly(flatJSON))}, [flatJSON])
+  const [renders, setRenders] = useState(0);
+  const ws = useRef();
 
   const renderedXMLRef = useRef(null);
 
@@ -65,6 +68,7 @@ export default function CompositionBlocks({ flatJSON, onChange }) {
   // then it gets a list of measures (which each have a list of notes)
   // then via generateBlocklyJson it creates the blocklyJSON for these flat measures/objects
   const onInject = useCallback((workspace) => {
+    ws.current = workspace;
     // NEW 3/27
     // const measures = convertFlatJsonToMeasures(flatJSON);
     // console.log("NEW measures: ", measures);
@@ -75,37 +79,18 @@ export default function CompositionBlocks({ flatJSON, onChange }) {
 
   }, [flatJSON])
 
-  // const willSetXml = (newXml) => {
-  //   console.log('willSetXml', newXml);
-  //   console.log('current ref value', renderedXMLRef.current);
-
-  //   setXml(newXml);
-  // rip out the score make it work with the flatJSON
-
-  // };
-
-  // const willSetXml = (newXml) => {
-  //   // console.log('Updated XML', newXml);
-  //   // setXml(newXml);
-
-  //   // // Update JSON with the new measures
-  //   // const updatedJSON = recreateMusicJSON(newXml, flatJSON);
-  //   // console.log("Composition Blocks --> Updated JSON:", updatedJSON);
-  //   // onChange(updatedJSON);
-
-  //   // // 2-27
-  //   // setXml(newXml);        // This needs to go **AFTER** onChange()
-
-  // };
-
 
   const [toolbox, setToolbox] = useState({});
   useEffect(() => {
     setToolbox(buildToolBox())
   }, []);
 
-  useEffect(()=>{
-    
+  useEffect(() => {
+
+    // if (ws.current && renders < 10) { //FIXME this should be on
+    //   setRenders(renders+1);
+    //   changeBlocks(ws.current, flatJSON);
+    // }
   }, [flatJSON])
 
   // change xml to JSON flatio: notes 11/18 
@@ -132,9 +117,17 @@ export default function CompositionBlocks({ flatJSON, onChange }) {
       // NEW 3/27
       let measures = parseBlocklyJSON(Json);
       let updatedFlatJson = updateFlatJsonNotes(flatJSON, measures); //new flatJSON with the changes incorporated
+
+      // can we do a logical comparison of the prop json vs the current json
+      console.log(convertFlatJsonToMeasures(flatJSON))
+      console.log(measures)
+
       console.log('updatedFlatJson', updatedFlatJson)
       // if the json is bad, don't update (yet)
-      if (validFlatJSON(updatedFlatJson)) {
+      if (validFlatJSON(updatedFlatJson) &&
+        JSON.stringify(convertFlatJsonToMeasures(flatJSON)) !==
+        JSON.stringify(measures)
+      ) {
         onChange(updatedFlatJson);
       } else {
         console.log('skipped update bc invalid json')

@@ -51,7 +51,7 @@ function convertFlatJsonToMeasures(flatJson) {
     const measures = [];
     
     // Navigate to the measures array
-    const part = flatJson["score-partwise"].part[0];
+    const part = flatJson["score-partwise"].part[0]; // FIXME probably never fix this but maybe one day there are multiple parts
     const measureList = part.measure;
     
     measureList.forEach(measure => {
