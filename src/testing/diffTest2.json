@@ -1,0 +1,45 @@
+[
+    [
+        {
+            "duration": "quarter",
+            "step": "E",
+            "octave": "4"
+        },
+        {
+            "duration": "quarter",
+            "step": "rest",
+            "octave": "rest"
+        },
+        {
+            "duration": "quarter",
+            "step": "rest",
+            "octave": "rest"
+        },
+        {
+            "duration": "quarter",
+            "step": "rest",
+            "octave": "rest"
+        }
+    ],
+    [
+        {
+            "duration": "whole",
+            "step": "F",
+            "octave": "4"
+        }
+    ],
+    [
+        {
+            "duration": "whole",
+            "step": "A",
+            "octave": "4"
+        }
+    ],
+    [
+        {
+            "duration": "whole",
+            "step": "rest",
+            "octave": "rest"
+        }
+    ]
+]

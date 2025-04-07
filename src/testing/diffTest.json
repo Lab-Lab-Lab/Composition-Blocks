@@ -1,0 +1,30 @@
+[
+    [
+        {
+            "duration": "whole",
+            "step": "E",
+            "octave": "4"
+        }
+    ],
+    [
+        {
+            "duration": "whole",
+            "step": "F",
+            "octave": "4"
+        }
+    ],
+    [
+        {
+            "duration": "whole",
+            "step": "A",
+            "octave": "4"
+        }
+    ],
+    [
+        {
+            "duration": "whole",
+            "step": "rest",
+            "octave": "rest"
+        }
+    ]
+]
