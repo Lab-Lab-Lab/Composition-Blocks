@@ -86,7 +86,14 @@ export default function CompositionBlocks({ flatJSON, onChange }) {
   }, []);
 
   useEffect(() => {
+    console.log('noticed change to flatJSON prop')
+    if (ws.current) {
+      const beforeUpdate = Blockly.serialization.workspaces.save(ws.current)
+      console.log('beforeUpdate', beforeUpdate)
+      console.log('flatJSON', flatJSON)
 
+      // FIXME: notice that the measures in beforeUpdate and those in flatJSON differ, so indeed call changeBlocks
+    }
     // if (ws.current && renders < 10) { //FIXME this should be on
     //   setRenders(renders+1);
     //   changeBlocks(ws.current, flatJSON);
