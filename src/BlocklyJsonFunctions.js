@@ -119,7 +119,7 @@ function updateFlatJsonNotes(flatJson, newMeasures) {
                         };
                         note["type"] = newNoteData.duration;  // Match the type to the duration
                     } else {
-                        console.log("Drop the rest property");
+                        // console.log("Drop the rest property");
                         delete note.rest;
                         // Handle regular notes with pitch
                         note["pitch"] = {

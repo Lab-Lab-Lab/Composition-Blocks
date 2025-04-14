@@ -46,9 +46,9 @@ function FlatEditor({
         .then(() => {
           embed.off('cursorPosition');
           embed.on('cursorPosition', (ev) => {
-            console.log('Cursor Position:', ev);
+            // console.log('Cursor Position:', ev);
             embed.getJSON().then((json) => {
-              console.log('JSON:', json);
+              // console.log('JSON:', json);
               console.log(convertFlatJsonToMeasures(json));
               console.log(convertFlatJsonToMeasures(flatJSON));
               if (onScoreUpdate && JSON.stringify(convertFlatJsonToMeasures(json)) !== JSON.stringify(convertFlatJsonToMeasures(flatJSON))) {

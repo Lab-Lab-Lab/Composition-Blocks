@@ -225,7 +225,7 @@ const useBlocklyWorkspace = ({
 
   // update xml/json
   React.useEffect(() => {
-    console.log('update xml/json', updateXml, updateJson)
+    // console.log('update xml/json', updateXml, updateJson)
 
     if (updateXml && workspace) {
       const success = repeatableImportFromXml(updateXml, workspace, onImportError);

@@ -11,7 +11,7 @@ import * as Blockly from "blockly";
 
 
 function changeBlocks(workspace, json) {
-  console.log("changeBlocks");
+  // console.log("changeBlocks");
   workspace.clear();
   const measures = json['score-partwise']['part'][0]['measure']; // Extract measures from JSON
   // console.log("measures", measures)
@@ -50,7 +50,7 @@ function changeBlocks(workspace, json) {
 }
 
 export default function CompositionBlocks({ flatJSON, onChange }) {
-  console.log("composition blocks", flatJSON)
+  console.log("composition blocks using this flatjson -->", flatJSON)
   // const [xml, setXml] = useState('');
   const [blocklyJSON, setBlocklyJSON] = useState({});
   // useEffect(() => {setBlocklyJSON(flatToBlockly(flatJSON))}, [flatJSON])
