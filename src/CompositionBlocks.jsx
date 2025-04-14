@@ -12,7 +12,11 @@ import * as Blockly from "blockly";
 
 function changeBlocks(workspace, json) {
   // console.log("changeBlocks");
-  workspace.clear();
+  try {
+    workspace.clear();
+  } catch(cantClearWorkspace) {
+    console.error('proceeding despite error', cantClearWorkspace)
+  }
   const measures = json['score-partwise']['part'][0]['measure']; // Extract measures from JSON
   // console.log("measures", measures)
   // Initialize the first measure block directly (to prevent typeError)
@@ -127,7 +131,6 @@ export default function CompositionBlocks({ flatJSON, onChange }) {
       // can we do a logical comparison of the prop json vs the current json
       console.log("FlatJSON: ", convertFlatJsonToMeasures(flatJSON))
       console.log("Updated FlatJSON: ", measures)
-
       console.log('updatedFlatJson', updatedFlatJson)
       // if the json is bad, don't update (yet)
       if (validFlatJSON(updatedFlatJson) &&

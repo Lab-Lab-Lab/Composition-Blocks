@@ -48,6 +48,7 @@ function importFromJson(
   onImportError?: (error: any) => void
 ) {
   try {
+    console.log('before clear workspace', workspace)
     workspace.clear();
     Blockly.serialization.workspaces.load(json, workspace);
     return true;
@@ -134,6 +135,7 @@ const useBlocklyWorkspace = ({
       ...workspaceConfigurationRef.current,
       toolbox: toolboxConfigurationRef.current,
     });
+    newWorkspace.addChangeListener((ev) => console.log('changelistener', ev))
     setWorkspace(newWorkspace);
     setDidInitialImport(false); // force a re-import if we recreate the workspace
     setDidHandleNewWorkspace(false); // Signal that a workspace change event needs to be sent.
@@ -183,6 +185,7 @@ const useBlocklyWorkspace = ({
     }
 
     const [callback, cancel] = debounce(() => {
+      console.log('debounce useWorkspace')
       const newXml = Blockly.Xml.domToText(
         Blockly.Xml.workspaceToDom(workspace)
       );
@@ -190,6 +193,10 @@ const useBlocklyWorkspace = ({
         return;
       }
       const newJson = Blockly.serialization.workspaces.save(workspace);
+      console.log('xml', xml)
+      console.log('json', json)
+      console.log('newXml', newXml)
+      console.log('newJson', newJson)
       setJson(newJson);
       setXml(newXml);
     }, 200);

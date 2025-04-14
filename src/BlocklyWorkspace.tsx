@@ -65,6 +65,7 @@ function BlocklyWorkspace({
       onXmlChangeRef.current(xml);
     }
     if (onJsonChangeRef.current && json) {
+      console.log('new json from workspace component', json)
       onJsonChangeRef.current(json);
     }
   }, [xml, json]);
