@@ -125,8 +125,8 @@ export default function CompositionBlocks({ flatJSON, onChange }) {
       let updatedFlatJson = updateFlatJsonNotes(flatJSON, measures); //new flatJSON with the changes incorporated
 
       // can we do a logical comparison of the prop json vs the current json
-      console.log(convertFlatJsonToMeasures(flatJSON))
-      console.log(measures)
+      console.log("FlatJSON: ", convertFlatJsonToMeasures(flatJSON))
+      console.log("Updated FlatJSON: ", measures)
 
       console.log('updatedFlatJson', updatedFlatJson)
       // if the json is bad, don't update (yet)
@@ -136,7 +136,11 @@ export default function CompositionBlocks({ flatJSON, onChange }) {
       ) {
         onChange(updatedFlatJson);
       } else {
-        console.log('skipped update bc invalid json')
+        console.log('Skipped update bc invalid json')
+        console.log("valid check: ", validFlatJSON(updatedFlatJson))
+        console.log("Comparison: flat array != update array", JSON.stringify(convertFlatJsonToMeasures(flatJSON)) !==
+        JSON.stringify(measures))
+
       }
     }}
     // changeBlocks = {{}}
