@@ -1,9 +1,14 @@
 [
     [
         {
-            "duration": "whole",
+            "duration": "half",
             "step": "E",
             "octave": "4"
+        },
+        {
+            "duration": "whole",
+            "step": "C",
+            "octave": "2"
         }
     ],
     [

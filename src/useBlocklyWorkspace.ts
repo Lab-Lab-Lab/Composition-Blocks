@@ -135,7 +135,7 @@ const useBlocklyWorkspace = ({
       ...workspaceConfigurationRef.current,
       toolbox: toolboxConfigurationRef.current,
     });
-    newWorkspace.addChangeListener((ev) => console.log('changelistener', ev))
+    // newWorkspace.addChangeListener((ev) => console.log('changelistener', ev))
     setWorkspace(newWorkspace);
     setDidInitialImport(false); // force a re-import if we recreate the workspace
     setDidHandleNewWorkspace(false); // Signal that a workspace change event needs to be sent.
@@ -193,10 +193,10 @@ const useBlocklyWorkspace = ({
         return;
       }
       const newJson = Blockly.serialization.workspaces.save(workspace);
-      console.log('xml', xml)
-      console.log('json', json)
-      console.log('newXml', newXml)
-      console.log('newJson', newJson)
+      // console.log('xml', xml)
+      // console.log('json', json)
+      // console.log('newXml', newXml)
+      // console.log('newJson', newJson)
       setJson(newJson);
       setXml(newXml);
     }, 200);

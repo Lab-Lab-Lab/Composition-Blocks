@@ -11,12 +11,43 @@ import * as Blockly from "blockly";
 
 
 function changeBlocks(workspace, json) {
-  // console.log("changeBlocks");
+  console.log("changeBlocks");
   try {
     workspace.clear();
-  } catch(cantClearWorkspace) {
+  } catch (cantClearWorkspace) {
     console.error('proceeding despite error', cantClearWorkspace)
   }
+  // workspace.addChangeListener((ev) => console.log('changelistener', ev))
+  workspace.addChangeListener((ev) => {
+    if (ev.type == "drag") {
+      if (ev.isStart) {
+        console.log("problem");
+      }
+    }
+  })
+  workspace.clear();
+
+  // let isDragging = false;
+
+  // workspace.addChangeListener((ev) => {
+  //   if (ev.type === 'drag') {
+  //     if (ev.isStart) {
+  //       isDragging = true;
+  //       console.log("Drag started");
+  //     } else if (ev.isEnd) {
+  //       isDragging = false;
+  //       console.log("Drag ended");
+  //     }
+  //   }
+  // });
+
+  // setTimeout(() => {
+  //   if (!isDragging) {
+  //     workspace.clear();
+  //   }
+  // }, 100);
+  
+
   const measures = json['score-partwise']['part'][0]['measure']; // Extract measures from JSON
   // console.log("measures", measures)
   // Initialize the first measure block directly (to prevent typeError)
@@ -79,6 +110,7 @@ export default function CompositionBlocks({ flatJSON, onChange }) {
     // const blocks = generateBlocklyJson(measures);
     // console.log("NEW blocks: ", blocks);
     // Blockly.defineBlocksWithJsonArray(blocks);
+    console.log("Changeblocks on Inject");
     changeBlocks(workspace, flatJSON);
 
   }, [flatJSON])
@@ -93,13 +125,25 @@ export default function CompositionBlocks({ flatJSON, onChange }) {
     console.log('noticed change to flatJSON prop')
     if (ws.current) {
       const beforeUpdate = Blockly.serialization.workspaces.save(ws.current)
-      console.log('beforeUpdate', parseBlocklyJSON(beforeUpdate))
-      console.log('flatJSON', convertFlatJsonToMeasures(flatJSON))
-    
+      const updateMeasures =  parseBlocklyJSON(beforeUpdate)
+      console.log('beforeUpdate blockly json', parseBlocklyJSON(beforeUpdate))
+      console.log("beforeUpdate changed measures", updateMeasures)
+      console.log('Current flatJSON', convertFlatJsonToMeasures(flatJSON))
+
       // FIXME: notice that the measures in beforeUpdate and those in flatJSON differ, so indeed call changeBlocks
       if (JSON.stringify(parseBlocklyJSON(beforeUpdate)) !== JSON.stringify(convertFlatJsonToMeasures(flatJSON))) {
-        changeBlocks(ws.current, flatJSON)
+        console.log("Changeblocks on change");
+        // console.log("Sending this flatJSON to changeblocks", flatJSON)
+        // changeBlocks(ws.current, flatJSON);
+        const newJson = updateFlatJsonNotes(flatJSON, updateMeasures);
+        console.log("Sending this json to changeblocks: ", newJson)
+        console.log("newJson measures: ", convertFlatJsonToMeasures(newJson))
+        changeBlocks(ws.current, newJson);
       }
+      else {
+        console.log("no Update needed", JSON.stringify(parseBlocklyJSON(beforeUpdate)) !== JSON.stringify(convertFlatJsonToMeasures(flatJSON)))
+      }
+
     }
   }, [flatJSON])
 
@@ -126,12 +170,13 @@ export default function CompositionBlocks({ flatJSON, onChange }) {
       console.log("OnJsonChange --> Blockly", Json); // json is in blockyljson format
       // NEW 3/27
       let measures = parseBlocklyJSON(Json);
+      console.log("Measures after parsing: ", measures);
       let updatedFlatJson = updateFlatJsonNotes(flatJSON, measures); //new flatJSON with the changes incorporated
 
       // can we do a logical comparison of the prop json vs the current json
-      console.log("FlatJSON: ", convertFlatJsonToMeasures(flatJSON))
-      console.log("Updated FlatJSON: ", measures)
-      console.log('updatedFlatJson', updatedFlatJson)
+      console.log("Current FlatJSON Measures: ", convertFlatJsonToMeasures(flatJSON))
+      console.log('Updated FlatJson: ', updatedFlatJson)
+      console.log("Updated FlatJson Measures: ", convertFlatJsonToMeasures(updatedFlatJson))
       // if the json is bad, don't update (yet)
       if (validFlatJSON(updatedFlatJson) &&
         JSON.stringify(convertFlatJsonToMeasures(flatJSON)) !==
@@ -142,7 +187,7 @@ export default function CompositionBlocks({ flatJSON, onChange }) {
         console.log('Skipped update bc invalid json')
         console.log("valid check: ", validFlatJSON(updatedFlatJson))
         console.log("Comparison: flat array != update array", JSON.stringify(convertFlatJsonToMeasures(flatJSON)) !==
-        JSON.stringify(measures))
+          JSON.stringify(measures))
 
       }
     }}

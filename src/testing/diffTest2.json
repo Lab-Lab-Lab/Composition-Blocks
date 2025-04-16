@@ -1,24 +1,9 @@
 [
     [
         {
-            "duration": "quarter",
+            "duration": "half",
             "step": "E",
             "octave": "4"
-        },
-        {
-            "duration": "quarter",
-            "step": "rest",
-            "octave": "rest"
-        },
-        {
-            "duration": "quarter",
-            "step": "rest",
-            "octave": "rest"
-        },
-        {
-            "duration": "quarter",
-            "step": "rest",
-            "octave": "rest"
         }
     ],
     [
