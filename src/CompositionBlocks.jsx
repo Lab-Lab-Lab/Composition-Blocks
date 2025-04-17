@@ -135,10 +135,15 @@ export default function CompositionBlocks({ flatJSON, onChange }) {
         console.log("Changeblocks on change");
         // console.log("Sending this flatJSON to changeblocks", flatJSON)
         // changeBlocks(ws.current, flatJSON);
-        const newJson = updateFlatJsonNotes(flatJSON, updateMeasures);
-        console.log("Sending this json to changeblocks: ", newJson)
-        console.log("newJson measures: ", convertFlatJsonToMeasures(newJson))
-        changeBlocks(ws.current, newJson);
+        // const newJson = updateFlatJsonNotes(flatJSON, updateMeasures);
+        // console.log("Sending this json to changeblocks: ", newJson)
+        // console.log("newJson measures: ", convertFlatJsonToMeasures(newJson))
+        // changeBlocks(ws.current, newJson);
+
+        // 4/17/25
+        console.log("Sending this json to changeblocks: ", flatJSON)
+        changeBlocks(ws.current, flatJSON);
+
       }
       else {
         console.log("no Update needed", JSON.stringify(parseBlocklyJSON(beforeUpdate)) !== JSON.stringify(convertFlatJsonToMeasures(flatJSON)))

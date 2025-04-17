@@ -77,108 +77,14 @@ function convertFlatJsonToMeasures(flatJson) {
     return measures;
 }
 
-// function updateFlatJsonNotes(flatJson, newMeasures) {
-//     console.log("Updating flatJson with newMeasures", flatJson, newMeasures);
-//     // Clone the flatJson object to avoid mutating the original
-//     const updatedFlatJson = JSON.parse(JSON.stringify(flatJson));
-
-//     // Navigate to the first part (assumes there's only one part)
-//     const part = updatedFlatJson["score-partwise"].part[0];
-
-//     // Get the list of measures for this part
-//     const measures = part.measure;
-
-//     // Duration-to-type mapping
-//     const durationMapping = {
-//         "whole": "4",
-//         "half": "3",
-//         "quarter": "2",
-//         "eighth": "1"
-//     };
-
-//     // Iterate through each measure in the flatJson
-//     measures.forEach((measure, index) => {
-//         // If there is corresponding new measure data in the `newMeasures` array
-//         if (newMeasures[index]) {
-//             // Update each note in the measure
-//             measure.note.forEach((note, noteIndex) => {
-//                 // Get the corresponding new note data from `newMeasures`
-//                 const newNoteData = newMeasures[index][noteIndex];
-
-//                 // Update the note with the new duration, step, and octave values
-//                 if (newNoteData) {
-//                     if (newNoteData.step === "rest") {
-//                         // Handle rest note - no pitch, only rest, duration, and type
-//                         note["rest"] = {};
-//                         note["voice"] = "1";
-//                         note["staff"] = "1";
-//                         delete note.pitch 
-//                         // Duration is number, type is word
-//                         note["duration"] = durationMapping[newNoteData.duration];
-//                         note["$adagio-location"] = {
-//                             "timePos": 0
-//                         };
-//                         note["type"] = newNoteData.duration;  // Match the type to the duration
-//                     } else {
-//                         // console.log("Drop the rest property");
-//                         delete note.rest;
-//                         // Handle regular notes with pitch
-//                         note["pitch"] = {
-//                             octave: newNoteData.octave,
-//                             step: newNoteData.step
-//                         };
-//                         // Duration is number, type is word
-//                         note["duration"] = durationMapping[newNoteData.duration];
-//                         note["voice"] = "1";
-//                         note["staff"] = "1";
-//                         note["$adagio-location"] = {
-//                             "timePos": 0
-//                         };
-//                         note["type"] = newNoteData.duration;  // Match the type to the duration
-//                     }
-//                 }
-//             });
-//         }
-//     });
-
-
-//     console.log("Finished updating flatJson with newMeasures --> updatedFlatJSon", flatJson, newMeasures, updatedFlatJson);
-//     console.log("Updated JSON measures check: ", convertFlatJsonToMeasures(updatedFlatJson));
-//     return updatedFlatJson;
-// }
-
-// function parseBlocklyJSON(blocklyJSON) {
-//     const measures = [];
-
-
-//     let currentBlock = blocklyJSON.blocks.blocks[0]; // Start from the first measure
-
-//     while (currentBlock) {
-//         if (currentBlock.type === "measure" && currentBlock.inputs && currentBlock.inputs.NOTES) {
-//             const noteBlock = currentBlock.inputs.NOTES.block;
-//             if (noteBlock && noteBlock.type === "play_sound") {
-//                 measures.push([
-//                     {
-//                         "duration": noteBlock.fields.DURATION,
-//                         "step": noteBlock.fields.STEP,
-//                         "octave": noteBlock.fields.OCTAVE
-//                     }
-//                 ]);
-//             }
-//         }
-//         currentBlock = currentBlock.next ? currentBlock.next.block : null;
-//     }
-
-//     return measures;
-// }
-
 function updateFlatJsonNotes(flatJson, newMeasures) {
     console.log("Updating flatJson with newMeasures", flatJson, newMeasures);
 
     const updatedFlatJson = JSON.parse(JSON.stringify(flatJson));
     const part = updatedFlatJson["score-partwise"].part[0];
-    const measures = part.measure;
-
+    const measureList = updatedFlatJson["score-partwise"]["measure-list"];
+    const originalMeasures = part.measure;
+    
     const durationMapping = {
         "whole": "4",
         "half": "3",
@@ -186,11 +92,50 @@ function updateFlatJsonNotes(flatJson, newMeasures) {
         "eighth": "1"
     };
 
-    measures.forEach((measure, index) => {
-        if (newMeasures[index]) {
-            const updatedNotes = [];
+    // Handle case where newMeasures is longer than original measures
+    if (newMeasures.length > originalMeasures.length) {
+        // Add new measures to the part
+        for (let i = originalMeasures.length; i < newMeasures.length; i++) {
+            const newMeasure = {
+                number: (i + 1).toString(),
+                note: []
+            };
+            
+            // Generate UUID for the new measure
+            const newUuid = generateUUID();
+            
+            // Add the UUID to the measure
+            newMeasure.uuid = newUuid;
+            
+            // Add the measure to the part
+            originalMeasures.push(newMeasure);
+            
+            // Add corresponding entry to measure-list if it exists
+            if (measureList && measureList["score-measure"]) {
+                measureList["score-measure"].push({
+                    uuid: newUuid
+                });
+            }
+        }
+    } 
+    // Handle case where newMeasures is shorter than original measures
+    else if (newMeasures.length < originalMeasures.length) {
+        // Remove excess measures from the part
+        originalMeasures.splice(newMeasures.length);
+        
+        // Remove corresponding entries from measure-list if it exists
+        if (measureList && measureList["score-measure"]) {
+            measureList["score-measure"].splice(newMeasures.length);
+        }
+    }
 
-            newMeasures[index].forEach(noteData => {
+    // Update notes in each measure
+    newMeasures.forEach((measureNotes, index) => {
+        // Clear existing notes
+        originalMeasures[index].note = [];
+        
+        if (Array.isArray(measureNotes)) {
+            measureNotes.forEach(noteData => {
                 const newNote = {};
 
                 if (noteData.step === "rest") {
@@ -212,18 +157,25 @@ function updateFlatJsonNotes(flatJson, newMeasures) {
                     newNote.type = noteData.duration;
                 }
 
-                updatedNotes.push(newNote);
+                originalMeasures[index].note.push(newNote);
             });
-
-            // Replace the old notes array with the new one
-            measure.note = updatedNotes;
         }
+        
+        // Ensure measure number is correct
+        originalMeasures[index].number = (index + 1).toString();
     });
 
     console.log("Updated JSON measures check: ", convertFlatJsonToMeasures(updatedFlatJson));
     return updatedFlatJson;
 }
 
+// Helper function to generate UUID v4
+function generateUUID() {
+    return 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'.replace(/[x]/g, function(c) {
+        const r = Math.random() * 16 | 0;
+        return r.toString(16);
+    });
+}
 
 function parseBlocklyJSON(blocklyJSON) {
     const measures = [];
