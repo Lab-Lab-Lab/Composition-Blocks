@@ -63,6 +63,11 @@ function FlatEditor({
         })
         .then(()=> {
           console.log('loaded the following flatjson without throwing an error', flatJSON)
+          return embed.getJSON().then((json) => {
+            console.log('got the json we just loaded', json)
+            console.log('expected vs actual', JSON.stringify(flatJSON)===JSON.stringify(json))
+            console.log('expected vs actual', JSON.stringify(convertFlatJsonToMeasures(flatJSON))===JSON.stringify(convertFlatJsonToMeasures(json)))
+          });
         })
         .catch((e) => {
           console.error("Flat.io Initialization Error:", e);

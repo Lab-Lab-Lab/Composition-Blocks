@@ -10,7 +10,7 @@
 <body>
     <h1>Flat.io Embed JSON Test</h1>
     <!-- copy and paste from FlatIO share by embedding section -->
-     <!-- Only change score and sharing KEY values -->
+    <!-- Only change score and sharing KEY values -->
     <div id="embed-container"></div>
     <script src="https://prod.flat-cdn.com/embed-js/v2.3.0/embed.min.js"></script>
     <script>
@@ -23,31 +23,35 @@
                 'sharingKey': 'd61fc1be1b3df01d6c52162d81e4d58834ce3f30ad9eb9a49d3f642d0a822b04c929b2ee20aaa2af838b5e3fe39d6200f5d82895241a832fdbe7b01f2cbe7586'
             },
             { // 3 notes
-                scoreId:'67bcb6fe61f27a0a88a4db86',
+                scoreId: '67bcb6fe61f27a0a88a4db86',
                 'sharingKey': '9ef465415e0c8f77bddd388d56599f5ee6b8e553e9ea94b59c8bf2a724e37ed5cd897ee700005fe209bd889d571205755bdc1b675e5d397eaf5f69d9cf9e3ed0'
+            },
+            {
+                scoreId: "65f3164ea114758e30975d47",
+                "sharingKey": "89b9d230dddd45edd858af771f3630b148705b2f5fa361678cf46864697cee3611f4dd49494c307513e8d261f65221692de79b474882560b649249fe2f2ad7b2"
             }
         ]
         var container = document.getElementById("embed-container");
         var embed = new Flat.Embed(container, {
             "width": "100%",
             "height": "450",
-            "score": scores[1].scoreId,
+            "score": scores[2].scoreId,
             "embedParams": {
                 "appId": "60a51c906bcde01fc75a3ad0",
-                "sharingKey": scores[1].sharingKey
+                "sharingKey": scores[2].sharingKey
             },
         });
         // You can now use the `embed` instance.
         // Check out the docs at https://flat.io/developers/docs/embed/javascript.html
 
-    // Wait for the embed to initialize, then fetch JSON
-    embed.getJSON()
-    .then(function (data) {
-    console.log("Flat.io JSON Data:", data);
-    })
-    .catch(function (error) {
-    console.error("Error fetching JSON:", error);
-    });
+        // Wait for the embed to initialize, then fetch JSON
+        embed.getJSON()
+            .then(function (data) {
+                console.log("Flat.io JSON Data:", data);
+            })
+            .catch(function (error) {
+                console.error("Error fetching JSON:", error);
+            });
     </script>
 </body>
 

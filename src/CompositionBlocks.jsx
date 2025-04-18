@@ -62,15 +62,24 @@ function changeBlocks(workspace, json) {
     // console.log(`Created measure block ${measureIndex}`);
 
     // Process notes in this measure
+    const noteList = [];
     measure['note'].forEach(note => {
       const noteBlock = newBlocklyBlockForNote(workspace, note);
       if (noteBlock) {
         const notesInput = measureBlock.getInput('NOTES');
-        if (notesInput && notesInput.connection && noteBlock.previousConnection) {
+        // if (notesInput && notesInput.connection && noteBlock.previousConnection) {
+        //   notesInput.connection.connect(noteBlock.previousConnection);
+        // }
+        if (noteList.length) {
+          noteList[noteList.length - 1].nextConnection.connect(noteBlock.previousConnection)
+          // notesInput.connection.connect(noteList[noteList.length - 1]);
+        } else {
           notesInput.connection.connect(noteBlock.previousConnection);
         }
       }
+      noteList.push(noteBlock);
     });
+
 
     // Connect the current measure block to the previous one
     if (previousMeasureBlock && previousMeasureBlock.nextConnection && measureBlock.previousConnection) {
