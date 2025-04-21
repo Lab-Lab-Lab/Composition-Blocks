@@ -29,16 +29,25 @@
             {
                 scoreId: "65f3164ea114758e30975d47",
                 "sharingKey": "89b9d230dddd45edd858af771f3630b148705b2f5fa361678cf46864697cee3611f4dd49494c307513e8d261f65221692de79b474882560b649249fe2f2ad7b2"
+            },
+            { // Hot cross buns
+                scoreId: "63fba8114d0b56e9531ff5c5",
+                "sharingKey": "5ede13bfc2b41608a8b15b386facde3e403ecb23f5a250e941534663b131a2e9c04f97df0a2516745f72915f3d7575af5170ca9e0182526a37820924cf8f4cc9"
+            },
+            { // Ode to joy
+                scoreId: "63fac50dac7007fc34068c7d",
+                "sharingKey": "0bf820e9183cd79191db8c7c600d79ff330221117c3d7ae0011fced03f16142c580f9597cf76814d963927c1e8561d8c0327c2efda2f75a5122cad2be050a848"
             }
+
         ]
         var container = document.getElementById("embed-container");
         var embed = new Flat.Embed(container, {
             "width": "100%",
             "height": "450",
-            "score": scores[2].scoreId,
+            "score": scores[3].scoreId, // change this
             "embedParams": {
-                "appId": "60a51c906bcde01fc75a3ad0",
-                "sharingKey": scores[2].sharingKey
+                "appId": "60a51c906bcde01fc75a3ad0", // stays the same
+                "sharingKey": scores[3].sharingKey // change this
             },
         });
         // You can now use the `embed` instance.

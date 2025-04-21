@@ -27,10 +27,24 @@ for (let i = MIN_OCTAVE; i <= MAX_OCTAVE; i++) {
     NOTE_VALUES.push(NOTES[j] + i);
   }
 }
+// This works but default block is Whole C 2 which looks weird in flatIO so change to quarter E 4
 
-const PLAY_DURATION_OPTIONS = ['whole', 'half', 'quarter', 'eighth'].map((duration) => [duration, duration]);
-const PLAY_OCTAVE_OPTIONS = ['2', '3', '4', '5', '6', '7', '8', 'rest'].map((octave) => [octave, octave]);
-const PLAY_STEP_OPTIONS = ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'rest'].map((step) => [step, step]);
+// const PLAY_DURATION_OPTIONS = ['whole', 'half', 'quarter', 'eighth'].map((duration) => [duration, duration]);
+// const PLAY_OCTAVE_OPTIONS = ['2', '3', '4', '5', '6', '7', '8', 'rest'].map((octave) => [octave, octave]);
+// const PLAY_STEP_OPTIONS = ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'rest'].map((step) => [step, step]);
+
+const PLAY_DURATION_OPTIONS = [['quarter', 'quarter'], 'whole', 'half', 'eighth'].map((x) =>
+  Array.isArray(x) ? x : [x, x]
+);
+
+const PLAY_STEP_OPTIONS = [['E', 'E'], 'C', 'D', 'F', 'G', 'A', 'B', 'rest'].map((x) =>
+  Array.isArray(x) ? x : [x, x]
+);
+
+const PLAY_OCTAVE_OPTIONS = [['4', '4'], '2', '3', '5', '6', '7', '8', 'rest'].map((x) =>
+  Array.isArray(x) ? x : [x, x]
+);
+
 
 const MCPR_TOOLBOX = [
   {
