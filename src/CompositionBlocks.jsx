@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-// import { BlocklyWorkspace } from 'react-blockly';
 import BlocklyWorkspace from './BlocklyWorkspace';
 // Old Functions
 import { buildToolBox, notesFromJSON, blocklyNoteFromMusicXMLNote, newBlocklyBlockForNote, extractMeasures, recreateMusicJSON } from './blockly-setup';

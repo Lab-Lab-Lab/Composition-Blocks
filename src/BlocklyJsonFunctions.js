@@ -229,5 +229,44 @@ function isValidRest(note){
     return note.rest && !note.pitch;
 }
 
+// Imported from old functions blockly-setup.js
 
-export { generateBlocklyJson, convertFlatJsonToMeasures, updateFlatJsonNotes, parseBlocklyJSON, validFlatJSON};
+function newBlocklyBlockForNote(currWork, noteObj) {
+  const duration = noteObj.type;
+  const noteString = blocklyNoteFromMusicXMLNote(noteObj);
+  const newB = currWork.newBlock('play_sound', null); // FIXME? why is this null?
+  
+  if (noteString === REST_STR) {
+    newB.setFieldValue('rest', 'STEP');
+    newB.setFieldValue('rest', 'OCTAVE');
+  } else {
+    newB.setFieldValue(noteObj.pitch.octave, 'OCTAVE');
+    newB.setFieldValue(noteObj.pitch.step, 'STEP');
+  }
+  newB.setFieldValue(duration, 'DURATION');
+
+  newB.initSvg();
+  return newB;
+}
+
+function buildToolBox() {
+    const JSONToolbox = {
+      kind: 'categoryToolbox',
+      contents: [
+        {
+          kind: 'category',
+          name: 'Notes',
+          colour: 210,
+          contents: [
+            { kind: 'block', type: 'play_sound' },
+            { kind: 'block', type: 'measure' }, // Add the measure block here
+          ],
+        },
+      ],
+    };
+    // console.log('JSONToolbox', JSONToolbox);
+    return JSONToolbox;
+  }
+
+
+export { generateBlocklyJson, convertFlatJsonToMeasures, updateFlatJsonNotes, parseBlocklyJSON, validFlatJSON, newBlocklyBlockForNote, buildToolBox};
